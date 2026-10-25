@@ -278,7 +278,11 @@
   }
 
   /* ---- Buttons ---------------------------------------------------------- */
-  .btn {
+  .btn,
+  .btn-primary,
+  .btn-accent,
+  .btn-outline,
+  .btn-ghost-dark {
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -305,10 +309,10 @@
   .btn-primary:active { transform: translateY(1px); }
 
   .btn-accent {
-    background-color: var(--orange-700);
-    color: #fff;
+    background-color: #e0b93a;
+    color: #16213a;
   }
-  .btn-accent:hover { background-color: #8c3c0b; }
+  .btn-accent:hover { background-color: #c9a227; }
 
   .btn-outline {
     border: 1px solid var(--hairline);

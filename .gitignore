@@ -74,3 +74,4 @@ rani-commercial.html
 # Working design notes (not part of the site)
 *.md
 !README.md
+.vercel
