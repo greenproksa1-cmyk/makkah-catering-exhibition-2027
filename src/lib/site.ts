@@ -49,8 +49,15 @@ export const siteUrl = (() => {
   if (fromEnv && /^https?:\/\//.test(fromEnv)) {
     return fromEnv.replace(/\/$/, '');
   }
-  if (process.env.VERCEL_PROJECT_ID || process.env.VERCEL_URL) {
-    return `https://${process.env.VERCEL_URL ?? ''}`.replace(/\/$/, '');
+  // The stable production domain Vercel assigns to the project. Prefer it over
+  // VERCEL_URL, which changes with every deployment and would make canonical
+  // and Open Graph URLs drift.
+  const production = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+  if (production) {
+    return `https://${production}`.replace(/\/$/, '');
+  }
+  if (process.env.VERCEL_URL) {
+    return `https://${process.env.VERCEL_URL}`.replace(/\/$/, '');
   }
   return 'http://localhost:3000';
 })();
