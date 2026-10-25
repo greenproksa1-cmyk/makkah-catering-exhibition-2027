@@ -1,0 +1,999 @@
+{
+  "meta": {
+    "localeName": "English",
+    "htmlLang": "en",
+    "dir": "ltr",
+    "shortEventName": "Makkah Catering & Food Supply Exhibition 2027",
+    "title": "Makkah Catering & Food Supply Exhibition 2027 | Hilton Makkah Convention Hall",
+    "description": "A specialised exhibition and conference for catering, food supply and hospitality, connecting food and beverage suppliers and kitchen equipment providers with Makkah hotels, catering companies and Hajj and Umrah missions. 10–12 January 2027, Hilton Makkah Convention Hall, Saudi Arabia.",
+    "keywords": "Makkah exhibition, catering, food supply, hospitality, Makkah hotels, kitchen equipment, food and beverage, Hajj and Umrah, Saudi Arabia, 2027, exhibition and conference"
+  },
+  "event": {
+    "nameAr": "معرض مكة للإعاشة والتموين 2027",
+    "nameEn": "Makkah Catering & Food Supply Exhibition 2027",
+    "wordmarkAr": "معرض مكة للإعاشة والتموين",
+    "wordmarkEn": "Makkah Catering & Food Supply Exhibition",
+    "tagline": "From the heart of Makkah to the world's hospitality table",
+    "dateLineAr": "10 – 12 يناير 2027",
+    "dateLineEn": "10 – 12 January 2027",
+    "placeAr": "مكة المكرمة، المملكة العربية السعودية",
+    "placeEn": "Makkah, Kingdom of Saudi Arabia",
+    "durationAr": "ثلاثة أيام",
+    "durationEn": "Three Days",
+    "dateLineFullAr": "10 – 12 يناير 2027 | 2 – 4 شعبان 1448 | هيلتون مكة للمؤتمرات",
+    "dateLineFullEn": "10 – 12 January 2027 | 2 – 4 Sha'ban 1448 | Hilton Makkah Convention Hall",
+    "startISO": "2027-01-10T09:00:00+03:00",
+    "endISO": "2027-01-12T18:00:00+03:00",
+    "isoDuration": "P3D",
+    "heroTitleAr": "معرض مكة للإعاشة والتموين 2027",
+    "heroTitleEn": "Makkah Catering & Food Supply Exhibition 2027",
+    "heroKickerAr": "منصة الإعاشة والضيافة في قلب مكة المكرمة",
+    "heroKickerEn": "The catering and hospitality platform at the heart of Makkah",
+    "scrollLabelAr": "اكتشف المزيد",
+    "scrollLabelEn": "Discover more"
+  },
+  "nav": {
+    "label": "Main navigation",
+    "links": [
+      {
+        "id": "introduction",
+        "label": "About"
+      },
+      {
+        "id": "objectives",
+        "label": "Objectives"
+      },
+      {
+        "id": "ecosystem",
+        "label": "Sectors"
+      },
+      {
+        "id": "visitors",
+        "label": "Visitors"
+      },
+      {
+        "id": "business-value",
+        "label": "Value"
+      },
+      {
+        "id": "partners",
+        "label": "Partners",
+        "href": "/partners"
+      }
+    ],
+    "cta": "Book your space",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "languageLabel": "Language",
+    "switchTo": "العربية",
+    "switchToShort": "ع",
+    "currentLangShort": "EN"
+  },
+  "chapters": {
+    "label": "Chapters",
+    "items": [
+      {
+        "id": "introduction",
+        "title": "Introduction",
+        "target": "introduction"
+      },
+      {
+        "id": "importance",
+        "title": "Importance of location",
+        "target": "importance"
+      },
+      {
+        "id": "timing",
+        "title": "Idea & timing",
+        "target": "timing"
+      },
+      {
+        "id": "objectives",
+        "title": "Objectives",
+        "target": "objectives"
+      },
+      {
+        "id": "visitors",
+        "title": "Target visitors",
+        "target": "visitors"
+      },
+      {
+        "id": "why-exhibit",
+        "title": "Why exhibit",
+        "target": "why-exhibit"
+      }
+    ]
+  },
+  "ui": {
+    "toBeAnnounced": "To be announced",
+    "backToTop": "Back to top",
+    "whatsapp": "Chat on WhatsApp",
+    "prev": "Previous",
+    "next": "Next",
+    "menu": "Menu",
+    "close": "Close",
+    "expand": "Show details",
+    "collapse": "Hide details",
+    "loading": "Loading…",
+    "scrollHint": "Scroll to explore"
+  },
+  "hero": {
+    "countdownLabel": "Countdown to the exhibition",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds",
+    "daysFull": "Days",
+    "ctaPrimary": "Book your space",
+    "ctaSecondary": "Register as visitor",
+    "stats": [
+      {
+        "value": 3,
+        "suffix": "",
+        "label": "Business days"
+      },
+      {
+        "value": 2,
+        "suffix": "",
+        "label": "Core sectors"
+      },
+      {
+        "value": 120,
+        "suffix": "+",
+        "label": "Target exhibitors"
+      },
+      {
+        "value": 10,
+        "suffix": "K+",
+        "label": "Trade visitors"
+      }
+    ]
+  },
+  "introduction": {
+    "eyebrow": "Introduction",
+    "eyebrowEn": "INTRODUCTION",
+    "imageCardTitleAr": "الإعاشة والضيافة",
+    "imageCardTitleEn": "Catering & Hospitality",
+    "imageAltAr": "طبق تقديم راقٍ من إعداد طهاة الإعاشة",
+    "title": "Makkah: the world's largest catering and hospitality market",
+    "lead": "One business platform bringing food and beverage manufacturers and kitchen equipment suppliers together with Makkah hotels, catering companies and Hajj and Umrah missions.",
+    "paragraphs": [
+      "Makkah welcomes millions of pilgrims and visitors throughout the year and hosts the largest concentration of hotels in the central zone, making it the most demanding market for catering services and high-efficiency kitchen equipment.",
+      "From this growing demand comes the Makkah Catering & Food Supply Exhibition 2027, bringing under one roof an integrated ecosystem of food and beverage manufacturers, catering and food supply companies, central kitchen equipment suppliers, refrigeration and packaging providers, alongside Makkah hotels, hospitality operators and Hajj and Umrah missions.",
+      "The exhibition is a genuine opportunity to build direct commercial partnerships, showcase the latest solutions that raise operational efficiency and guarantee food safety, and connect suppliers with the real decision-makers of Saudi Arabia's largest hospitality ecosystem."
+    ]
+  },
+  "importance": {
+    "eyebrow": "The importance of location",
+    "eyebrowEn": "THE IMPORTANCE OF LOCATION",
+    "title": "From the heart of the central zone, where catering decisions are made",
+    "lead": "Location is the greatest competitive advantage: the exhibition takes place inside the very ecosystem it serves, steps away from the Holy Mosque and Makkah's largest hotels.",
+    "cards": [
+      {
+        "number": "01",
+        "title": "Heart of the central zone",
+        "en": "Heart of the Central Zone",
+        "description": "A strategic position within the hotels and operating facilities that run catering for pilgrims and visitors around the clock."
+      },
+      {
+        "number": "02",
+        "title": "A market that operates 365 days",
+        "en": "A market that never sleeps",
+        "description": "Continuous demand beyond a single season, from hotel kitchens and catering companies to food warehouses, outlets and services."
+      },
+      {
+        "number": "03",
+        "title": "Decision-makers in one place",
+        "en": "Decision-makers in one place",
+        "description": "Procurement, operations and quality directors from hotels and catering companies, and Hajj mission representatives, on one sourcing platform."
+      }
+    ],
+    "closingTitle": "Why you need to be here",
+    "closingText": "Because participating in Makkah is not simply attending an exhibition; it is direct entry into a year-round catering market serving pilgrims from across the world."
+  },
+  "timing": {
+    "eyebrow": "The idea and timing",
+    "eyebrowEn": "THE IDEA AND TIMING",
+    "title": "Timed ahead of the season, so contracts are signed on time",
+    "lead": "The exhibition takes place in January 2027, ahead of the main Hajj and Umrah season, giving buyers and suppliers enough time to complete contracts and mobilise.",
+    "pills": [
+      {
+        "id": "1",
+        "labelAr": "كبرى الشركات الغذائية",
+        "labelEn": "Major food companies"
+      },
+      {
+        "id": "2",
+        "labelAr": "شركات الإعاشة والتموين الغذائي",
+        "labelEn": "Catering & food supply companies"
+      },
+      {
+        "id": "3",
+        "labelAr": "موردو معدات المطابخ المركزية",
+        "labelEn": "Central kitchen equipment suppliers"
+      },
+      {
+        "id": "4",
+        "labelAr": "صنّاع القرار من بعثات الحج الدولية",
+        "labelEn": "Decision-makers from international Hajj delegations"
+      },
+      {
+        "id": "5",
+        "labelAr": "الفنادق الفاخرة في مكة المكرمة",
+        "labelEn": "Luxury hotels in Makkah"
+      }
+    ],
+    "bridgeTitle": "The trade bridge",
+    "closingLine": "One date. The largest demand meets the best supply."
+  },
+  "objectives": {
+    "eyebrow": "Objectives",
+    "eyebrowEn": "OBJECTIVES",
+    "title": "12 strategic objectives for a stronger catering ecosystem",
+    "hubLabelAr": "منظومة الإعاشة والضيافة",
+    "hubLabelEn": "Catering & Hospitality Ecosystem",
+    "hint": "Hover over any objective to see its detail, or browse the full list.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Open direct commercial channels",
+        "description": "Connect food and beverage manufacturers and equipment suppliers with hotels and catering companies through direct contracting meetings."
+      },
+      {
+        "number": "02",
+        "title": "Support Saudi Vision 2030",
+        "description": "Contribute to developing the hospitality sector and serving pilgrims in line with the Kingdom's Vision 2030 objectives."
+      },
+      {
+        "number": "03",
+        "title": "Empower local and international companies",
+        "description": "Give national and international companies a fair platform to present their products and solutions to relevant buyers."
+      },
+      {
+        "number": "04",
+        "title": "One platform for two integrated sectors",
+        "description": "Bring the food and beverage sector and the kitchen equipment sector together in one place to match supply and demand."
+      },
+      {
+        "number": "05",
+        "title": "Strengthen local content",
+        "description": "Encourage the localisation of the catering industry, food manufacturing and related operating services in the Kingdom."
+      },
+      {
+        "number": "06",
+        "title": "Raise efficiency and food safety",
+        "description": "Showcase solutions and practices that improve kitchen efficiency and uphold the highest food safety standards."
+      },
+      {
+        "number": "07",
+        "title": "Elevate Makkah's global standing",
+        "description": "Establish Makkah as a global centre for catering and hospitality services and the service of pilgrims."
+      },
+      {
+        "number": "08",
+        "title": "Latest central kitchen technology",
+        "description": "Present automation, central kitchen management, traceability and digital quality solutions."
+      },
+      {
+        "number": "09",
+        "title": "Integrate the supply chain",
+        "description": "Connect the supply chain from factory and farm to table through storage, refrigeration and distribution solutions."
+      },
+      {
+        "number": "10",
+        "title": "Attract quality investment",
+        "description": "Highlight investment opportunities in food factories, catering centres and hospitality operating infrastructure."
+      },
+      {
+        "number": "11",
+        "title": "A sector dialogue platform",
+        "description": "Sessions bringing regulators and the private sector together to discuss regulations, opportunities and challenges."
+      },
+      {
+        "number": "12",
+        "title": "Support SMEs and startups",
+        "description": "Enable entrepreneurs and emerging businesses to reach major buyers and partners."
+      }
+    ]
+  },
+  "ecosystem": {
+    "eyebrow": "Exhibition sectors",
+    "eyebrowEn": "EXHIBITION SECTORS",
+    "title": "Two core sectors and a complete supporting ecosystem",
+    "lead": "The exhibition covers the entire catering chain, from raw materials and equipment to operations, packaging and technology.",
+    "hubAr": "الإعاشة والتموين",
+    "hubEn": "Catering & Food Supply",
+    "hint": "Select any sector to see its details",
+    "selectPrompt": "Select a sector to see details",
+    "items": [
+      {
+        "id": "food",
+        "number": "01",
+        "title": "Food & Beverage",
+        "en": "Food & Beverage",
+        "image": "/images/intro-catering.jpg",
+        "imageAltAr": "طاهٍ يجهّز أطباقاً في مطبخ احترافي",
+        "details": [
+          "Food manufacturers and distributors",
+          "Meat, poultry, fish and protein",
+          "Rice, grains, pulses and oils",
+          "Fresh vegetables and fruit",
+          "Bakery, pastry and ready meals",
+          "Hot and cold beverages and drinking water",
+          "Speciality and clinical nutrition",
+          "Private-label hotel products"
+        ]
+      },
+      {
+        "id": "equipment",
+        "number": "02",
+        "title": "Kitchen & Catering Equipment",
+        "en": "Kitchen & Catering Equipment",
+        "image": "/images/intro-kitchen.jpg",
+        "imageAltAr": "مطبخ احترافي مجهّز بأحدث المعدات",
+        "details": [
+          "Cooking, frying and grilling equipment",
+          "Central kitchens and mass production systems",
+          "Refrigerators, cold rooms and freezers",
+          "Washing and sterilisation systems",
+          "Preparation, cutting and packaging equipment",
+          "Tableware and serving utensils",
+          "Extraction, ventilation and food safety systems",
+          "Kitchen energy management solutions"
+        ]
+      },
+      {
+        "id": "catering",
+        "number": "03",
+        "title": "Catering & Food Service",
+        "en": "Catering & Food Service",
+        "image": "/images/hero-catering.jpg",
+        "imageAltAr": "بوفيه إعاشة مجهّز في حدث كبير",
+        "details": [
+          "Integrated catering companies",
+          "Pilgrim catering contractors",
+          "Hotel and conference food service",
+          "Field and temporary kitchens",
+          "Serving and distribution systems",
+          "Cleaning and sterilisation management",
+          "Workforce and operational training"
+        ]
+      },
+      {
+        "id": "coldchain",
+        "number": "04",
+        "title": "Cold Chain & Refrigeration",
+        "en": "Cold Chain & Refrigeration",
+        "details": [
+          "Cold rooms and freezer stores",
+          "Refrigerated transport vehicles",
+          "Monitoring and sensor systems",
+          "Cold chain integrity solutions",
+          "Refrigerated display equipment",
+          "Backup power systems"
+        ]
+      },
+      {
+        "id": "packaging",
+        "number": "05",
+        "title": "Packaging & Disposables",
+        "en": "Packaging & Disposables",
+        "details": [
+          "Food containers and chilled packaging",
+          "Delivery bags and boxes",
+          "Eco-friendly packaging materials",
+          "Labelling and traceability systems",
+          "Safe storage and transport solutions",
+          "Filling and packaging machinery"
+        ]
+      },
+      {
+        "id": "technology",
+        "number": "06",
+        "title": "Technology & Management Systems",
+        "en": "Technology & Management Systems",
+        "details": [
+          "Kitchen and inventory management systems",
+          "Point of sale and order management",
+          "AI and demand forecasting",
+          "Traceability and food safety systems",
+          "Procurement and supply platforms",
+          "Payment and relationship management"
+        ]
+      }
+    ]
+  },
+  "sectors": {
+    "items": [
+      {
+        "id": "food",
+        "title": "Food & Beverage",
+        "en": "Food & Beverage"
+      },
+      {
+        "id": "beverage",
+        "title": "Beverages & Water",
+        "en": "Beverages & Water"
+      },
+      {
+        "id": "equipment",
+        "title": "Kitchen Equipment",
+        "en": "Kitchen Equipment"
+      },
+      {
+        "id": "catering",
+        "title": "Catering & Food Service",
+        "en": "Catering & Food Service"
+      },
+      {
+        "id": "coldchain",
+        "title": "Cold Chain",
+        "en": "Cold Chain"
+      },
+      {
+        "id": "packaging",
+        "title": "Packaging",
+        "en": "Packaging"
+      },
+      {
+        "id": "technology",
+        "title": "Technology & Systems",
+        "en": "Technology & Systems"
+      },
+      {
+        "id": "services",
+        "title": "Hospitality & Operations Services",
+        "en": "Hospitality & Operations Services"
+      }
+    ]
+  },
+  "visitors": {
+    "eyebrow": "Target visitors",
+    "eyebrowEn": "TARGET VISITORS",
+    "title": "Who does the exhibition welcome?",
+    "lead": "The exhibition welcomes decision-makers across the hospitality and catering ecosystem, from hotels and catering companies to Hajj missions and regulators.",
+    "hubAr": "أصحاب القرار",
+    "hubEn": "Decision Makers",
+    "items": [
+      {
+        "id": "executive",
+        "number": "01",
+        "title": "Hotel Leadership",
+        "en": "Hotel Leadership",
+        "roles": [
+          "Hotel general managers",
+          "Food and beverage directors",
+          "Procurement and supply directors",
+          "Operations and quality directors",
+          "Projects and fit-out managers",
+          "Hotel owners and operators"
+        ]
+      },
+      {
+        "id": "industry",
+        "number": "02",
+        "title": "Catering & Food Supply",
+        "en": "Catering & Food Supply",
+        "roles": [
+          "Integrated catering companies",
+          "Pilgrim catering contractors",
+          "Central and field kitchens",
+          "Restaurant and café chains",
+          "Food supply companies",
+          "Hospitality service operators"
+        ]
+      },
+      {
+        "id": "investment",
+        "number": "03",
+        "title": "Hajj Missions & Government",
+        "en": "Hajj Missions & Government",
+        "roles": [
+          "International Hajj and Umrah missions",
+          "Regulatory and supervisory bodies",
+          "Holy Makkah Municipality",
+          "Saudi Food & Drug Authority",
+          "Holy sites operators",
+          "Financial and investment institutions"
+        ]
+      },
+      {
+        "id": "innovation",
+        "number": "04",
+        "title": "Suppliers & Entrepreneurs",
+        "en": "Suppliers & Entrepreneurs",
+        "roles": [
+          "Food and beverage manufacturers",
+          "Equipment and supplies providers",
+          "Packaging and refrigeration companies",
+          "Technology solution providers",
+          "Entrepreneurs and startups",
+          "Hospitality investors"
+        ]
+      }
+    ],
+    "subCategories": {
+      "title": "Visitor category",
+      "items": [
+        {
+          "id": "hotel",
+          "title": "Hotel / Accommodation",
+          "en": "Hotel / Accommodation"
+        },
+        {
+          "id": "catering",
+          "title": "Catering & Food Supply Company",
+          "en": "Catering & Food Supply Company"
+        },
+        {
+          "id": "hajj",
+          "title": "Hajj / Umrah Mission",
+          "en": "Hajj / Umrah Mission"
+        },
+        {
+          "id": "restaurant",
+          "title": "Restaurant / Chain",
+          "en": "Restaurant / Chain"
+        },
+        {
+          "id": "supplier",
+          "title": "Food or Equipment Supplier",
+          "en": "Food or Equipment Supplier"
+        },
+        {
+          "id": "government",
+          "title": "Government / Regulatory Body",
+          "en": "Government / Regulatory Body"
+        },
+        {
+          "id": "other",
+          "title": "Other",
+          "en": "Other"
+        }
+      ]
+    }
+  },
+  "whyExhibit": {
+    "eyebrow": "Why exhibit",
+    "eyebrowEn": "WHY EXHIBIT",
+    "title": "Five reasons participation is a direct investment",
+    "lead": "Your participation gives you direct access to real buyers and purchasing decisions in one place:",
+    "items": [
+      {
+        "number": "01",
+        "title": "Direct contracts",
+        "description": "Meet procurement and operations directors from hotels and catering companies, and sign your agreements at the exhibition instead of waiting for opportunities."
+      },
+      {
+        "number": "02",
+        "title": "Build brand credibility",
+        "description": "In front of a specialised audience looking for trusted suppliers, your stand strengthens your brand's credibility and puts it on procurement lists."
+      },
+      {
+        "number": "03",
+        "title": "Test the market where it is",
+        "description": "Showcase your products in the most demanding catering market and hear directly from buyers before investing in expansion."
+      },
+      {
+        "number": "04",
+        "title": "Expand your network",
+        "description": "Structured B2B meetings connect you with suppliers, partners and mission representatives from inside and outside the Kingdom."
+      },
+      {
+        "number": "05",
+        "title": "New markets",
+        "description": "Your gateway to a hospitality market serving millions of visitors a year, with export opportunities and regional partnerships."
+      }
+    ],
+    "ctaTitle": "Don't miss contracting season",
+    "ctaBody": "Book your space now and put your brand in front of decision-makers in the heart of Makkah.",
+    "ctaButton": "Book your space now"
+  },
+  "businessValue": {
+    "eyebrow": "Value of participation",
+    "eyebrowEn": "VALUE OF PARTICIPATION",
+    "title": "From connection to lasting impact",
+    "lead": "Eight steps that take your participation from a first meeting to a firm presence in the catering ecosystem.",
+    "items": [
+      {
+        "number": "01",
+        "title": "Connect",
+        "subtitle": "Linking suppliers with buyers",
+        "description": "Direct meetings between food manufacturers, equipment suppliers, Makkah hotels and catering companies."
+      },
+      {
+        "number": "02",
+        "title": "Discover",
+        "subtitle": "The latest solutions and technology",
+        "description": "Innovations in central kitchens, packaging, refrigeration and food safety systems."
+      },
+      {
+        "number": "03",
+        "title": "Meet",
+        "subtitle": "Real business opportunities",
+        "description": "Structured B2B meetings that put you in front of the right buyer at a set time in a single room."
+      },
+      {
+        "number": "04",
+        "title": "Collaborate",
+        "subtitle": "An integrated supply chain",
+        "description": "Connecting factory, farm, warehouse and kitchen into a more efficient supply ecosystem."
+      },
+      {
+        "number": "05",
+        "title": "Invest",
+        "subtitle": "Opportunities in hospitality",
+        "description": "Highlighting investment opportunities in food factories, catering centres and operating infrastructure."
+      },
+      {
+        "number": "06",
+        "title": "Grow",
+        "subtitle": "Higher efficiency, lower cost",
+        "description": "Solutions that reduce waste, raise kitchen productivity and lower operating costs."
+      },
+      {
+        "number": "07",
+        "title": "Localise",
+        "subtitle": "A stronger national industry",
+        "description": "Greater opportunities for national companies and SMEs to enter supply chains."
+      },
+      {
+        "number": "08",
+        "title": "The sector's future",
+        "subtitle": "Dialogue that shapes decisions",
+        "description": "A conference and workshops discussing regulations and the future direction of catering and hospitality."
+      }
+    ]
+  },
+  "experience": {
+    "eyebrow": "Event experience",
+    "eyebrowEn": "EVENT EXPERIENCE",
+    "title": "An integrated programme beyond a traditional showcase",
+    "lead": "The exhibition is accompanied by a programme of events and side activities that enhance its commercial and knowledge value:",
+    "groupA": "Side programme 01–05",
+    "groupB": "Side programme 06–10",
+    "items": [
+      {
+        "number": "01",
+        "title": "Accompanying Conference",
+        "en": "Accompanying Conference",
+        "description": "Sessions and keynotes on the future of catering, hospitality, food safety and pilgrim services."
+      },
+      {
+        "number": "02",
+        "title": "Decision-Makers Roundtables",
+        "en": "Decision-Makers Roundtables",
+        "description": "Closed sessions bringing hotel leaders, catering companies and regulators together to discuss challenges and solutions."
+      },
+      {
+        "number": "03",
+        "title": "Specialized Workshops",
+        "en": "Specialized Workshops",
+        "description": "Applied workshops on food safety, central kitchen management, waste reduction, energy efficiency and sourcing."
+      },
+      {
+        "number": "04",
+        "title": "B2B Business Meetings",
+        "en": "B2B Business Meetings",
+        "description": "Structured direct meetings between exhibitors and buyers, turning participation into actual contracts."
+      },
+      {
+        "number": "05",
+        "title": "Innovation Zone",
+        "en": "Innovation Zone",
+        "description": "A space for automation, AI, food traceability and kitchen management systems."
+      },
+      {
+        "number": "06",
+        "title": "Live Kitchen & Culinary Demos",
+        "en": "Live Kitchen & Culinary Demos",
+        "description": "Live cooking demonstrations with executive chefs from Makkah hotels and catering companies."
+      },
+      {
+        "number": "07",
+        "title": "Procurement Day",
+        "en": "Procurement Day",
+        "description": "Dedicated sessions for procurement directors to review annual needs and discuss supply terms."
+      },
+      {
+        "number": "08",
+        "title": "Startup Platform",
+        "en": "Startup Platform",
+        "description": "A space for entrepreneurs to present their solutions to investors and major hospitality companies."
+      },
+      {
+        "number": "09",
+        "title": "Live Demonstrations",
+        "en": "Live Demonstrations",
+        "description": "Hands-on operational demonstrations of equipment, refrigeration and packaging systems on the show floor."
+      },
+      {
+        "number": "10",
+        "title": "Networking",
+        "en": "Networking",
+        "description": "Dedicated events to build long-term relationships between exhibitors, visitors and partners."
+      }
+    ]
+  },
+  "earlyBird": {
+    "eyebrow": "Early-bird offer",
+    "eyebrowEn": "EARLY-BIRD OFFER",
+    "title": "30% off exhibition space until 15 November 2026",
+    "lead": "Book your space before the offer ends and benefit from the founding rate. Every square metre is priced at the early-bird rate for all stand sizes.",
+    "badge": "30% OFF",
+    "discountPercent": 30,
+    "earlyPrice": 1600,
+    "regularPrice": 2285,
+    "deadline": "Offer ends 15 November 2026",
+    "earlyLabel": "Early-bird rate",
+    "regularLabel": "Regular rate",
+    "savingLabel": "You save",
+    "areaLabel": "Stand area (m²)",
+    "calcTitle": "Calculate your participation cost",
+    "calcHint": "Enter your stand area or pick one of the quick sizes.",
+    "currency": "SAR / m²",
+    "cta": "Book at the early-bird rate",
+    "note": "Prices exclude VAT. Rates are locked when the booking is confirmed and the first payment is made before 15 November 2026.",
+    "quickAreas": [9, 18, 36, 72]
+  },
+  "location": {
+    "eyebrow": "Location",
+    "eyebrowEn": "LOCATION",
+    "title": "Makkah, Kingdom of Saudi Arabia",
+    "lead": "The heart of the Islamic world and the region's largest catering and hospitality market.",
+    "cityAr": "مكة المكرمة",
+    "cityEn": "Makkah",
+    "regionAr": "المملكة العربية السعودية",
+    "regionEn": "Kingdom of Saudi Arabia",
+    "coastAr": "المنطقة المركزية",
+    "coastEn": "Central Makkah",
+    "facts": [
+      {
+        "label": "City",
+        "value": "Makkah"
+      },
+      {
+        "label": "Time zone",
+        "value": "Makkah time (GMT+3)"
+      },
+      {
+        "label": "Location",
+        "value": "Central zone – near the Holy Mosque"
+      }
+    ],
+    "venueTitle": "Venue",
+    "venueTba": "Hilton Makkah Convention Hall",
+    "venueNote": "A fully equipped convention hall in the central zone, with high operational flexibility and hospitality services befitting exhibition visitors.",
+    "datesTitle": "Dates",
+    "startDate": "10 – 12 January 2027",
+    "duration": "Three days | 2 – 4 Sha'ban 1448",
+    "mapLabel": "Approximate location of Makkah and the central zone"
+  },
+  "register": {
+    "eyebrow": "Registration",
+    "eyebrowEn": "REGISTRATION",
+    "title": "Book your space or register as a visitor",
+    "lead": "Choose the registration type that suits you, and the Green Projects team will contact you to complete the details.",
+    "tabs": {
+      "exhibit": "احجز مساحتك",
+      "exhibitEn": "Book Your Space",
+      "visitor": "سجّل كزائر",
+      "visitorEn": "Register as Visitor"
+    },
+    "exhibit": {
+      "title": "Book your space",
+      "subtitle": "For companies wishing to participate as exhibitors",
+      "submit": "Send booking request",
+      "note": "Our team will contact you to confirm the space and final price under the early-bird offer.",
+      "fields": {
+        "company": "Company name",
+        "contact": "Contact name",
+        "jobTitle": "Job title",
+        "email": "Email address",
+        "phone": "Mobile number",
+        "sector": "Sector",
+        "boothSize": "Preferred stand size",
+        "message": "Your message"
+      },
+      "placeholders": {
+        "company": "e.g. National Catering Company",
+        "contact": "Full name",
+        "jobTitle": "e.g. Procurement Manager",
+        "phone": "+966 5X XXX XXXX",
+        "message": "Tell us about your business and your goals for participating…",
+        "select": "Select…"
+      }
+    },
+    "visitor": {
+      "title": "Register as a visitor",
+      "subtitle": "To attend as an accredited visitor",
+      "submit": "Register as visitor",
+      "note": "Visitor registration is free. A confirmation will be sent to your email address.",
+      "fields": {
+        "name": "Full name",
+        "company": "Company / Organisation",
+        "jobTitle": "Job title",
+        "email": "Email address",
+        "phone": "Mobile number",
+        "category": "Visitor category"
+      },
+      "placeholders": {
+        "name": "Full name",
+        "company": "Company or organisation name",
+        "jobTitle": "e.g. Planning Manager",
+        "phone": "+966 5X XXX XXXX",
+        "select": "Select a category…"
+      }
+    },
+    "boothSizes": [
+      {
+        "value": "up-to-9",
+        "labelAr": "حتى 9 م²",
+        "labelEn": "Up to 9 m²"
+      },
+      {
+        "value": "9-18",
+        "labelAr": "9 – 18 م²",
+        "labelEn": "9 – 18 m²"
+      },
+      {
+        "value": "18-36",
+        "labelAr": "18 – 36 م²",
+        "labelEn": "18 – 36 m²"
+      },
+      {
+        "value": "36-72",
+        "labelAr": "36 – 72 م²",
+        "labelEn": "36 – 72 m²"
+      },
+      {
+        "value": "72-plus",
+        "labelAr": "أكثر من 72 م²",
+        "labelEn": "More than 72 m²"
+      },
+      {
+        "value": "undecided",
+        "labelAr": "لم أحدد بعد",
+        "labelEn": "Not decided yet"
+      }
+    ],
+    "consent": "By submitting this form you agree to be contacted by the Green Projects team regarding the exhibition.",
+    "validation": {
+      "required": "This field is required",
+      "email": "Please enter a valid email address",
+      "phone": "Please enter a valid mobile number",
+      "minLength": "Please enter at least {n} characters",
+      "summary": "Please correct the highlighted fields below"
+    },
+    "status": {
+      "sending": "Sending…",
+      "success": "Your request has been received. The Green Projects team will contact you shortly.",
+      "error": "Something went wrong while sending. Please try again or contact us directly.",
+      "successTitle": "Thank you",
+      "errorTitle": "Could not send"
+    }
+  },
+  "organizer": {
+    "eyebrow": "Project owner",
+    "eyebrowEn": "PROJECT OWNER",
+    "nameAr": "قرين بروجكتس",
+    "nameEn": "Green Projects",
+    "addressLabel": "Address",
+    "addressAr": "الرياض – تقاطع طريق الملك فهد مع طريق التحلية",
+    "addressEn": "Riyadh – King Fahd Road at the Intersection with Tahlia Road",
+    "phoneLabel": "Phone",
+    "phoneDisplay": "+966 59 0401 777",
+    "phoneRaw": "+966590401777",
+    "email": "contact@gren-pro.com",
+    "websiteLabel": "Website",
+    "website": "www.greeen-pro.com",
+    "websiteUrl": "https://www.greeen-pro.com",
+    "whatsappLabel": "Chat on WhatsApp",
+    "noteAr": "Green Projects — project owner and organiser of Makkah Catering & Food Supply Exhibition 2027.",
+    "noteEn": "Green Projects — project owner and organiser of Makkah Catering & Food Supply Exhibition 2027."
+  },
+  "footer": {
+    "navTitle": "Quick links",
+    "contactTitle": "Contact us",
+    "organizerTitle": "Project owner",
+    "locationTitle": "Location",
+    "languageTitle": "Language",
+    "rights": "All rights reserved",
+    "madeWith": "Organised and led by",
+    "disclaimer": "All information, dates and prices are subject to update; the final offer is confirmed upon booking. Exhibition details are updated regularly."
+  },
+  "partners": {
+    "eyebrow": "Partners",
+    "eyebrowEn": "PARTNERS",
+    "title": "Event partners",
+    "leadAr": "يقف الحدث على تعاون منظومة وطنية من الجهات التنظيمية والقطاعية التي تدعم ضيافة مكة وخدمة ضيوف الرحمن.",
+    "leadEn": "The event is built on the cooperation of a national ecosystem of regulatory and sector bodies supporting Makkah's hospitality and the service of pilgrims.",
+    "noteTitle": "Acknowledgement",
+    "noteAr": "نقدّر الشراكة والدعم المقدم من هذه الجهات، والذي يسهم في استضافة الحدث وتطوير برنامجه. تُستكمل قائمة الشركاء تباعاً بعد اعتماد مذكرات التفاهم.",
+    "noteEn": "We acknowledge the partnership and support of these organisations, which contributes to hosting the event and developing its programme. The partner list will be completed as agreements are confirmed.",
+    "backHome": "Back to the home page",
+    "metaTitle": "Event Partners | Makkah Catering & Food Supply Exhibition 2027",
+    "metaTitleEn": "Event Partners | Makkah Catering & Food Supply Exhibition 2027",
+    "metaDescription": "الجهات والشركات الشريكة في معرض مكة للإعاشة والتموين 2027: الجهات التنظيمية وقطاع الضيافة والغذاء في المملكة العربية السعودية.",
+    "metaDescriptionEn": "The partner organisations of the Makkah Catering & Food Supply Exhibition 2027: regulators and hospitality and food sector bodies in Saudi Arabia.",
+    "logoAlt": "Logo",
+    "items": [
+      {
+        "id": "makkah-municipality",
+        "logo": "",
+        "nameAr": "أمانة العاصمة المقدسة",
+        "nameEn": "Holy Makkah Municipality",
+        "roleAr": "شريك تنظيمي",
+        "roleEn": "Regulatory partner",
+        "logoScale": 45,
+        "logoW": 600,
+        "logoH": 300
+      },
+      {
+        "id": "sfda",
+        "logo": "",
+        "nameAr": "الهيئة العامة للغذاء والدواء",
+        "nameEn": "Saudi Food & Drug Authority",
+        "roleAr": "سلامة الغذاء",
+        "roleEn": "Food safety",
+        "logoScale": 42,
+        "logoW": 580,
+        "logoH": 290
+      },
+      {
+        "id": "makkah-chamber",
+        "logo": "",
+        "nameAr": "غرفة مكة المكرمة",
+        "nameEn": "Makkah Chamber",
+        "roleAr": "شريك قطاع الأعمال",
+        "roleEn": "Business sector partner",
+        "logoScale": 40,
+        "logoW": 550,
+        "logoH": 280
+      },
+      {
+        "id": "tourism",
+        "logo": "",
+        "nameAr": "الهيئة السعودية للسياحة",
+        "nameEn": "Saudi Tourism Authority",
+        "roleAr": "دعم قطاع الضيافة",
+        "roleEn": "Hospitality sector support",
+        "logoScale": 40,
+        "logoW": 550,
+        "logoH": 280
+      },
+      {
+        "id": "hajj",
+        "logo": "",
+        "nameAr": "وزارة الحج والعمرة",
+        "nameEn": "Ministry of Hajj and Umrah",
+        "roleAr": "خدمة ضيوف الرحمن",
+        "roleEn": "Pilgrim services",
+        "logoScale": 42,
+        "logoW": 560,
+        "logoH": 300
+      },
+      {
+        "id": "green-projects",
+        "logo": "/images/green-projects.png",
+        "nameAr": "قرين بروجكتس",
+        "nameEn": "Green Projects",
+        "roleAr": "منظّم المعرض",
+        "roleEn": "Event organiser",
+        "logoScale": 55,
+        "logoW": 1200,
+        "logoH": 325
+      }
+    ]
+  },
+  "partnersGrid": {
+    "eyebrow": "Partners & supporters",
+    "eyebrowEn": "PARTNERS & SUPPORTERS",
+    "title": "A partnership ecosystem behind the event",
+    "leadAr": "تعاون وثيق مع الجهات التنظيمية وقطاع الضيافة لضمان حدث يليق بمكانة مكة المكرمة.",
+    "leadEn": "Close cooperation with regulators and the hospitality sector to deliver an event worthy of Makkah.",
+    "logoAlt": "Logo",
+    "note": "The partner list will be completed as agreements are confirmed.",
+    "cta": "View all partners"
+  }
+}
