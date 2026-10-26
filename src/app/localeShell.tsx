@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import type { ReactNode } from 'react';
-import { Inter, IBM_Plex_Sans_Arabic } from 'next/font/google';
+import { Amiri, Cormorant_Garamond, Inter, Tajawal } from 'next/font/google';
 import type { Locale } from '@/lib/i18n';
 import { localeHtmlLang } from '@/lib/i18n';
 import { getDictionary } from '@/lib/dictionary';
@@ -11,16 +11,33 @@ const inter = Inter({
   subsets: ['latin'],
   variable: '--font-inter',
   display: 'swap',
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '500', '600', '700'],
   preload: true,
 });
 
-const plexArabic = IBM_Plex_Sans_Arabic({
-  subsets: ['arabic', 'latin'],
-  variable: '--font-arabic',
+const tajawal = Tajawal({
+  subsets: ['arabic'],
+  variable: '--font-tajawal',
+  display: 'swap',
+  weight: ['300', '400', '500', '700', '800'],
+  preload: true,
+});
+
+const amiri = Amiri({
+  subsets: ['arabic'],
+  variable: '--font-amiri',
+  display: 'swap',
+  weight: ['400', '700'],
+  preload: true,
+});
+
+const cormorant = Cormorant_Garamond({
+  subsets: ['latin'],
+  variable: '--font-cormorant',
   display: 'swap',
   weight: ['400', '500', '600', '700'],
-  preload: true,
+  style: ['normal', 'italic'],
+  preload: false,
 });
 
 /** Builds the per-locale metadata block. */
@@ -28,10 +45,12 @@ export function localeMetadata(locale: Locale): Metadata {
   const dict = getDictionary(locale);
 
   const ogImage = {
-    url: `${siteUrl}/images/hero-catering.jpg`,
-    width: 2200,
-    height: 1467,
-    alt: dict.meta.shortEventName,
+    url: `${siteUrl}/images/design/makkah-pilgrims.jpg`,
+    width: 1920,
+    height: 1080,
+    alt: locale === 'ar'
+      ? 'المسجد الحرام والكعبة المشرفة في مكة المكرمة'
+      : 'The Holy Kaaba and Masjid al-Haram in Makkah',
   };
 
   return {
@@ -104,7 +123,7 @@ export function EventJsonLd({ locale }: { locale: Locale }) {
         duration: facts.duration,
         url: `${siteUrl}/${locale}`,
         inLanguage: locale,
-        image: [`${siteUrl}/images/hero-catering.jpg`],
+        image: [`${siteUrl}/images/design/makkah-pilgrims.jpg`],
         location: {
           '@type': 'Place',
           name: locale === 'ar' ? 'قاعة هيلتون مكة للمؤتمرات، مكة المكرمة' : 'Hilton Makkah Convention Hall, Makkah',
@@ -173,9 +192,9 @@ export function DocumentShell({ locale, children }: { locale: Locale; children: 
     <html
       lang={localeHtmlLang[locale]}
       dir={locale === 'ar' ? 'rtl' : 'ltr'}
-      className={`${inter.variable} ${plexArabic.variable}`}
+      className={`${inter.variable} ${tajawal.variable} ${amiri.variable} ${cormorant.variable}`}
     >
-      <body className="min-h-dvh bg-white font-sans">
+      <body className="min-h-dvh">
         <a
           href="#main"
           className="sr-only rounded-full bg-navy-900 px-5 py-3 text-body-sm font-semibold text-white focus:not-sr-only focus:fixed focus:start-4 focus:top-4 focus:z-[100]"

@@ -10,6 +10,7 @@ import { cn } from '@/lib/cn';
 import { Header } from '@/components/Header';
 import { Footer } from '@/components/Footer';
 import { FloatingActions } from '@/components/FloatingActions';
+import { StarMark } from '@/components/ui/Ornament';
 
 /**
  * Strategic partners page.
@@ -30,7 +31,11 @@ export function PartnersPage({ locale, dict }: { locale: Locale; dict: Dictionar
 
   const rise = (delay: number) =>
     reduce
-      ? {}
+      ? {
+          initial: false as const,
+          animate: { opacity: 1, y: 0 },
+          transition: { duration: 0 },
+        }
       : {
           initial: { opacity: 0, y: 20 },
           animate: { opacity: 1, y: 0 },
@@ -48,61 +53,56 @@ export function PartnersPage({ locale, dict }: { locale: Locale; dict: Dictionar
             The same photographic wash as the hero, held far back, so this page
             reads as its own document rather than a second landing page.
           */}
-          <div aria-hidden="true" className="absolute inset-0 -z-10 opacity-25">
+          <div aria-hidden="true" className="absolute inset-0 z-0 opacity-55">
             <Image
-              src="/images/hero-catering.jpg"
+              src="/images/design/makkah-clock.jpg"
               alt=""
               fill
               priority
               sizes="100vw"
-              quality={70}
+              quality={74}
               className="object-cover object-center"
             />
           </div>
           <div
             aria-hidden="true"
-            className="absolute inset-0 -z-10 bg-gradient-to-b from-navy-950 via-navy-950/88 to-navy-950"
+            className="absolute inset-0 z-[1] bg-gradient-to-b from-navy-950 via-navy-950/78 to-navy-950"
+          />
+          <StarMark
+            aria-hidden="true"
+            className="pointer-events-none absolute -start-16 bottom-0 z-[1] hidden h-80 w-80 text-gold-400/10 lg:block"
+            filled
           />
 
-          <div className="shell relative">
-            <motion.p {...rise(0.02)} className="eyebrow text-orange-300">
+          <div className="shell relative z-10">
+            <motion.p {...rise(0.02)} className="eyebrow text-gold-300">
               {t.eyebrowEn}
             </motion.p>
-            <motion.h1 {...rise(0.08)} className="mt-5 max-w-[20ch] text-display-xl text-white">
+            <motion.h1 {...rise(0.08)} className="mt-5 max-w-[20ch] font-display text-display-xl text-white">
               {t.title}
             </motion.h1>
-            <motion.p {...rise(0.14)} className="mt-6 max-w-prose text-body-lg text-body">
+            <motion.p {...rise(0.14)} className="mt-6 max-w-prose text-body-lg leading-[1.9] text-navy-100">
               {isAr ? t.leadAr : t.leadEn}
             </motion.p>
           </div>
         </section>
 
         {/* ---- The wall --------------------------------------------------- */}
-        <section className="relative scroll-mt-24 border-b border-navy-100 bg-surface-alt py-20 sm:py-24">
+        <section className="relative scroll-mt-24 border-b border-navy-100 bg-surface py-20 sm:py-24">
           <div className="shell">
-            {/*
-              Two columns on a phone and three from sm, which divides the six
-              partners evenly at every size — three by three on a desktop, with
-              no orphaned cell in a final row.
-            */}
             <ul className="grid grid-cols-2 gap-4 sm:grid-cols-3 sm:gap-5">
               {t.items.map((partner, i) => (
                 <motion.li
                   key={partner.id}
                   {...rise(0.04 * i)}
                   className={cn(
-                    'group relative flex h-full flex-col overflow-hidden rounded-2xl border border-navy-100 bg-white p-5 shadow-card transition-all duration-300',
-                    'hover:-translate-y-1 hover:border-orange-300 hover:shadow-card-lg',
+                    'group relative flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-navy-900/12 bg-[#FFFDF7] p-5 shadow-card transition-all duration-500',
+                    'hover:-translate-y-1 hover:border-gold-600/50 hover:shadow-card-lg',
                   )}
                 >
-                  {/*
-                    Index numeral. Uses the same accent role as the rest of
-                    the site's index numbers: navy-200 was 1.65:1 on white and
-                    effectively invisible.
-                  */}
                   <span
                     aria-hidden="true"
-                    className="numeral absolute end-4 top-4 text-label-2xs text-accent"
+                    className="numeral absolute end-4 top-4 text-label-2xs text-gold-600"
                   >
                     {String(i + 1).padStart(2, '0')}
                   </span>
@@ -130,7 +130,7 @@ export function PartnersPage({ locale, dict }: { locale: Locale; dict: Dictionar
                   </div>
 
                   <div className="mt-6 border-t border-[var(--hairline)] pt-4">
-                    <h2 className="text-body-md font-bold text-strong">
+                    <h2 className="font-display text-[1.15rem] font-bold text-strong">
                       {isAr ? partner.nameAr : partner.nameEn}
                     </h2>
                     <p className="mt-1 text-body-xs text-muted">
@@ -144,18 +144,18 @@ export function PartnersPage({ locale, dict }: { locale: Locale; dict: Dictionar
             {/* Acknowledgement */}
             <motion.div
               {...rise(0.3)}
-              className="relative mt-14 flex flex-col gap-6 overflow-hidden rounded-2xl border border-navy-100 bg-white p-7 shadow-card sm:flex-row sm:items-center sm:gap-8 sm:p-8"
+              className="relative mt-14 flex flex-col gap-6 overflow-hidden rounded-[1.5rem] border border-gold-600/25 bg-[#FFFDF7] p-7 shadow-card sm:flex-row sm:items-center sm:gap-8 sm:p-8"
             >
-              <span aria-hidden="true" className="accent-bar inset-x-0 top-0 rounded-t-2xl" />
+              <span aria-hidden="true" className="accent-bar inset-x-0 top-0" />
               <div className="min-w-0 flex-1">
                 <h2 className="font-display text-display-sm font-bold text-strong">
                   {t.noteTitle}
                 </h2>
-                <p className="mt-2 max-w-prose text-body-md text-body">
+                <p className="mt-2 max-w-prose text-body-md leading-[1.85] text-body">
                   {isAr ? t.noteAr : t.noteEn}
                 </p>
               </div>
-              <a href={`/${locale}#register`} className="btn-accent shrink-0 px-6 py-3">
+              <a href={`/${locale}#register`} className="btn btn-primary shrink-0 px-6 py-3">
                 {dict.nav.cta}
               </a>
             </motion.div>
@@ -189,7 +189,7 @@ function PartnerMonogram({ name }: { name: string }) {
   return (
     <span
       aria-hidden="true"
-      className="flex h-20 w-20 items-center justify-center rounded-2xl border border-orange-200 bg-orange-50 font-display text-display-sm font-bold tracking-wide text-accent"
+      className="flex h-20 w-20 items-center justify-center rounded-full border border-gold-600/35 bg-gold-500/10 font-display text-display-sm font-bold tracking-wide text-gold-700"
     >
       {letters}
     </span>
@@ -225,7 +225,7 @@ function PartnerMark({
 
   if (failed) {
     return (
-      <span className="px-2 text-center font-display text-body-md font-bold leading-snug text-navy-500">
+      <span className="px-2 text-center font-display text-body-md font-bold leading-snug text-navy-700">
         {fallback}
       </span>
     );

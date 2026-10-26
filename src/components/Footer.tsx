@@ -6,6 +6,7 @@ import type { Locale } from '@/lib/i18n';
 import type { Dictionary } from '@/lib/types';
 import { LanguageSwitcher } from './LanguageSwitcher';
 import { RevealGroup, RevealItem } from './ui/Motion';
+import { StarMark } from './ui/Ornament';
 
 function IconPhone(props: { className?: string }) {
   return (
@@ -57,34 +58,138 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const whatsappUrl = `https://wa.me/${org.phoneRaw.replace(/[^\d]/g, '')}`;
 
   return (
-    <footer className="on-dark bg-navy-950 text-body">
-      {/* Organiser block — the one place Green Projects green appears */}
-      <div className="border-b border-white/10">
-        <div className="shell py-14 sm:py-16">
-          <RevealGroup className="grid gap-10 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]" stagger={0.08}>
+    <footer className="on-dark relative overflow-hidden bg-navy-950 pb-24 text-body md:pb-0">
+      <div aria-hidden="true" className="pattern-stars absolute inset-0 opacity-15" />
+      <div aria-hidden="true" className="absolute inset-x-0 top-0 h-px bg-gold-gradient opacity-50" />
+      <StarMark
+        aria-hidden="true"
+        className="pointer-events-none absolute -end-24 top-10 hidden h-[26rem] w-[26rem] text-gold-400/[0.06] lg:block"
+        filled
+      />
+
+      <div className="shell relative">
+        {/* Closing invitation */}
+        <div className="grid gap-10 border-b border-white/10 py-14 lg:grid-cols-[1.08fr_0.92fr] lg:items-end lg:gap-16">
+          <RevealGroup stagger={0.08}>
+            <RevealItem>
+              <p className="eyebrow text-gold-300">{isAr ? 'مكة المكرمة · ٢٠٢٧' : 'MAKKAH · 2027'}</p>
+            </RevealItem>
+            <RevealItem>
+              <h2 className="mt-5 max-w-xl font-display text-[clamp(2rem,4vw,3.35rem)] font-bold leading-[1.14] text-white">
+                {isAr ? 'لنصنع موسم ٢٠٢٧ معاً.' : "Let's shape the 2027 season together."}
+              </h2>
+            </RevealItem>
+            <RevealItem>
+              <p className="mt-4 max-w-lg text-body-sm leading-[1.9] text-navy-200">
+                {isAr
+                  ? 'المعرض يجمع صنّاع القرار في الإعاشة والضيافة والتموين تحت سقف واحد، في قلب مكة المكرمة.'
+                  : 'The exhibition brings catering, hospitality and supply chain decision-makers together under one roof, in the heart of Makkah.'}
+              </p>
+            </RevealItem>
+            <RevealItem>
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <Link href={`/${locale}#register`} className="btn btn-accent px-7 py-3.5">
+                  {dict.nav.cta}
+                </Link>
+                <Link href={`/${locale}/partners`} className="btn btn-ghost-dark px-7 py-3.5">
+                  {dict.partnersGrid.cta}
+                </Link>
+              </div>
+            </RevealItem>
+          </RevealGroup>
+
+          <RevealGroup className="grid grid-cols-2 gap-x-6 gap-y-7 border-t border-white/10 pt-7 lg:border-s lg:border-t-0 lg:ps-10 lg:pt-0" stagger={0.06}>
+            <RevealItem>
+              <p className="text-label-2xs font-bold uppercase tracking-[0.16em] text-gold-300/80">
+                {isAr ? 'التاريخ' : 'Dates'}
+              </p>
+              <p className="mt-2 font-display text-[1.15rem] font-bold leading-snug text-white">
+                {isAr ? dict.event.dateLineAr : dict.event.dateLineEn}
+              </p>
+              <p className="mt-1 text-label-xs text-navy-300">{isAr ? dict.event.durationAr : dict.event.durationEn}</p>
+            </RevealItem>
+            <RevealItem>
+              <p className="text-label-2xs font-bold uppercase tracking-[0.16em] text-gold-300/80">
+                {isAr ? 'المكان' : 'Venue'}
+              </p>
+              <p className="mt-2 font-display text-[1.15rem] font-bold leading-snug text-white">
+                {isAr ? dict.location.venueTba : 'Hilton Makkah Convention Hall'}
+              </p>
+              <p className="mt-1 text-label-xs text-navy-300">
+                {isAr ? dict.location.cityAr : dict.location.cityEn}
+              </p>
+            </RevealItem>
+            <RevealItem>
+              <p className="text-label-2xs font-bold uppercase tracking-[0.16em] text-gold-300/80">
+                {isAr ? 'المنظم' : 'Organiser'}
+              </p>
+              <p className="mt-2 font-display text-[1.15rem] font-bold leading-snug text-white">
+                {isAr ? org.nameAr : org.nameEn}
+              </p>
+            </RevealItem>
+            <RevealItem>
+              <p className="text-label-2xs font-bold uppercase tracking-[0.16em] text-gold-300/80">
+                {isAr ? 'الموقع' : 'Website'}
+              </p>
+              <a
+                href={org.websiteUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                dir="ltr"
+                className="link-underline mt-2 inline-block font-inter text-label-xs font-semibold text-white"
+              >
+                {org.website}
+              </a>
+            </RevealItem>
+          </RevealGroup>
+        </div>
+
+        {/* Organiser + contact */}
+        <div className="grid gap-10 border-b border-white/10 py-12 lg:grid-cols-[0.92fr_1.08fr] lg:gap-16">
+          <RevealGroup stagger={0.08}>
             <RevealItem>
               <div className="flex items-start gap-5">
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-xl bg-white p-2">
+                <div className="flex h-16 w-40 shrink-0 items-center justify-center rounded-2xl bg-white p-3">
                   <Image
                     src="/images/green-projects.png"
                     alt={isAr ? org.nameAr : org.nameEn}
                     width={1200}
                     height={325}
-                    className="h-auto w-full"
+                    className="h-auto w-full object-contain"
                   />
                 </div>
                 <div className="min-w-0">
-                  <p className="text-label-2xs font-semibold uppercase tracking-[0.14em] text-green-brand">
+                  <p className="text-label-2xs font-bold uppercase tracking-[0.16em] text-gold-300">
                     {org.eyebrowEn}
                   </p>
-                  <p className="mt-2 font-display text-display-sm font-bold text-white sm:text-display-md">
+                  <p className="mt-2 font-display text-[1.35rem] font-bold leading-snug text-white sm:text-[1.5rem]">
                     {isAr ? org.nameAr : org.nameEn}
                   </p>
-                  <p className="mt-2 text-body-sm text-muted">{isAr ? org.noteAr : org.noteEn}</p>
+                  <p className="mt-2 max-w-sm text-body-sm leading-relaxed text-navy-200">
+                    {isAr ? org.noteAr : org.noteEn}
+                  </p>
                 </div>
               </div>
             </RevealItem>
+            <RevealItem>
+              <div className="mt-6 flex flex-wrap gap-3">
+                <a
+                  href={whatsappUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn bg-[var(--green-brand)] px-5 py-2.5 text-label-xs text-white hover:bg-[var(--green-brand-dark)]"
+                >
+                  <IconWhatsApp className="h-4 w-4" />
+                  {org.whatsappLabel}
+                </a>
+                <a href={`tel:${org.phoneRaw}`} className="btn btn-ghost-dark px-5 py-2.5 text-label-xs">
+                  {org.phoneDisplay}
+                </a>
+              </div>
+            </RevealItem>
+          </RevealGroup>
 
+          <RevealGroup stagger={0.06}>
             <RevealItem>
               <address className="not-italic">
                 <ul className="grid gap-5 sm:grid-cols-2">
@@ -95,129 +200,111 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
                     { Icon: IconGlobe, label: org.websiteLabel, value: org.website, href: org.websiteUrl, external: true, ltr: true },
                   ].map((row) => (
                     <li key={row.label} className="flex items-start gap-3">
-                      <row.Icon className="mt-0.5 h-5 w-5 shrink-0 text-green-brand" />
+                      <row.Icon className="mt-0.5 h-5 w-5 shrink-0 text-gold-400" />
                       <div className="min-w-0">
-                        <p className="text-label-2xs font-semibold uppercase tracking-[0.14em] text-muted">
+                        <p className="text-label-2xs font-bold uppercase tracking-[0.14em] text-navy-300">
                           {row.label}
                         </p>
                         {row.href ? (
                           <a
                             href={row.href}
                             {...(row.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                            className={`link-underline block py-0.5 text-body-md text-body transition-colors hover:text-white ${row.ltr ? 'force-ltr text-start' : ''}`}
+                            className={`link-underline block py-0.5 text-body-sm text-navy-100 transition-colors hover:text-white ${row.ltr ? 'force-ltr text-start' : ''}`}
                           >
                             {row.value}
                           </a>
                         ) : (
-                          <p className="mt-0.5 text-body-md text-body">{row.value}</p>
+                          <p className="mt-0.5 text-body-sm leading-relaxed text-navy-100">{row.value}</p>
                         )}
                       </div>
                     </li>
                   ))}
                 </ul>
-
-                <div className="mt-7 flex flex-wrap gap-3">
-                  <a
-                    href={whatsappUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn bg-[var(--green-brand-dark)] px-5 py-2.5 text-body-xs text-white hover:bg-[var(--green-brand)]"
-                  >
-                    <IconWhatsApp className="h-4 w-4" />
-                    {org.whatsappLabel}
-                  </a>
-                  <a href={`tel:${org.phoneRaw}`} className="btn btn-ghost-dark px-5 py-2.5 text-body-xs">
-                    {org.phoneDisplay}
-                  </a>
-                </div>
               </address>
             </RevealItem>
           </RevealGroup>
         </div>
-      </div>
 
-      {/* Link columns */}
-      <div className="shell grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-4">
-        <div>
-          <p className="text-balance font-display text-body-md font-bold leading-snug text-white">
-            {isAr ? dict.event.wordmarkAr : dict.event.wordmarkEn}
-          </p>
-          <p
-            lang={isAr ? 'en' : 'ar'}
-            className="mt-2.5 text-balance font-inter text-label-xs uppercase leading-snug tracking-[0.08em] text-muted"
-          >
-            {isAr ? dict.event.wordmarkEn : dict.event.wordmarkAr}
-          </p>
-          <p className="mt-4 border-t border-white/10 pt-4 text-body-sm text-orange-300">
-            {dict.event.tagline}
-          </p>
-        </div>
+        {/* Link columns */}
+        <div className="grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4">
+          <div>
+            <div className="flex items-center gap-2.5 text-gold-300">
+              <StarMark className="h-4 w-4" filled />
+              <p className="text-label-2xs font-bold uppercase tracking-[0.18em]">
+                {isAr ? 'معرض مكة' : 'Makkah Expo'}
+              </p>
+            </div>
+            <p className="mt-4 max-w-xs font-display text-[1.45rem] font-bold leading-snug text-white">
+              {isAr ? dict.event.wordmarkAr : dict.event.wordmarkEn}
+            </p>
+            <p className="mt-3 border-t border-white/10 pt-4 font-display text-body-md italic leading-relaxed text-gold-200/80">
+              {dict.event.tagline}
+            </p>
+          </div>
 
-        <nav aria-labelledby="footer-nav-title">
-          <h2 id="footer-nav-title" className="text-label-2xs font-semibold uppercase tracking-[0.14em] text-muted">
-            {dict.footer.navTitle}
-          </h2>
-          <ul className="mt-5 space-y-2.5">
-            {dict.nav.links.map((link) => (
-              <li key={link.id}>
-                {/*
-                  Same rule as the header: a bare `#id` only works on the
-                  landing page, where the section exists to scroll to. The
-                  partners entry carries an explicit `href` because it is a
-                  route from anywhere, including the landing page itself.
-                */}
-                <Link
-                  href={link.href ? `/${locale}${link.href}` : `/${locale}#${link.id}`}
-                  className="link-underline block py-1 text-body-md text-body transition-colors hover:text-white"
-                >
-                  {link.label}
-                </Link>
+          <nav aria-labelledby="footer-nav-title">
+            <h2 id="footer-nav-title" className="text-label-2xs font-bold uppercase tracking-[0.16em] text-navy-300">
+              {dict.footer.navTitle}
+            </h2>
+            <ul className="mt-5 space-y-2.5">
+              {dict.nav.links.map((link) => (
+                <li key={link.id}>
+                  <Link
+                    href={link.href ? `/${locale}${link.href}` : `/${locale}#${link.id}`}
+                    className="link-underline block py-1 text-body-sm text-navy-100 transition-colors hover:text-white"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div>
+            <h2 className="text-label-2xs font-bold uppercase tracking-[0.16em] text-navy-300">
+              {dict.footer.locationTitle}
+            </h2>
+            <ul className="mt-5 space-y-2 text-body-sm text-navy-100">
+              <li>{isAr ? dict.location.cityAr : dict.location.cityEn}</li>
+              <li>{isAr ? dict.location.regionAr : dict.location.regionEn}</li>
+              <li>{isAr ? dict.location.coastAr : dict.location.coastEn}</li>
+              <li className="border-t border-white/10 pt-3 font-semibold text-white">
+                {isAr ? dict.event.dateLineFullAr : dict.event.dateLineFullEn}
               </li>
-            ))}
-          </ul>
-        </nav>
+            </ul>
+          </div>
 
-        <div>
-          <h2 className="text-label-2xs font-semibold uppercase tracking-[0.14em] text-muted">
-            {dict.footer.locationTitle}
-          </h2>
-          <ul className="mt-5 space-y-2 text-body-md text-body">
-            <li>{isAr ? dict.location.cityAr : dict.location.cityEn}</li>
-            <li>{isAr ? dict.location.regionAr : dict.location.regionEn}</li>
-            <li>{isAr ? dict.location.coastAr : dict.location.coastEn}</li>
-            <li className="border-t border-white/10 pt-3 font-semibold text-white">
-              {isAr ? dict.event.dateLineFullAr : dict.event.dateLineFullEn}
-            </li>
-            <li className="text-muted">
-              {dict.location.venueTitle}: {dict.location.venueTba}
-            </li>
-          </ul>
-        </div>
-
-        <div>
-          <h2 className="text-label-2xs font-semibold uppercase tracking-[0.14em] text-muted">
-            {dict.footer.languageTitle}
-          </h2>
-          <div className="mt-5">
-            <LanguageSwitcher
-              locale={locale}
-              labels={dict.nav.languageLabel}
-              switchToLabel={dict.nav.switchTo}
-              switchToShort={dict.nav.switchToShort}
-              currentShort={dict.nav.currentLangShort}
-              tone="dark"
-            />
+          <div>
+            <h2 className="text-label-2xs font-bold uppercase tracking-[0.16em] text-navy-300">
+              {dict.footer.languageTitle}
+            </h2>
+            <div className="mt-5">
+              <LanguageSwitcher
+                locale={locale}
+                labels={dict.nav.languageLabel}
+                switchToLabel={dict.nav.switchTo}
+                switchToShort={dict.nav.switchToShort}
+                currentShort={dict.nav.currentLangShort}
+                tone="dark"
+              />
+            </div>
+            <a href={`/${locale}#top`} className="link-underline mt-6 inline-block text-label-xs font-semibold text-gold-300">
+              {isAr ? 'العودة إلى الأعلى ↑' : 'Back to top ↑'}
+            </a>
           </div>
         </div>
-      </div>
 
-      <div className="border-t border-white/10">
-        <div className="shell flex flex-col items-center justify-between gap-3 py-6 sm:flex-row">
-          <p className="text-center text-label-sm text-muted sm:text-start">
-            © <span className="tabular">{year}</span> {isAr ? org.nameAr : org.nameEn} — {dict.footer.rights}.
-          </p>
-          <p className="max-w-xl text-center text-label-xs text-muted sm:text-end">
-            {dict.footer.disclaimer}
+        <div className="border-t border-white/10 py-6">
+          <div className="flex flex-col items-center justify-between gap-3 sm:flex-row">
+            <p className="text-center text-label-xs text-navy-300 sm:text-start">
+              © <span className="tabular">{year}</span> {isAr ? org.nameAr : org.nameEn} — {dict.footer.rights}.
+            </p>
+            <p className="max-w-lg text-center text-label-xs leading-relaxed text-navy-400 sm:text-end">
+              {dict.footer.disclaimer}
+            </p>
+          </div>
+          <p className="mt-4 text-center text-[0.65rem] leading-relaxed text-navy-500 sm:text-start">
+            {isAr ? 'صور مكة المكرمة: مساهمو ويكيميديا كومنز (CC BY-SA) · صور الطعام والضيافة: Unsplash.' : 'Makkah photography: Wikimedia Commons contributors (CC BY-SA) · Food and hospitality photography: Unsplash.'}
           </p>
         </div>
       </div>

@@ -9,37 +9,31 @@ import type { Dictionary } from '@/lib/types';
 import { cn } from '@/lib/cn';
 import { useActiveSection, useScrolledPast } from '@/hooks/useScrollState';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { StarMark } from './ui/Ornament';
 
 const NAV_IDS = [
   'introduction',
-  'themes',
+  'importance',
   'objectives',
   'ecosystem',
   'visitors',
-  'why-exhibit',
-  'business-value',
   'experience',
-  'location',
+  'business-value',
+  'early-bird',
+  'partners',
   'register',
 ];
 
 export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [progress, setProgress] = useState(0);
-  const scrolled = useScrolledPast(20);
+  const scrolled = useScrolledPast(24);
   const active = useActiveSection(NAV_IDS);
   const pathname = usePathname();
   const reduce = useReducedMotion() ?? false;
   const links = dict.nav.links;
   const isAr = locale === 'ar';
 
-  /*
-    Most nav entries are sections of the landing page, so on that page a bare
-    `#id` is right and lets the smooth-scroll handler below take over. On any
-    other page there is no such element to scroll to, so the same link has to
-    become a route. The partners entry carries an explicit `href` because it is
-    always a route, landing page or not.
-  */
   const onLanding = pathname === `/${locale}`;
   const hrefFor = useCallback(
     (link: { id: string; href?: string }) => {
@@ -61,8 +55,8 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
       if (!target) return;
       event.preventDefault();
       const headerHeight =
-        parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h'), 10) || 72;
-      const top = target.getBoundingClientRect().top + window.scrollY - headerHeight - 16;
+        parseInt(getComputedStyle(document.documentElement).getPropertyValue('--header-h'), 10) || 80;
+      const top = target.getBoundingClientRect().top + window.scrollY - headerHeight - 18;
       window.scrollTo({ top, behavior: reduce ? 'auto' : 'smooth' });
       window.history.replaceState(null, '', `#${id}`);
       setMenuOpen(false);
@@ -80,14 +74,6 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
     document.addEventListener('keydown', onKey);
     document.body.style.overflow = 'hidden';
 
-    /*
-      The sheet covers the viewport but the page behind it stays in the
-      accessibility tree, so a keyboard reader could tab straight through the
-      menu into content nobody can see. `inert` takes the background out of both
-      the a11y tree and the tab order while the sheet is open, which is also
-      what silences axe's `region` rule — the six sections behind it were being
-      counted as content outside any landmark.
-    */
     const background = [
       document.getElementById('main'),
       document.querySelector('footer'),
@@ -126,65 +112,68 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
     };
   }, []);
 
-  const solid = scrolled || menuOpen;
+  const solid = scrolled || !onLanding;
+  const light = solid && !menuOpen;
+
+  const wordmarkMain = isAr ? 'معرض مكة' : 'MAKKAH EXPO';
+  const wordmarkSub = isAr ? 'للإعاشة والتموين ٢٠٢٧' : 'CATERING & FOOD SUPPLY 2027';
 
   return (
     <>
       <header
         className={cn(
-          'on-dark fixed inset-x-0 top-0 z-50 transition-colors duration-300',
-          solid ? 'border-b border-white/10 bg-navy-950' : 'bg-transparent',
+          'fixed inset-x-0 top-0 z-50 transition-[background-color,border-color,color,box-shadow] duration-500',
+          menuOpen
+            ? 'on-dark border-b border-white/10 bg-navy-950 text-white'
+            : light
+              ? 'border-b border-gold-500/20 bg-[#FBF7EE]/94 text-navy-900 shadow-header backdrop-blur-xl'
+              : 'on-dark border-b border-transparent bg-transparent text-white',
         )}
         style={{ height: 'var(--header-h)' }}
       >
-        {/*
-          `gap-2` is a minimum, not a fixed gap: `justify-between` hands the
-          leftover space back to the gaps on a wide screen, so the bar breathes
-          at 1440 and tightens to 8px at 1280, which is the only viewport where
-          the English set does not fit. Everything here was measured — the
-          shell caps at 1312px, so there is no width above 1366 that buys more
-          room.
-        */}
-        <div className="shell flex h-full items-center justify-between gap-2">
-          {/*
-            The name is the logo — no mark beside it, per the brand direction.
-            With the icon gone the wordmark gets the full width of the bar, so it
-            steps down on smaller screens instead: narrower and smaller on a
-            phone, and still tight at `lg`, which is exactly where the nav first
-            appears and the name has the least room. The name is never
-            abbreviated, only re-wrapped. aria-label keeps the link named.
-
-            `min-w` on the link is the counterpart to `shrink-0` on the nav: it
-            stops the longest string on the page from being squeezed into a
-            50px ribbon when English needs the room. Arabic still fits on one
-            line; English wraps, which is the deliberate trade.
-          */}
+        <div className="shell flex h-full items-center justify-between gap-4">
+          {/* Brand */}
           <Link
             href={`/${locale}#top`}
-            aria-label={dict.event.wordmarkAr}
-            className="min-w-[9.5rem] shrink rounded py-1 xl:min-w-[10.5rem]"
+            aria-label={isAr ? dict.event.wordmarkAr : dict.event.wordmarkEn}
+            className="group flex min-w-0 shrink items-center gap-3 rounded py-1"
           >
-            <span className="block max-w-[11.5rem] text-balance font-display text-label-sm font-bold leading-[1.25] text-white sm:max-w-[19rem] sm:text-body-md sm:leading-tight md:max-w-[24ch] xl:max-w-[34ch] xl:text-body-sm">
-              {locale === 'ar' ? dict.event.wordmarkAr : dict.event.wordmarkEn}
+            <span
+              className={cn(
+                'relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-colors duration-300',
+                light ? 'border-gold-600/45' : 'border-gold-400/45',
+              )}
+            >
+              <StarMark className={cn('h-5 w-5', light ? 'text-gold-700' : 'text-gold-300')} />
+              <span
+                aria-hidden="true"
+                className="absolute inset-[-4px] rounded-full border border-dashed border-gold-500/20"
+              />
+            </span>
+            <span className="min-w-0 leading-none">
+              <span
+                className={cn(
+                  'block truncate font-display text-[1.18rem] font-bold sm:text-[1.35rem]',
+                  light ? 'text-navy-900' : 'text-white',
+                )}
+              >
+                {wordmarkMain}
+              </span>
+              <span
+                className={cn(
+                  'mt-1 block truncate font-sans text-[0.6rem] font-semibold uppercase tracking-[0.16em]',
+                  light ? 'text-gold-700' : 'text-gold-200/80',
+                )}
+              >
+                {wordmarkSub}
+              </span>
             </span>
           </Link>
 
+          {/* Desktop navigation */}
           <nav aria-label={dict.nav.label} className="hidden xl:block">
-            {/*
-              `shrink-0` on each label is what actually holds the bar together.
-              Without it the seven links quietly absorb the shortfall by
-              wrapping to two lines, and because a flex item will never report
-              as overflowing, nothing ever looks broken — the nav just looks
-              untidy. They are never allowed to wrap from here on.
-            */}
-            <ul className="flex items-center">
+            <ul className="flex items-center gap-0.5">
               {links.map((link) => {
-                /*
-                  A route entry is never "in view" from the scroll tracker —
-                  there are no sections on it — so it is matched against the
-                  path instead, which also makes it light up while the reader
-                  is on the partners page.
-                */
                 const isActive = link.href
                   ? pathname === `/${locale}${link.href}`
                   : onLanding && active === link.id;
@@ -194,17 +183,24 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
                       href={hrefFor(link)}
                       aria-current={isActive ? 'true' : undefined}
                       className={cn(
-                        'relative block whitespace-nowrap rounded px-1.5 py-2 text-label-nav font-semibold transition-colors duration-300',
-                        isActive ? 'text-white' : 'text-muted hover:text-white',
+                        'relative block whitespace-nowrap rounded-full px-3 py-2 text-label-nav font-semibold transition-colors duration-300',
+                        light
+                          ? isActive
+                            ? 'text-navy-950'
+                            : 'text-navy-700/70 hover:text-navy-950'
+                          : isActive
+                            ? 'text-white'
+                            : 'text-white/65 hover:text-white',
                       )}
                     >
                       {link.label}
-                      {isActive && (
-                        <span
-                          aria-hidden="true"
-                          className="absolute inset-x-2 -bottom-px h-0.5 rounded-full bg-orange-500"
-                        />
-                      )}
+                      <span
+                        aria-hidden="true"
+                        className={cn(
+                          'absolute inset-x-3 -bottom-0.5 h-px origin-center bg-gold-500 transition-transform duration-300',
+                          isActive ? 'scale-x-100' : 'scale-x-0',
+                        )}
+                      />
                     </Link>
                   </li>
                 );
@@ -212,20 +208,20 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
             </ul>
           </nav>
 
-          <div className="flex items-center gap-2 sm:gap-3">
+          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
             <LanguageSwitcher
               locale={locale}
               labels={dict.nav.languageLabel}
               switchToLabel={dict.nav.switchTo}
               switchToShort={dict.nav.switchToShort}
               currentShort={dict.nav.currentLangShort}
-              tone="dark"
+              tone={light ? 'light' : 'dark'}
               className="hidden sm:inline-flex"
             />
 
             <Link
               href={registerHref}
-              className="btn btn-accent hidden shrink-0 whitespace-nowrap px-2.5 py-2.5 text-label-xs sm:inline-flex"
+              className="btn btn-accent hidden px-5 py-2.5 text-label-xs sm:inline-flex"
             >
               {dict.nav.cta}
             </Link>
@@ -236,7 +232,10 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               aria-expanded={menuOpen}
               aria-controls="mobile-nav"
               aria-label={menuOpen ? dict.nav.closeMenu : dict.nav.openMenu}
-              className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-white/20 text-white xl:hidden"
+              className={cn(
+                'inline-flex h-11 w-11 items-center justify-center rounded-full border transition-colors duration-300 xl:hidden',
+                light ? 'border-navy-900/25 text-navy-900' : 'border-white/30 text-white',
+              )}
             >
               <span className="relative block h-4 w-5" aria-hidden="true">
                 <span
@@ -262,10 +261,10 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           </div>
         </div>
 
-        {/* Reading progress hairline */}
-        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-px bg-white/10">
+        {/* Reading progress */}
+        <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-px bg-current/10">
           <div
-            className="h-full origin-left bg-orange-500 rtl:origin-right"
+            className="h-full origin-left bg-gold-500 rtl:origin-right"
             style={{ transform: `scaleX(${progress})` }}
           />
         </div>
@@ -280,48 +279,59 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           aria-label={dict.nav.label}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="on-dark fixed inset-0 z-40 overflow-y-auto bg-navy-950 px-6 pb-10 pt-[calc(var(--header-h)+1.5rem)] xl:hidden"
+          className="on-dark fixed inset-0 z-40 overflow-y-auto bg-navy-950 px-6 pb-12 pt-[calc(var(--header-h)+1.5rem)] xl:hidden"
         >
-          <p className="eyebrow text-orange-300">{isAr ? dict.event.heroKickerAr : dict.event.heroKickerEn}</p>
-          <h2 className="mt-4 text-display-sm text-white">{isAr ? dict.event.heroTitleAr : dict.event.heroTitleEn}</h2>
-          <p lang={isAr ? 'en' : 'ar'} className="mt-2 font-inter text-label-xs uppercase tracking-[0.12em] text-muted">
-            {isAr ? dict.event.heroTitleEn : dict.event.heroTitleAr}
-          </p>
+          <div aria-hidden="true" className="pattern-stars absolute inset-0 opacity-30" />
+          <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-transparent via-navy-950/30 to-navy-950" />
 
-          <nav aria-label={dict.nav.label} className="mt-9">
-            <ul className="divide-y divide-white/10 border-y border-white/10">
-              {links.map((link, i) => (
-                <li key={link.id}>
-                  <Link
-                    href={hrefFor(link)}
-                    className="flex items-center gap-4 py-4 text-body transition hover:text-white"
-                  >
-                    <span className="numeral w-6 shrink-0 text-label-xs text-orange-400">
-                      {String(i + 1).padStart(2, '0')}
-                    </span>
-                    <span className="text-display-sm font-semibold">{link.label}</span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
+          <div className="relative">
+            <p className="eyebrow text-gold-300">
+              {isAr ? dict.event.heroKickerAr : dict.event.heroKickerEn}
+            </p>
+            <h2 className="mt-5 font-display text-[2.35rem] leading-tight text-white">
+              {isAr ? 'معرض مكة' : 'Makkah Expo'}
+              <span className="mt-1 block text-gold-300">{isAr ? 'للإعاشة والتموين ٢٠٢٧' : 'Catering & Food Supply 2027'}</span>
+            </h2>
 
-          <Link href={registerHref} className="btn btn-accent mt-8 w-full">
-            {dict.nav.cta}
-          </Link>
-          <Link href={registerHref} className="btn btn-ghost-dark mt-3 w-full">
-            {isAr ? dict.register.tabs.visitor : dict.register.tabs.visitorEn}
-          </Link>
+            <nav aria-label={dict.nav.label} className="mt-10">
+              <ul className="divide-y divide-white/10 border-y border-white/10">
+                {links.map((link, i) => (
+                  <li key={link.id}>
+                    <Link
+                      href={hrefFor(link)}
+                      className="group flex items-center gap-4 py-4 text-white/85 transition hover:text-white"
+                    >
+                      <span className="numeral w-6 shrink-0 text-label-xs text-gold-500">
+                        {String(i + 1).padStart(2, '0')}
+                      </span>
+                      <span className="flex-1 font-display text-[1.4rem] font-bold">{link.label}</span>
+                      <StarMark className="h-3 w-3 text-gold-500/40 transition group-hover:text-gold-400" filled />
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
 
-          <div className="mt-10">
-            <LanguageSwitcher
-              locale={locale}
-              labels={dict.nav.languageLabel}
-              switchToLabel={dict.nav.switchTo}
-              switchToShort={dict.nav.switchToShort}
-              currentShort={dict.nav.currentLangShort}
-              tone="dark"
-            />
+            <Link href={registerHref} className="btn btn-accent mt-8 w-full">
+              {dict.nav.cta}
+            </Link>
+            <Link href={registerHref} className="btn btn-ghost-dark mt-3 w-full">
+              {isAr ? dict.register.tabs.visitor : dict.register.tabs.visitorEn}
+            </Link>
+
+            <div className="mt-8 flex items-center justify-between gap-4 border-t border-white/10 pt-6">
+              <LanguageSwitcher
+                locale={locale}
+                labels={dict.nav.languageLabel}
+                switchToLabel={dict.nav.switchTo}
+                switchToShort={dict.nav.switchToShort}
+                currentShort={dict.nav.currentLangShort}
+                tone="dark"
+              />
+              <p className="text-end text-label-xs text-gold-200/80">
+                {isAr ? dict.event.dateLineAr : dict.event.dateLineEn}
+              </p>
+            </div>
           </div>
         </motion.div>
       )}

@@ -311,7 +311,7 @@
         "number": "01",
         "title": "Food & Beverage",
         "en": "Food & Beverage",
-        "image": "/images/intro-catering.jpg",
+        "image": "/images/design/grill.jpg",
         "imageAltAr": "طاهٍ يجهّز أطباقاً في مطبخ احترافي",
         "details": [
           "Food manufacturers and distributors",
@@ -347,7 +347,7 @@
         "number": "03",
         "title": "Catering & Food Service",
         "en": "Catering & Food Service",
-        "image": "/images/hero-catering.jpg",
+        "image": "/images/design/catering-buffet.jpg",
         "imageAltAr": "بوفيه إعاشة مجهّز في حدث كبير",
         "details": [
           "Integrated catering companies",
@@ -371,7 +371,8 @@
           "Cold chain integrity solutions",
           "Refrigerated display equipment",
           "Backup power systems"
-        ]
+        ],
+        "image": "/images/design/warehouse.jpg"
       },
       {
         "id": "packaging",
@@ -385,7 +386,8 @@
           "Labelling and traceability systems",
           "Safe storage and transport solutions",
           "Filling and packaging machinery"
-        ]
+        ],
+        "image": "/images/design/coffee.jpg"
       },
       {
         "id": "technology",
@@ -399,7 +401,8 @@
           "Traceability and food safety systems",
           "Procurement and supply platforms",
           "Payment and relationship management"
-        ]
+        ],
+        "image": "/images/conference-hall.jpg"
       }
     ]
   },
@@ -734,7 +737,12 @@
     "currency": "SAR / m²",
     "cta": "Book at the early-bird rate",
     "note": "Prices exclude VAT. Rates are locked when the booking is confirmed and the first payment is made before 15 November 2026.",
-    "quickAreas": [9, 18, 36, 72]
+    "quickAreas": [
+      9,
+      18,
+      36,
+      72
+    ]
   },
   "location": {
     "eyebrow": "Location",

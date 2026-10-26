@@ -8,7 +8,7 @@ const nextConfig: NextConfig = {
     formats: ['image/avif', 'image/webp'],
     deviceSizes: [360, 480, 640, 828, 1080, 1280, 1600, 1920, 2560],
     // Explicit list keeps `next/image` quality values valid and future-proof.
-    qualities: [70, 75, 80, 86, 90],
+    qualities: [70, 74, 75, 80, 82, 84, 86, 88, 90],
   },
   experimental: {
     optimizePackageImports: ['framer-motion'],

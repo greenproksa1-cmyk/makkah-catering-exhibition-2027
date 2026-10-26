@@ -21,8 +21,9 @@
 ## Features
 
 - **Bilingual, RTL-first** — Arabic is the default locale with a full English mirror. Every string lives in the dictionary; no copy is hard-coded in components.
-- **Navy + gold dark theme** — `#1F2E4D → #16213A` surfaces with `#E0B93A / #C9A227` accents, defined as design tokens in `tailwind.config.ts` and `globals.css`.
+- **Pine, champagne and ivory identity** — royal pine green (`#0B2B21 → #123B2C`), champagne gold (`#D4AF37`) and warm ivory (`#FBF7EE`), with Makkah arch motifs, eight-point stars and editorial asymmetry.
 - **13 single-page sections** — hero, introduction, importance of location, idea & timing, objectives, exhibition sectors, target visitors, event experience, why exhibit, value of participation, early-bird pricing (with live calculator), partners, registration.
+- **Makkah and catering photography** — full-bleed Kaaba hero, Masjid al-Haram arches, Makkah Clock Tower, chef and buffet imagery, with parallax and arch crops.
 - **Live early-bird calculator** — enter a stand area (m²) to compare the early-bird and regular totals and see the saving.
 - **Accessible interactions** — keyboard-friendly tabs, `aria-current` navigation, reduced-motion support, visible focus states.
 - **Registration form** — exhibitor / visitor tabs with client-side validation and an API route at `/api/register`.
@@ -37,7 +38,7 @@
 - **TypeScript** (strict)
 - **Tailwind CSS 3**
 - **Framer Motion 11**
-- **next/font** — Inter + IBM Plex Sans Arabic
+- **next/font** — Amiri (Arabic display), Tajawal (Arabic UI), Cormorant Garamond (Latin display), Inter (Latin UI)
 
 ---
 
@@ -95,6 +96,21 @@ All copy, dates, prices and contact details live in **`content/ar.json`** and **
 4. Event dates are in `event.startISO` / `event.endISO`; the countdown reads them directly.
 
 Contact details are in `organizer`, and the venue is in `location.venueTba`.
+
+---
+
+## Photography credits
+
+Makkah photography is sourced from **Wikimedia Commons** and is used under the Creative Commons Attribution-ShareAlike licence (CC BY-SA). Author metadata is preserved in the image files:
+
+- **Kaaba / Masjid al-Haram** — Moataz Egbaria, CC BY-SA 3.0.
+- **Pilgrims around the Kaaba** — Adli Wahid.
+- **Makkah central area** — Saudi Press Agency (SPA).
+- **Makkah Clock Tower** — Picasa uploader, Wikimedia Commons.
+
+Food, chef and hospitality photography is sourced from **Unsplash** under the Unsplash licence.
+
+If you replace any photograph, update this section and keep the licence and attribution with the new asset.
 
 ---
 

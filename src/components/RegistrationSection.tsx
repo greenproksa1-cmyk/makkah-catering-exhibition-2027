@@ -1,12 +1,14 @@
 'use client';
 
 import { useMemo, useState, type FormEvent } from 'react';
+import Image from 'next/image';
 import { motion, useReducedMotion } from 'framer-motion';
 import type { Locale } from '@/lib/i18n';
 import type { Dictionary } from '@/lib/types';
 import { cn } from '@/lib/cn';
 import { Section, SectionTitle } from './ui/Section';
 import { Reveal } from './ui/Motion';
+import { StarMark } from './ui/Ornament';
 
 type FormMode = 'exhibit' | 'visitor';
 type Status = 'idle' | 'sending' | 'success' | 'error';
@@ -37,7 +39,7 @@ function Field({
       <label htmlFor={id} className="text-label-sm font-semibold text-body">
         {label}
         {required && (
-          <span className="ms-1 text-orange-300" aria-hidden="true">
+          <span className="ms-1 text-gold-600" aria-hidden="true">
             *
           </span>
         )}
@@ -45,7 +47,7 @@ function Field({
       {children}
       {hint && !error && <p className="text-label-xs text-muted">{hint}</p>}
       {error && (
-        <p id={`${id}-error`} role="alert" className="text-label-sm font-medium text-red-300">
+        <p id={`${id}-error`} role="alert" className="text-label-sm font-medium text-red-600">
           {error}
         </p>
       )}
@@ -54,14 +56,14 @@ function Field({
 }
 
 const inputBase =
-  'w-full rounded-xl border bg-white px-4 py-3 text-body-md text-strong outline-none transition-all duration-300 placeholder:text-muted focus:ring-4 focus:ring-orange-500/15';
+  'w-full rounded-xl border bg-white px-4 py-3 text-body-md text-navy-900 outline-none transition-all duration-300 placeholder:text-muted focus:ring-4 focus:ring-gold-500/20';
 
 function inputClass(hasError: boolean) {
   return cn(
     inputBase,
     hasError
       ? 'border-red-400 focus:border-red-500'
-      : 'border-navy-100 focus:border-orange-500',
+      : 'border-navy-900/15 focus:border-gold-600',
   );
 }
 
@@ -71,7 +73,7 @@ function inputClass(hasError: boolean) {
  */
 const SELECT_CHEVRON = {
   backgroundImage:
-    "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231B4F8A' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E\")",
+    "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23122A22' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E\")",
   backgroundRepeat: 'no-repeat',
 } as const;
 
@@ -206,85 +208,127 @@ export function RegistrationSection({ locale, dict }: { locale: Locale; dict: Di
       containerClassName="shell"
       className="overflow-hidden"
     >
-      <div aria-hidden="true" className="absolute inset-0 -z-10 opacity-25">
-      </div>
-      <div
+      <div aria-hidden="true" className="pattern-stars absolute inset-0 opacity-20" />
+      <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-navy-950 via-navy-900/40 to-navy-950" />
+      <StarMark
         aria-hidden="true"
-        className="absolute inset-0 -z-10 bg-gradient-to-b from-navy-900 via-navy-900/70 to-navy-900"
+        className="pointer-events-none absolute -start-20 top-24 hidden h-80 w-80 text-gold-400/10 lg:block"
+        filled
       />
 
-      <SectionTitle
-        eyebrow={dict.register.eyebrow}
-        eyebrowEn={dict.register.eyebrowEn}
-        title={dict.register.title}
-        lead={dict.register.lead}
-        tone="dark"
-        titleId="register-title"
-        align="center"
-        className="mx-auto max-w-3xl"
-      />
+      <div className="relative">
+        <SectionTitle
+          eyebrow={dict.register.eyebrow}
+          eyebrowEn={dict.register.eyebrowEn}
+          title={dict.register.title}
+          lead={dict.register.lead}
+          tone="dark"
+          titleId="register-title"
+          index="12"
+          align="center"
+          className="mx-auto max-w-3xl"
+        />
 
-      {/* Mode tabs */}
-      <Reveal className="mt-10 flex justify-center">
-        <div
-          role="tablist"
-          aria-label={dict.register.title}
-          className="inline-flex rounded-full border border-white/12 bg-white/[0.05] p-1 backdrop-blur-sm"
-        >
-          {(['exhibit', 'visitor'] as FormMode[]).map((tab) => {
-            const selected = mode === tab;
-            const label = isAr ? dict.register.tabs[tab] : dict.register.tabs[`${tab}En` as 'exhibitEn' | 'visitorEn'];
-            return (
-              <button
-                key={tab}
-                role="tab"
-                type="button"
-                id={`tab-${tab}`}
-                aria-selected={selected}
-                aria-controls="registration-panel"
-                onClick={() => switchMode(tab)}
-                className={cn(
-                  'relative rounded-full px-6 py-2.5 text-body-xs font-semibold transition-colors duration-300',
-                  selected ? 'text-white' : 'text-muted hover:text-white',
-                )}
-              >
-                {selected && (
-                  <motion.span
-                    layoutId="register-tab"
-                    className="absolute inset-0 -z-10 rounded-full bg-orange-500"
-                    transition={{ type: 'spring', stiffness: 380, damping: 32 }}
-                  />
-                )}
-                {label}
-              </button>
-            );
-          })}
-        </div>
-      </Reveal>
-
-      {/* Panel */}
-      <Reveal delay={0.06} className="mx-auto mt-8 max-w-4xl">
-        <div className="overflow-hidden rounded-2xl border border-white/12 bg-white/[0.04]">
-          <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-white/10 px-6 py-5 sm:px-8">
-            <div>
-              <h3 className="font-display text-body-lg font-bold text-white">
-                {mode === 'exhibit' ? dict.register.exhibit.title : dict.register.visitor.title}
-              </h3>
-              <p className="mt-0.5 text-body-xs text-muted">
-                {mode === 'exhibit' ? dict.register.exhibit.subtitle : dict.register.visitor.subtitle}
-              </p>
-            </div>
-            <span className="text-label-2xs font-semibold uppercase tracking-[0.16em] text-orange-400">
-              {dict.organizer.nameEn}
-            </span>
-          </div>
-
+        {/* Mode tabs */}
+        <Reveal className="mt-10 flex justify-center">
           <div
-            id="registration-panel"
-            role="tabpanel"
-            aria-labelledby={`tab-${mode}`}
-            className="px-6 py-7 sm:px-8"
+            role="tablist"
+            aria-label={dict.register.title}
+            className="inline-flex rounded-full border border-gold-400/25 bg-white/[0.05] p-1 backdrop-blur-sm"
           >
+            {(['exhibit', 'visitor'] as FormMode[]).map((tab) => {
+              const selected = mode === tab;
+              const label = isAr ? dict.register.tabs[tab] : dict.register.tabs[`${tab}En` as 'exhibitEn' | 'visitorEn'];
+              return (
+                <button
+                  key={tab}
+                  role="tab"
+                  type="button"
+                  id={`tab-${tab}`}
+                  aria-selected={selected}
+                  aria-controls="registration-panel"
+                  onClick={() => switchMode(tab)}
+                  className={cn(
+                    'relative rounded-full px-6 py-2.5 text-body-xs font-bold transition-colors duration-300',
+                    selected ? 'text-navy-950' : 'text-white/70 hover:text-white',
+                  )}
+                >
+                  {selected && (
+                    <motion.span
+                      layoutId="register-tab"
+                      className="absolute inset-0 -z-10 rounded-full bg-gold-gradient"
+                      transition={{ type: 'spring', stiffness: 380, damping: 32 }}
+                    />
+                  )}
+                  {label}
+                </button>
+              );
+            })}
+          </div>
+        </Reveal>
+
+        {/* Panel */}
+        <Reveal delay={0.06} className="mx-auto mt-8 max-w-6xl">
+          <div className="grid overflow-hidden rounded-[2rem] border border-gold-500/30 shadow-card-lg lg:grid-cols-[0.72fr_1.28fr]">
+            {/* Makkah aside */}
+            <aside className="relative hidden min-h-[42rem] overflow-hidden bg-navy-900 lg:block">
+              <Image
+                src="/images/design/makkah-hajj.jpg"
+                alt={
+                  isAr
+                    ? 'المسجد الحرام والكعبة المشرفة في مكة المكرمة'
+                    : 'The Grand Mosque and the Holy Kaaba in Makkah'
+                }
+                fill
+                sizes="32vw"
+                quality={82}
+                className="object-cover"
+              />
+              <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-navy-950 via-navy-950/45 to-navy-950/15" />
+              <div className="absolute inset-x-6 bottom-7">
+                <div className="flex items-center gap-2 text-gold-300">
+                  <StarMark className="h-4 w-4" filled />
+                  <p className="text-label-2xs font-bold uppercase tracking-[0.2em]">
+                    {isAr ? 'مكان الحدث' : 'The venue'}
+                  </p>
+                </div>
+                <p className="mt-3 font-display text-[1.65rem] font-bold leading-snug text-white">
+                  {isAr ? 'هيلتون مكة للمؤتمرات' : 'Hilton Makkah Convention Hall'}
+                </p>
+                <p className="mt-2 text-body-xs leading-relaxed text-white/75">
+                  {isAr ? dict.event.dateLineFullAr : dict.event.dateLineFullEn}
+                </p>
+                <div className="mt-5 border-t border-white/15 pt-4">
+                  <p className="text-label-2xs uppercase tracking-[0.16em] text-gold-300/80">
+                    {isAr ? 'المنظم' : 'Organiser'}
+                  </p>
+                  <p className="mt-1 text-body-sm font-semibold text-white">{isAr ? dict.organizer.nameAr : dict.organizer.nameEn}</p>
+                </div>
+              </div>
+            </aside>
+
+            {/* Form */}
+            <div className="on-light bg-[#FBF7EE] text-navy-900">
+              <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-navy-900/10 px-6 py-5 sm:px-8">
+                <div>
+                  <h3 className="font-display text-[1.3rem] font-bold text-navy-900">
+                    {mode === 'exhibit' ? dict.register.exhibit.title : dict.register.visitor.title}
+                  </h3>
+                  <p className="mt-1 text-body-xs text-muted">
+                    {mode === 'exhibit' ? dict.register.exhibit.subtitle : dict.register.visitor.subtitle}
+                  </p>
+                </div>
+                <span className="text-label-2xs font-bold uppercase tracking-[0.16em] text-gold-700">
+                  {dict.organizer.nameEn}
+                </span>
+              </div>
+
+              <div
+                id="registration-panel"
+                role="tabpanel"
+                aria-labelledby={`tab-${mode}`}
+                className="px-6 py-7 sm:px-8"
+              >
             {/* Both the confirmation and the tab switch render immediately: neither is
                 allowed to wait on an exit animation to finish. */}
               {success ? (
@@ -295,23 +339,23 @@ export function RegistrationSection({ locale, dict }: { locale: Locale; dict: Di
                   className="flex flex-col items-center gap-4 py-10 text-center"
                 >
                   <span
-                    className="flex h-16 w-16 items-center justify-center rounded-full bg-green-brand/20 text-green-brand"
+                    className="flex h-16 w-16 items-center justify-center rounded-full bg-gold-500/15 text-gold-700"
                     aria-hidden="true"
                   >
                     <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round">
                       <path d="m4 12.5 5.5 5.5L20 6" />
                     </svg>
                   </span>
-                  <h4 className="font-display text-display-sm font-bold text-white">
+                  <h4 className="font-display text-display-sm font-bold text-navy-900">
                     {dict.register.status.successTitle}
                   </h4>
-                  <p className="max-w-md text-body-sm text-body">
+                  <p className="max-w-md text-body-sm text-muted">
                     {dict.register.status.success}
                   </p>
                   <button
                     type="button"
                     onClick={() => setStatus('idle')}
-                    className="btn-ghost-light mt-2"
+                    className="btn btn-outline mt-2"
                   >
                     {isAr ? 'إرسال طلب آخر' : 'Submit another request'}
                   </button>
@@ -330,7 +374,7 @@ export function RegistrationSection({ locale, dict }: { locale: Locale; dict: Di
                   {Object.keys(errors).length > 0 && (
                     <p
                       role="alert"
-                      className="rounded-xl border border-red-400/40 bg-red-500/10 px-4 py-3 text-body-xs font-medium text-red-300"
+                      className="rounded-xl border border-red-500/35 bg-red-500/10 px-4 py-3 text-body-xs font-medium text-red-700"
                     >
                       {v.summary}
                     </p>
@@ -582,7 +626,7 @@ export function RegistrationSection({ locale, dict }: { locale: Locale; dict: Di
                   {status === 'error' && (
                     <p
                       role="alert"
-                      className="rounded-xl border border-red-400/40 bg-red-500/10 px-4 py-3 text-body-xs font-medium text-red-300"
+                      className="rounded-xl border border-red-500/35 bg-red-500/10 px-4 py-3 text-body-xs font-medium text-red-700"
                     >
                       <span className="font-bold">{dict.register.status.errorTitle}: </span>
                       {dict.register.status.error}
@@ -628,9 +672,11 @@ export function RegistrationSection({ locale, dict }: { locale: Locale; dict: Di
                   </p>
                 </motion.form>
               )}
+              </div>
+            </div>
           </div>
-        </div>
-      </Reveal>
+        </Reveal>
+      </div>
     </Section>
   );
 }

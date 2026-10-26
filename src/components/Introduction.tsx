@@ -3,7 +3,7 @@ import type { Locale } from '@/lib/i18n';
 import type { Dictionary } from '@/lib/types';
 import { Section, SectionTitle } from './ui/Section';
 import { RevealGroup, RevealItem, RevealX } from './ui/Motion';
-import { StatTile } from './ui/Photo';
+import { StarMark } from './ui/Ornament';
 
 export function Introduction({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const t = dict.introduction;
@@ -15,11 +15,17 @@ export function Introduction({ locale, dict }: { locale: Locale; dict: Dictionar
       tone="white"
       labelledBy="introduction-title"
       containerClassName="shell"
-      className="border-b"
+      className="overflow-hidden"
     >
-      <div className="grid gap-14 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.95fr)] lg:gap-16">
+      <StarMark
+        aria-hidden="true"
+        className="pointer-events-none absolute -start-16 top-24 hidden h-72 w-72 text-gold-500/10 lg:block"
+        filled
+      />
+
+      <div className="grid gap-16 lg:grid-cols-[minmax(0,1.02fr)_minmax(0,0.88fr)] lg:items-start lg:gap-20">
         {/* Copy */}
-        <div>
+        <div className="relative">
           <SectionTitle
             eyebrow={t.eyebrow}
             eyebrowEn={t.eyebrowEn}
@@ -27,24 +33,22 @@ export function Introduction({ locale, dict }: { locale: Locale; dict: Dictionar
             lead={t.lead}
             tone="light"
             titleId="introduction-title"
-            className="max-w-2xl"
+            index="01"
+            titleClassName="max-w-[19ch]"
           />
 
           <RevealGroup className="mt-10 space-y-6" stagger={0.08}>
             {t.paragraphs.map((paragraph, i) => (
               <RevealItem key={i}>
-                <div className="flex gap-4">
-                  <span
-                    aria-hidden="true"
-                    className="numeral mt-1 w-6 shrink-0 text-label-xs text-accent"
-                  >
+                <div className="group flex gap-4 border-t border-[var(--hairline)] pt-5 first:border-t-0 first:pt-0">
+                  <span className="numeral mt-1 w-7 shrink-0 text-label-xs font-bold text-gold-600">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <p
                     className={
                       i === 0
-                        ? 'text-body-lg font-medium text-strong'
-                        : 'text-body-lg text-muted'
+                        ? 'text-[1.08rem] font-medium leading-[1.9] text-navy-900'
+                        : 'text-body-md leading-[1.9] text-muted'
                     }
                   >
                     {paragraph}
@@ -54,87 +58,81 @@ export function Introduction({ locale, dict }: { locale: Locale; dict: Dictionar
             ))}
           </RevealGroup>
 
-          <RevealGroup className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4" stagger={0.05}>
+          <RevealGroup className="mt-10 grid grid-cols-2 gap-y-8 border-t border-gold-500/30 pt-8 sm:grid-cols-4" stagger={0.05}>
             {dict.hero.stats.map((stat) => (
               <RevealItem key={stat.label}>
-                <StatTile
-                  value={String(stat.value).padStart(2, '0')}
-                  label={stat.label}
-                  className="h-full"
-                />
+                <div className="px-3 first:ps-0">
+                  <p className="numeral text-display-md font-bold text-navy-900">
+                    {stat.value}
+                    <span className="text-gold-600">{stat.suffix}</span>
+                  </p>
+                  <p className="mt-2 text-label-2xs font-semibold leading-snug text-muted">
+                    {stat.label}
+                  </p>
+                </div>
               </RevealItem>
             ))}
           </RevealGroup>
         </div>
 
-        {/* Photography — caption lives in its own box under the image.
+        {/* Photography composition */}
+        <RevealX from="end" className="relative mx-auto w-full max-w-md lg:mt-6 lg:max-w-none">
+          <div className="relative">
+            <div aria-hidden="true" className="arch-frame absolute inset-0 translate-x-3 translate-y-3 rtl:-translate-x-3" />
+            <figure className="arch relative aspect-[4/5.2] w-full bg-navy-900">
+              <Image
+                src="/images/design/makkah-kaaba.jpg"
+                alt={
+                  isAr
+                    ? 'الكعبة المشرفة والمسجد الحرام في مكة المكرمة'
+                    : 'The Holy Kaaba and Masjid al-Haram in Makkah'
+                }
+                fill
+                sizes="(max-width: 1024px) 92vw, 42vw"
+                quality={84}
+                className="object-cover"
+              />
+              <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-navy-950/80 via-transparent to-navy-950/10" />
 
-            These were top-down aerials cut from the hero shot. Read at card
-            size they were flat teal rectangles that said nothing about the
-            event, so the section now leads with the dusk terminal and pairs
-            it with warehousing and land transport: maritime, storage and
-            inland, which is the scope the copy describes. */}
-        <RevealX from="end" className="lg:pt-16">
-          <div className="space-y-4">
-            <figure className="overflow-hidden rounded-2xl border">
-              <div className="relative aspect-[16/10] w-full bg-surface-2">
-                <Image
-                  src="/images/intro-catering.jpg"
-                  alt={
-                    isAr
-                      ? 'طاهٍ يجهّز أطباقاً راقية في مطبخ احترافي'
-                      : 'A chef plating refined dishes in a professional kitchen'
-                  }
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 42vw"
-                  className="object-cover"
-                />
-              </div>
-              <figcaption className="flex items-center justify-between gap-4 border-t px-5 py-4">
-                <div>
-                  <p className="text-label-2xs font-semibold uppercase tracking-[0.2em] text-accent">
-                    {isAr ? 'الإعاشة والضيافة' : 'Catering & Hospitality'}
-                  </p>
-                  <p className="mt-1 font-display text-display-sm font-bold text-strong">
-                    {isAr ? t.imageCardTitleAr : t.imageCardTitleEn}
+              <figcaption className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/15 bg-navy-950/60 px-5 py-4 backdrop-blur-md sm:pe-36">
+                <div className="flex items-center gap-2 text-gold-300">
+                  <StarMark className="h-3.5 w-3.5" filled />
+                  <p className="text-label-2xs font-bold uppercase tracking-[0.18em]">
+                    {isAr ? 'مكة المكرمة' : 'Makkah al-Mukarramah'}
                   </p>
                 </div>
-                <span aria-hidden="true" className="h-8 w-[3px] shrink-0 rounded-full bg-orange-500" />
+                <p className="mt-2 font-display text-[1.3rem] font-bold leading-tight text-white">
+                  {isAr ? 'أكبر سوق للإعاشة والضيافة' : "The world's largest catering market"}
+                </p>
               </figcaption>
             </figure>
+          </div>
 
-            <div className="grid grid-cols-2 gap-4">
-              <figure className="overflow-hidden rounded-2xl border">
-                <div className="relative aspect-[16/10] w-full bg-surface-2">
-                  <Image
-                    src="/images/intro-kitchen.jpg"
-                    alt={
-                      isAr
-                        ? 'مطبخ احترافي نظيف مجهّز بأحدث المعدات'
-                        : 'A clean professional kitchen fitted with modern equipment'
-                    }
-                    fill
-                    sizes="(max-width: 1024px) 45vw, 20vw"
-                    className="object-cover"
-                  />
-                </div>
-              </figure>
-              <figure className="overflow-hidden rounded-2xl border">
-                <div className="relative aspect-[16/10] w-full bg-surface-2">
-                  <Image
-                    src="/images/chef-portrait.jpg"
-                    alt={
-                      isAr
-                        ? 'طاهٍ محترف يستعد لتقديم خدمة الإعاشة'
-                        : 'A professional chef preparing to serve'
-                    }
-                    fill
-                    sizes="(max-width: 1024px) 45vw, 20vw"
-                    className="object-cover"
-                  />
-                </div>
-              </figure>
+          <figure className="absolute -bottom-10 -end-6 hidden w-40 overflow-hidden rounded-2xl border-4 border-[#FBF7EE] shadow-card-lg sm:block lg:w-48">
+            <div className="relative aspect-[4/5] w-full bg-surface-alt">
+              <Image
+                src="/images/design/catering-buffet.jpg"
+                alt={
+                  isAr
+                    ? 'بوفيه إعاشة فاخر في حدث كبير'
+                    : 'A luxury catering buffet at a large event'
+                }
+                fill
+                sizes="(max-width: 1024px) 40vw, 18vw"
+                quality={82}
+                className="object-cover"
+              />
             </div>
+          </figure>
+
+          <div className="absolute -end-3 top-1/2 hidden -translate-y-1/2 lg:block">
+            <p
+              lang="en"
+              className="rotate-90 font-inter text-[0.6rem] font-semibold uppercase tracking-[0.42em] text-gold-600/70"
+              dir="ltr"
+            >
+              MAKKAH · 2027
+            </p>
           </div>
         </RevealX>
       </div>

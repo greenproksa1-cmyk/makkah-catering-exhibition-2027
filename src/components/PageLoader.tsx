@@ -19,7 +19,7 @@ export function PageLoader({ dict, locale }: { dict: Dictionary; locale: Locale 
     if (reduce) return;
     if (typeof window === 'undefined') return;
 
-    const KEY = 'yanbu-expo-intro-seen';
+    const KEY = 'makkah-expo-intro-seen';
     let seen = false;
     try {
       seen = window.sessionStorage.getItem(KEY) === '1';
@@ -64,14 +64,20 @@ export function PageLoader({ dict, locale }: { dict: Dictionary; locale: Locale 
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
         >
-          <p className="font-display text-display-sm font-bold text-white sm:text-display-md">
+          <span aria-hidden="true" className="pattern-stars absolute inset-0 opacity-20" />
+          <span aria-hidden="true" className="relative flex h-14 w-14 items-center justify-center rounded-full border border-gold-400/40 text-gold-300">
+            <svg viewBox="0 0 24 24" className="h-6 w-6" fill="currentColor" aria-hidden="true">
+              <path d="M12 1.8 15.1 8.9 22.2 12l-7.1 3.1L12 22.2 8.9 15.1 1.8 12l7.1-3.1Z" />
+            </svg>
+          </span>
+          <p className="relative font-display text-display-sm font-bold text-white sm:text-display-md">
             {locale === 'ar' ? dict.event.heroTitleAr : dict.event.heroTitleEn}
           </p>
 
-          <span aria-hidden="true" className="h-[3px] w-16 rounded-full bg-orange-500" />
+          <span aria-hidden="true" className="relative h-px w-24 bg-gold-gradient" />
 
-          <p className="font-inter text-label-2xs uppercase tracking-[0.24em] text-muted">
-            {dict.event.dateLineFullEn}
+          <p className="relative font-inter text-label-2xs uppercase tracking-[0.24em] text-gold-200/70">
+            {locale === 'ar' ? dict.event.dateLineAr : dict.event.dateLineEn}
           </p>
         </motion.div>
       </motion.div>

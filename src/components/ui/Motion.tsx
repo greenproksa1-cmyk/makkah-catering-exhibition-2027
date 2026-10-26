@@ -26,16 +26,14 @@ export function Reveal({
   amount?: number;
 }) {
   const reduce = useReducedMotion();
-  if (reduce) {
-    return <div className={className}>{children}</div>;
-  }
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0, y, x }}
-      whileInView={{ opacity: 1, y: 0, x: 0 }}
+      initial={reduce ? false : { opacity: 0, y, x }}
+      animate={reduce ? { opacity: 1, y: 0, x: 0 } : undefined}
+      whileInView={reduce ? undefined : { opacity: 1, y: 0, x: 0 }}
       viewport={{ once, amount }}
-      transition={{ duration: 0.75, delay, ease: EASE }}
+      transition={reduce ? { duration: 0 } : { duration: 0.75, delay, ease: EASE }}
     >
       {children}
     </motion.div>
@@ -65,20 +63,16 @@ export function RevealGroup({
   const reduce = useReducedMotion();
   const Comp = motion[as] as typeof motion.div;
 
-  if (reduce) {
-    const Plain = as as 'div';
-    return <Plain className={className}>{children}</Plain>;
-  }
-
   return (
     <Comp
       className={className}
-      initial="hidden"
-      whileInView="visible"
+      initial={reduce ? false : 'hidden'}
+      animate={reduce ? 'visible' : undefined}
+      whileInView={reduce ? undefined : 'visible'}
       viewport={{ once: true, amount }}
       variants={{
         hidden: {},
-        visible: { transition: { staggerChildren: stagger, delayChildren: delay } },
+        visible: { transition: { staggerChildren: reduce ? 0 : stagger, delayChildren: reduce ? 0 : delay } },
       }}
     >
       {children}
@@ -102,16 +96,16 @@ export function RevealItem({
   const Comp = motion[as] as typeof motion.div;
   const variants: Variants = {
     hidden: { opacity: 0, y },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: EASE } },
+    visible: { opacity: 1, y: 0, transition: { duration: reduce ? 0 : 0.7, ease: EASE } },
   };
 
-  if (reduce) {
-    const Plain = as as 'div';
-    return <Plain className={className}>{children}</Plain>;
-  }
-
   return (
-    <Comp className={className} variants={variants}>
+    <Comp
+      className={className}
+      initial={reduce ? false : undefined}
+      animate={reduce ? 'visible' : undefined}
+      variants={variants}
+    >
       {children}
     </Comp>
   );
@@ -134,15 +128,15 @@ export function RevealX({
   amount?: number;
 }) {
   const reduce = useReducedMotion();
-  if (reduce) return <div className={className}>{children}</div>;
   const offset = from === 'start' ? x : -x;
   return (
     <motion.div
       className={cn(className)}
-      initial={{ opacity: 0, x: offset }}
-      whileInView={{ opacity: 1, x: 0 }}
+      initial={reduce ? false : { opacity: 0, x: offset }}
+      animate={reduce ? { opacity: 1, x: 0 } : undefined}
+      whileInView={reduce ? undefined : { opacity: 1, x: 0 }}
       viewport={{ once: true, amount }}
-      transition={{ duration: 0.85, delay, ease: EASE }}
+      transition={reduce ? { duration: 0 } : { duration: 0.85, delay, ease: EASE }}
     >
       {children}
     </motion.div>

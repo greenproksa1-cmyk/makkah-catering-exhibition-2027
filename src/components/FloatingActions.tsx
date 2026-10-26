@@ -65,7 +65,7 @@ export function FloatingActions({
               exit={{ opacity: 0, scale: 0.7, y: 10 }}
               whileHover={{ y: -3 }}
               transition={{ duration: 0.28, ease: [0.16, 1, 0.3, 1] }}
-              className="on-light pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full border border-navy-100 bg-white text-strong shadow-card-lg transition-colors hover:bg-orange-500 hover:text-white"
+              className="on-light pointer-events-auto flex h-12 w-12 items-center justify-center rounded-full border border-navy-900/15 bg-white text-strong shadow-card-lg transition-colors hover:bg-gold-500 hover:text-navy-950"
             >
               <ArrowUpGlyph className="h-5 w-5 rtl:rotate-180" />
             </motion.button>
@@ -78,11 +78,11 @@ export function FloatingActions({
           rel="noopener noreferrer"
           aria-label={dict.ui.whatsapp}
           whileHover={reduce ? undefined : { y: -3 }}
-          className="pointer-events-auto group relative flex h-14 w-14 items-center justify-center rounded-full bg-green-brand text-white shadow-[0_14px_40px_-12px_rgba(62,155,87,0.9)]"
+          className="pointer-events-auto group relative flex h-14 w-14 items-center justify-center rounded-full bg-gold-gradient text-navy-950 shadow-gold"
         >
           <span
             aria-hidden="true"
-            className="absolute inset-0 animate-ping rounded-full bg-green-brand opacity-25 [animation-duration:2.8s]"
+            className="absolute inset-0 animate-ping rounded-full bg-gold-500 opacity-25 [animation-duration:2.8s]"
           />
           <WhatsAppGlyph className="relative h-7 w-7" />
           <span className="pointer-events-none absolute end-full me-3 hidden whitespace-nowrap rounded-lg bg-navy-900 px-3 py-1.5 text-label-xs font-semibold text-white opacity-0 shadow-lg transition-opacity duration-300 group-hover:opacity-100 lg:block rtl:start-full rtl:me-0 rtl:ms-3">
@@ -92,8 +92,8 @@ export function FloatingActions({
       </div>
 
       {/* Mobile: sticky bottom CTA bar (leaves room for the WhatsApp bubble). */}
-      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-white/10 bg-navy-900/95 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur-xl md:hidden">
-        <a href="#register" className="btn-primary w-full py-3 text-body-sm">
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-gold-500/25 bg-navy-950/95 px-4 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 backdrop-blur-xl md:hidden">
+        <a href="#register" className="btn btn-accent w-full py-3 text-body-sm">
           {dict.hero.ctaPrimary}
         </a>
       </div>
@@ -105,7 +105,7 @@ export function FloatingActions({
         rel="noopener noreferrer"
         aria-label={dict.ui.whatsapp}
         className={cn(
-          'fixed z-40 flex h-12 w-12 items-center justify-center rounded-full bg-green-brand text-white shadow-[0_12px_32px_-10px_rgba(62,155,87,0.9)] md:hidden',
+          'fixed z-40 flex h-12 w-12 items-center justify-center rounded-full bg-gold-gradient text-navy-950 shadow-gold md:hidden',
           'bottom-[calc(5.25rem+env(safe-area-inset-bottom))] end-4',
         )}
       >
@@ -124,7 +124,7 @@ export function FloatingActions({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.8 }}
             className={cn(
-              'fixed z-40 flex h-11 w-11 items-center justify-center rounded-full border border-navy-100 bg-white text-strong shadow-card md:hidden',
+              'fixed z-40 flex h-11 w-11 items-center justify-center rounded-full border border-navy-900/15 bg-white text-strong shadow-card md:hidden',
               'bottom-[calc(5.25rem+env(safe-area-inset-bottom))] start-4',
             )}
           >

@@ -1,52 +1,73 @@
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
-  content: [
-    './src/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
     extend: {
-      // The design leans on subtle glass layers, so allow any 1% step for
-      // slash-opacity utilities such as `bg-white/12` or `border-navy-100/45`.
       opacity: Object.fromEntries(
         Array.from({ length: 101 }, (_, i) => [String(i), String(i / 100)]),
       ),
       colors: {
+        /*
+         * `navy` is kept as the token name for compatibility with the section
+         * components, but the Makkah identity is a deep pine green rather than
+         * the old navy. Every `bg-navy-*` / `text-navy-*` therefore reads as
+         * Makkah green.
+         */
         navy: {
-          50: '#F0F4FA',
-          100: '#E0E7F0',
-          200: '#C1C9DE',
-          300: '#A2A9C4',
-          400: '#6E76A0',
-          500: '#3F4F6B',
-          600: '#2D3751',
-          700: '#1F2E4D',
-          800: '#16213A',
-          900: '#0D1420',
-          950: '#060B12',
+          50: '#F1F6F3',
+          100: '#DFEBE4',
+          200: '#C1D8CB',
+          300: '#96BBA8',
+          400: '#679A82',
+          500: '#447C63',
+          600: '#2F634D',
+          700: '#234F3D',
+          800: '#173D2F',
+          900: '#0E2D22',
+          950: '#071F17',
+        },
+        /* `orange` is remapped to the Makkah gold ladder. */
+        orange: {
+          50: '#FBF6E8',
+          100: '#F6EBCB',
+          200: '#EDD9A0',
+          300: '#E2C473',
+          400: '#D6AE4A',
+          500: '#C1962F',
+          600: '#A87D25',
+          700: '#8A641D',
+          800: '#6B4C16',
+          900: '#4C350F',
         },
         gold: {
-          50: '#FFFDF5',
-          100: '#FFF8EB',
-          200: '#FFF0D9',
-          300: '#FFE8C9',
-          400: '#FFE0BB',
-          500: '#FFD7A8',
-          600: '#E0B93A',
-          700: '#C9A227',
-          800: '#B28A1F',
-          900: '#9A7218',
+          50: '#FDFAF1',
+          100: '#F9F1DA',
+          200: '#F2E2B8',
+          300: '#E9D09A',
+          400: '#DFBD72',
+          500: '#D4AF37',
+          600: '#BA952B',
+          700: '#96741F',
+          800: '#6F5516',
+          900: '#4A380D',
         },
         surface: {
-          DEFAULT: '#F8FAFC',
-          2: '#F0F4FA',
-          3: '#E6EDF7',
+          DEFAULT: '#FBF7EE',
+          2: '#F4EDDD',
+          3: '#EADFC9',
+          alt: '#F4EDDD',
           subtle: 'rgba(255, 255, 255, 0.06)',
         },
+        'green-brand': {
+          DEFAULT: '#2E7D5B',
+          dark: '#1C5C41',
+          light: '#4A9C76',
+        },
         accent: {
-          gold: '#E0B93A',
-          goldLight: '#F5E1A9',
-          goldGradient: 'linear-gradient(135deg, #E0B93A, #C9A227)',
+          gold: '#D4AF37',
+          goldLight: '#E9D09A',
+          goldGradient: 'linear-gradient(135deg, #E9D09A, #D4AF37, #B98A2F)',
         },
         border: {
           subtle: 'rgba(255, 255, 255, 0.1)',
@@ -54,80 +75,35 @@ const config: Config = {
         },
       },
       fontFamily: {
-        arabic: ['Cairo', 'Tajawal', 'IBM Plex Sans Arabic', 'system-ui', 'sans-serif'],
-        display: ['Cairo', 'Tajawal', 'IBM Plex Sans Arabic', 'var(--font-inter)', 'system-ui', 'sans-serif'],
-        sans: ['Cairo', 'Tajawal', 'IBM Plex Sans Arabic', 'var(--font-inter)', 'system-ui', 'sans-serif'],
-        inter: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
+        display: ['var(--font-display)', 'Georgia', 'serif'],
+        arabic: ['var(--font-arabic)', 'system-ui', 'sans-serif'],
+        inter: ['var(--font-inter)', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        /*
-         * Display — section headline and hero title only.
-         *
-         * Capped at 3.375rem: the Arabic title runs to three lines, and at 4.5rem
-         * it swallowed the whole first screen. Letter-spacing is deliberately
-         * mild here; globals.css neutralises it to 0 for Arabic, where negative
-         * tracking breaks the joins between letters.
-         */
-        'display-xl': ['clamp(2rem, 3.9vw, 3.375rem)', { lineHeight: '1.24', letterSpacing: '-0.012em' }],
-        'display-lg': ['clamp(1.625rem, 2.9vw, 2.5rem)', { lineHeight: '1.26', letterSpacing: '-0.01em' }],
-        'display-md': ['clamp(1.3rem, 1.9vw, 1.625rem)', { lineHeight: '1.32', letterSpacing: '-0.006em' }],
-        'display-sm': ['clamp(1.075rem, 1.3vw, 1.25rem)', { lineHeight: '1.4', letterSpacing: '-0.004em' }],
+        'display-2xl': ['clamp(2.9rem, 7.4vw, 6.25rem)', { lineHeight: '1.02', letterSpacing: '-0.02em' }],
+        'display-xl': ['clamp(2.25rem, 5.1vw, 4.15rem)', { lineHeight: '1.12', letterSpacing: '-0.015em' }],
+        'display-lg': ['clamp(1.85rem, 3.6vw, 3.1rem)', { lineHeight: '1.16', letterSpacing: '-0.012em' }],
+        'display-md': ['clamp(1.4rem, 2.2vw, 1.9rem)', { lineHeight: '1.28', letterSpacing: '-0.008em' }],
+        'display-sm': ['clamp(1.1rem, 1.5vw, 1.35rem)', { lineHeight: '1.38', letterSpacing: '-0.004em' }],
 
-        /* Numerals — deliberately tighter leading than type. */
-        'stat-lg': ['clamp(2.125rem, 3vw, 2.625rem)', { lineHeight: '1.05', letterSpacing: '-0.02em' }],
-        'stat-xl': ['clamp(3.5rem, 11vw, 7rem)', { lineHeight: '0.92', letterSpacing: '-0.03em' }],
+        'stat-lg': ['clamp(2.25rem, 3.4vw, 3rem)', { lineHeight: '1', letterSpacing: '-0.02em' }],
+        'stat-xl': ['clamp(3.75rem, 12vw, 8rem)', { lineHeight: '0.9', letterSpacing: '-0.03em' }],
 
-        /*
-         * Countdown digits. Sized from the component's own container, never the
-         * viewport: the same countdown is used in the hero and in a narrow card,
-         * so it must stay legible in both without ever overflowing.
-         */
-        countdown: ['clamp(1.5rem, 2.6vw, 2rem)', { lineHeight: '1.1', letterSpacing: '-0.01em' }],
+        countdown: ['clamp(1.55rem, 2.8vw, 2.15rem)', { lineHeight: '1.05', letterSpacing: '-0.01em' }],
 
-        /* Body — one rhythm, so paragraphs feel uniform everywhere. */
-        'body-lg': ['1.0625rem', { lineHeight: '1.75', letterSpacing: '-0.005em' }],
-        'body-md': ['1rem', { lineHeight: '1.72', letterSpacing: '-0.004em' }],
-        'body-sm': ['0.9375rem', { lineHeight: '1.7', letterSpacing: '-0.002em' }],
+        'body-lg': ['1.0625rem', { lineHeight: '1.8', letterSpacing: '-0.005em' }],
+        'body-md': ['1rem', { lineHeight: '1.75', letterSpacing: '-0.004em' }],
+        'body-sm': ['0.9375rem', { lineHeight: '1.72', letterSpacing: '-0.002em' }],
         'body-xs': ['0.875rem', { lineHeight: '1.65' }],
 
-        /*
-         * Meta — labels, captions, counters.
-         *
-         * Fluid rather than fixed: these were pinned at 10–11px, which is below
-         * what a phone can render comfortably and left ~150 nodes on the page
-         * under 12px. The floor is now 11px and the ceiling 12–14px, so a phone
-         * gets readable labels and a desktop still gets the tight caption look.
-         */
         'label-sm': ['clamp(0.8125rem, 1.7vw, 0.875rem)', { lineHeight: '1.45', letterSpacing: '0.01em' }],
         'label-xs': ['clamp(0.75rem, 1.5vw, 0.8125rem)', { lineHeight: '1.4', letterSpacing: '0.02em' }],
         'label-2xs': ['clamp(0.75rem, 1.25vw, 0.8125rem)', { lineHeight: '1.4', letterSpacing: '0.03em' }],
-
-        /*
-         * The desktop header nav.
-         *
-         * Seven labels have to share one fixed-width bar: the shell caps at
-         * 82rem, so past 1312px of viewport there is no more room to win and a
-         * fluid size would only shrink needlessly on a wide screen. The measured
-         * one-line cost is 759px in Arabic and 988px in English at the old 14px
-         * `body-xs`, against a 1200px budget that also has to hold the wordmark
-         * and the booking button — English simply did not fit, and every label
-         * silently wrapped to two lines.
-         *
-         * 12px is the floor the label scale already sits at (`label-xs` and
-         * `label-2xs` both bottom out there), so this stays inside the type
-         * system rather than inventing a new tier. Below this the wordmark
-         * starts losing lines and the trade stops being worth making: at 12px
-         * English still gets 198px, enough for three lines; squeezing the nav
-         * further would buy the logo a fourth line of height it cannot use.
-         *
-         * Letter spacing is zero on purpose — any tracking on Arabic breaks
-         * the joins between letters.
-         */
-        'label-nav': ['0.75rem', { lineHeight: '1.4', letterSpacing: '0' }],
+        'label-nav': ['0.78rem', { lineHeight: '1.4', letterSpacing: '0' }],
       },
       spacing: {
-        /* Consistent vertical rhythm between sections and blocks. */
-        'section': 'var(--gap-section)',
+        section: 'var(--gap-section)',
       },
       maxWidth: {
         shell: 'var(--shell)',
@@ -135,19 +111,20 @@ const config: Config = {
         narrow: '46ch',
       },
       boxShadow: {
-        glow: '0 0 0 1px rgba(232,119,34,0.28), 0 18px 60px -18px rgba(232,119,34,0.42)',
-        card: '0 1px 2px rgba(10,26,51,0.04), 0 18px 40px -22px rgba(10,26,51,0.28)',
-        'card-lg': '0 2px 4px rgba(10,26,51,0.05), 0 40px 80px -40px rgba(10,26,51,0.42)',
-        header: '0 1px 0 rgba(255,255,255,0.08), 0 12px 40px -18px rgba(6,16,31,0.7)',
+        glow: '0 0 0 1px rgba(212,175,55,0.32), 0 24px 70px -20px rgba(212,175,55,0.35)',
+        card: '0 1px 2px rgba(7,31,23,0.05), 0 20px 45px -26px rgba(7,31,23,0.35)',
+        'card-lg': '0 2px 4px rgba(7,31,23,0.06), 0 50px 90px -46px rgba(7,31,23,0.45)',
+        header: '0 1px 0 rgba(212,175,55,0.16), 0 16px 45px -22px rgba(7,31,23,0.45)',
+        gold: '0 18px 50px -24px rgba(185,138,47,0.55)',
       },
       backgroundImage: {
         'grid-light':
-          'linear-gradient(to right, rgba(27,79,138,0.07) 1px, transparent 1px), linear-gradient(to bottom, rgba(27,79,138,0.07) 1px, transparent 1px)',
+          'linear-gradient(to right, rgba(35,79,61,0.06) 1px, transparent 1px), linear-gradient(to bottom, rgba(35,79,61,0.06) 1px, transparent 1px)',
         'grid-dark':
           'linear-gradient(to right, rgba(255,255,255,0.045) 1px, transparent 1px), linear-gradient(to bottom, rgba(255,255,255,0.045) 1px, transparent 1px)',
       },
       backgroundSize: {
-        grid: '56px 56px',
+        grid: '58px 58px',
       },
       keyframes: {
         'dash-flow': {
@@ -160,9 +137,9 @@ const config: Config = {
         },
         'float-slow': {
           '0%, 100%': { transform: 'translateY(0)' },
-          '50%': { transform: 'translateY(-8px)' },
+          '50%': { transform: 'translateY(-10px)' },
         },
-        'sheen': {
+        sheen: {
           '0%': { transform: 'translateX(-120%)' },
           '100%': { transform: 'translateX(220%)' },
         },
@@ -170,13 +147,22 @@ const config: Config = {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
         },
+        'marquee-rtl': {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(50%)' },
+        },
+        'arch-glow': {
+          '0%, 100%': { opacity: '0.45' },
+          '50%': { opacity: '0.9' },
+        },
       },
       animation: {
         'dash-flow': 'dash-flow 3.2s linear infinite',
         'pulse-node': 'pulse-node 3s ease-in-out infinite',
-        'float-slow': 'float-slow 7s ease-in-out infinite',
+        'float-slow': 'float-slow 8s ease-in-out infinite',
         sheen: 'sheen 2.4s ease-in-out infinite',
-        'marquee-x': 'marquee-x 38s linear infinite',
+        'marquee-x': 'marquee-x 42s linear infinite',
+        'arch-glow': 'arch-glow 7s ease-in-out infinite',
       },
       transitionTimingFunction: {
         'out-expo': 'cubic-bezier(0.16, 1, 0.3, 1)',

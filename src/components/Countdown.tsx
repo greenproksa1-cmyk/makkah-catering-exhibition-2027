@@ -123,14 +123,6 @@ export function Countdown({
 
   return (
     <div className={className}>
-      <p
-        className={cn(
-          'mb-2.5 text-label-2xs font-semibold uppercase tracking-[0.18em]',
-          tone === 'dark' ? 'text-orange-300' : 'text-accent',
-        )}
-      >
-        {dict.hero.countdownLabel}
-      </p>
       <div
         className="grid grid-cols-4 gap-1.5 sm:gap-2"
         role="timer"

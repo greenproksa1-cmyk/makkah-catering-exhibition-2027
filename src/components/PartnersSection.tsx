@@ -8,6 +8,7 @@ import type { Dictionary } from '@/lib/types';
 import { cn } from '@/lib/cn';
 import { Section, SectionTitle } from './ui/Section';
 import { RevealGroup, RevealItem } from './ui/Motion';
+import { StarMark } from './ui/Ornament';
 
 function initials(name: string) {
   return name
@@ -27,21 +28,35 @@ export function PartnersSection({ locale, dict }: { locale: Locale; dict: Dictio
   return (
     <Section
       id="partners-grid"
-      tone="dark"
+      tone="white"
       labelledBy="partners-grid-title"
       containerClassName="shell"
+      className="overflow-hidden"
     >
-      <SectionTitle
-        eyebrow={t.eyebrow}
-        eyebrowEn={t.eyebrowEn}
-        title={t.title}
-        lead={isAr ? t.leadAr : t.leadEn}
-        tone="dark"
-        titleId="partners-grid-title"
-        className="max-w-3xl"
+      <StarMark
+        aria-hidden="true"
+        className="pointer-events-none absolute -end-20 top-10 hidden h-72 w-72 text-gold-500/10 lg:block"
+        filled
       />
 
-      <RevealGroup as="ul" className="mt-14 grid grid-cols-2 gap-4 lg:grid-cols-3" stagger={0.06}>
+      <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+        <SectionTitle
+          eyebrow={t.eyebrow}
+          eyebrowEn={t.eyebrowEn}
+          title={t.title}
+          lead={isAr ? t.leadAr : t.leadEn}
+          tone="light"
+          titleId="partners-grid-title"
+          index="11"
+          className="max-w-2xl"
+          titleClassName="max-w-[18ch]"
+        />
+        <Link href={`/${locale}/partners`} className="btn btn-outline shrink-0">
+          {t.cta}
+        </Link>
+      </div>
+
+      <RevealGroup as="ul" className="mt-12 grid grid-cols-2 gap-4 lg:grid-cols-3" stagger={0.06}>
         {partners.map((partner) => {
           const name = isAr ? partner.nameAr : partner.nameEn;
           const role = isAr ? partner.roleAr : partner.roleEn;
@@ -49,15 +64,21 @@ export function PartnersSection({ locale, dict }: { locale: Locale; dict: Dictio
 
           return (
             <RevealItem as="li" key={partner.id}>
-              <div className="flex h-full flex-col rounded-2xl border border-white/12 bg-white/[0.03] p-5 transition-colors duration-300 hover:border-orange-400/50">
-                <div className="flex min-h-20 items-center justify-center">
+              <article className="group relative flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-navy-900/12 bg-[#FFFDF7] p-5 transition-all duration-500 hover:-translate-y-1 hover:border-gold-600/50 hover:shadow-card sm:p-6">
+                <StarMark
+                  aria-hidden="true"
+                  className="pointer-events-none absolute -end-6 -top-6 h-24 w-24 text-gold-600/[0.07] transition-colors duration-500 group-hover:text-gold-600/20"
+                  filled
+                />
+
+                <div className="relative flex min-h-20 items-center justify-start">
                   {showLogo ? (
                     <Image
                       src={partner.logo}
                       alt={`${t.logoAlt} ${name}`}
                       width={partner.logoW}
                       height={partner.logoH}
-                      className="h-auto max-w-full bg-white/95 p-2"
+                      className="h-auto max-w-full bg-white p-2"
                       style={{ width: `${partner.logoScale}%` }}
                       onError={() => setFailed((prev) => ({ ...prev, [partner.id]: true }))}
                     />
@@ -65,8 +86,8 @@ export function PartnersSection({ locale, dict }: { locale: Locale; dict: Dictio
                     <span
                       aria-hidden="true"
                       className={cn(
-                        'flex h-16 w-16 items-center justify-center rounded-2xl border border-orange-400/40 bg-orange-500/10',
-                        'font-display text-display-sm font-bold tracking-wide text-orange-300',
+                        'flex h-16 w-16 items-center justify-center rounded-full border border-gold-600/35 bg-gold-500/10',
+                        'font-display text-[1.35rem] font-bold tracking-wide text-gold-700',
                       )}
                     >
                       {initials(partner.nameEn)}
@@ -74,19 +95,26 @@ export function PartnersSection({ locale, dict }: { locale: Locale; dict: Dictio
                   )}
                 </div>
 
-                <div className="mt-5 border-t border-white/12 pt-4">
-                  <h3 className="text-body-md font-bold text-white">{name}</h3>
-                  <p className="mt-1 text-body-xs text-muted">{role}</p>
+                <div className="relative mt-5 border-t border-navy-900/10 pt-4">
+                  <h3 className="font-display text-[1.15rem] font-bold leading-snug text-navy-900">
+                    {name}
+                  </h3>
+                  <p className="mt-1 text-body-xs leading-relaxed text-muted">{role}</p>
                 </div>
-              </div>
+
+                <span
+                  aria-hidden="true"
+                  className="absolute inset-x-0 bottom-0 h-px origin-start scale-x-0 bg-gold-gradient transition-transform duration-500 group-hover:scale-x-100"
+                />
+              </article>
             </RevealItem>
           );
         })}
       </RevealGroup>
 
-      <div className="mt-10 flex flex-col items-start justify-between gap-4 rounded-2xl border border-white/12 px-6 py-5 sm:flex-row sm:items-center">
-        <p className="max-w-2xl text-body-sm text-muted">{t.note}</p>
-        <Link href={`/${locale}/partners`} className="btn btn-ghost-dark shrink-0">
+      <div className="mt-10 flex flex-col items-start justify-between gap-4 rounded-[1.4rem] border border-gold-600/25 bg-surface-alt px-6 py-5 sm:flex-row sm:items-center">
+        <p className="max-w-2xl text-body-sm leading-relaxed text-muted">{t.note}</p>
+        <Link href={`/${locale}/partners`} className="btn btn-primary shrink-0">
           {t.cta}
         </Link>
       </div>

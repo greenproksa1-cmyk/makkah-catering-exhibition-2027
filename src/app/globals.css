@@ -3,141 +3,71 @@
 @tailwind utilities;
 
 /* ==========================================================================
-   Design tokens — Makkah Catering & Food Supply Exhibition 2027
-
-   Palette: Deep navy (#1F2E4D → #16213A), Rich gold (#E0B93A / #C9A227),
-   White, Soft slate-blue panels (rgba white 6-10%).
-   Chef-hat "M" logo as primary mark. Geometric parallelogram pattern.
-   Glassmorphism cards, gold gradient bars, rounded corners (20-28px).
-   Mood: luxurious, hospitality-driven, trustworthy, Saudi/Makkah-inspired.
-   Dark theme only, high contrast, WCAG-AA readable text.
+   Makkah Catering & Food Supply Exhibition 2027 — design system
+   Identity: royal pine green, champagne gold, warm ivory.
+   Type: Amiri (Arabic display) + Tajawal (Arabic UI) + Cormorant (Latin
+   display) + Inter (Latin UI). Arch motifs, eight-point stars, fine rules.
    ========================================================================== */
+
 @layer base {
   :root {
-    --navy-900: #0a1a33;
-    --navy-800: #0b2447;
-    --navy-700: #16213A;
-    --navy-600: #1F2E4D;
-    --navy-500: #3F4F6B;
-    --navy-400: #6E76A0;
-    --navy-300: #A2A9C4;
+    --navy-950: #071f17;
+    --navy-900: #0e2d22;
+    --navy-800: #173d2f;
+    --navy-700: #234f3d;
+    --navy-600: #2f634d;
+    --navy-500: #447c63;
+    --navy-400: #679a82;
+    --navy-300: #96bba8;
 
-    --gold-500: #E0B93A;
-    --gold-400: #C9A227;
-    --gold-300: #FFE8C9;
-    --gold-50: #FFFDF5;
+    --gold-600: #ba952b;
+    --gold-500: #d4af37;
+    --gold-400: #dfbd72;
+    --gold-300: #e9d09a;
+    --gold-200: #f2e2b8;
+    --gold-100: #f9f1da;
 
-    --surface-subtle: rgba(255, 255, 255, 0.06);
-    --surface-panel: rgba(255, 255, 255, 0.08);
+    --green-brand: #2e7d5b;
+    --green-brand-dark: #1c5c41;
 
-    --hairline: rgba(255, 255, 255, 0.14);
-    --hairline-strong: rgba(255, 255, 255, 0.24);
+    --surface: #fbf7ee;
+    --surface-alt: #f4eddd;
+    --surface-deep: #eadfc9;
 
-    /*
-     * Text roles. Every piece of copy uses one of these, so tone and contrast
-     * stay consistent. Light values clear WCAG AA on white / --surface-panel.
-     */
-    --text-strong: #ffffff;   /* on dark navy */
-    --text-body: #c9d6e6;     /* on dark navy */
-    --text-soft: #a9bcd4;     /* on dark navy */
-    --text-accent: #f0a768;  /* gold accent on dark */
+    --ink: #122a22;
+    --ink-body: #3d574c;
+    --ink-soft: #6a7f75;
 
-    /* Dark-context equivalents (see .on-dark) */
-    --icon-stroke: #ffffff;
+    --hairline: rgba(18, 42, 34, 0.14);
+    --hairline-strong: rgba(18, 42, 34, 0.26);
+    --hairline-gold: rgba(186, 149, 43, 0.38);
 
-    --header-h: 4.75rem;
-    --shell: 82rem;
+    --text-strong: var(--ink);
+    --text-body: var(--ink-body);
+    --text-soft: var(--ink-soft);
+    --text-accent: #96741f;
 
-    /* Vertical rhythm */
-    --gap-section: 5.5rem;
+    --icon-stroke: var(--ink);
 
-    /* Gold gradient utilities */
-    --gold-gradient: linear-gradient(135deg, var(--gold-500), var(--gold-400));
-    --navy-gold-gradient: linear-gradient(135deg, var(--navy-600), var(--navy-700));
+    --header-h: 5rem;
+    --shell: 84rem;
+    --gap-section: 6rem;
+
+    --gold-gradient: linear-gradient(135deg, #f2e2b8, #d4af37 48%, #b98a2f);
+    --gold-line: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.85), transparent);
+    --pine-gradient: linear-gradient(150deg, #12392b, #071f17);
   }
 
-  html {
-    -webkit-text-size-adjust: 100%;
-    scroll-behavior: smooth;
-    scroll-padding-top: calc(var(--header-h) + 1rem);
+  html[lang='ar'] {
+    --font-sans: var(--font-tajawal);
+    --font-arabic: var(--font-tajawal);
+    --font-display: var(--font-amiri);
   }
 
-  body {
-    margin: 0;
-    background-color: var(--navy-900);
-    color: var(--text-strong);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
-    overflow-x: clip;
-  }
-
-  /* Locale-aware font stack, resolved per character. */
-  html[lang='ar'] body {
-    font-family: var(--font-arabic), var(--font-inter), system-ui, sans-serif;
-  }
-  html[lang='en'] body {
-    font-family: var(--font-inter), var(--font-arabic), system-ui, sans-serif;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    font-weight: 700;
-    letter-spacing: -0.015em;
-    line-height: 1.2;
-    text-wrap: balance;
-  }
-
-  /*
-   * Arabic headings keep neutral tracking.
-   *
-   * Arabic letters join along a baseline; negative letter-spacing pulls those
-   * joins apart and breaks the word shape. This overrides the Latin-tuned
-   * tracking on the display scale for Arabic only, and leaves digits alone —
-   * numerals do benefit from tight tracking.
-   */
-  html[lang='ar'] :is(h1, h2, h3, h4, h5, h6) {
-    letter-spacing: normal;
-    line-height: 1.34;
-  }
-
-  p {
-    margin: 0;
-    text-wrap: pretty;
-  }
-
-  :focus-visible {
-    outline: 2px solid var(--gold-500);
-    outline-offset: 3px;
-    border-radius: 4px;
-  }
-
-  ::selection {
-    background-color: rgba(224, 185, 58, 0.22);
-    color: var(--navy-900);
-  }
-
-  ::-webkit-scrollbar { width: 11px; height: 11px; }
-  ::-webkit-scrollbar-track { background: #16213A; }
-  ::-webkit-scrollbar-thumb { background: #1F2E4D; border-radius: 99px; border: 3px solid #16213A; }
-  ::-webkit-scrollbar-thumb:hover { background: var(--gold-500); }
-
-  /* Gold accent bar */
-  .gold-accent-bar {
-    position: absolute;
-    inset-inline: 0;
-    top: 0;
-    height: 3px;
-    background: var(--gold-gradient);
-  }
-
-  /* Navy gold gradient bar */
-  .navy-gold-accent-bar {
-    position: absolute;
-    inset-inline: 0;
-    top: 0;
-    height: 3px;
-    background: var(--navy-gold-gradient);
+  html[lang='en'] {
+    --font-sans: var(--font-inter);
+    --font-arabic: var(--font-tajawal);
+    --font-display: var(--font-cormorant);
   }
 
   * {
@@ -148,60 +78,46 @@
     -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;
     scroll-padding-top: calc(var(--header-h) + 1rem);
-    /* No overflow here: the root element propagates its overflow to the
-       viewport, which would cost the page its vertical scrolling. The clip
-       guard lives on `body` instead. */
   }
 
   body {
     margin: 0;
-    background-color: #fff;
-    /*
-     * Resolved through the role variable rather than a literal. `color` is an
-     * inherited *computed* value, so a `.on-dark` wrapper could never flip it
-     * unless the wrapper re-declares `color` too — which it does, below.
-     */
+    background-color: var(--surface);
     color: var(--text-strong);
+    font-family: var(--font-sans), system-ui, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
-    /*
-     * Horizontal clip guard — deliberately NOT on `html`.
-     *
-     * Overflow on the root element propagates to the viewport, so `overflow-x:
-     * clip` there strips the page of its vertical scrolling. On `body` it clips
-     * stray horizontal overflow only, and the viewport stays scrollable.
-     */
     overflow-x: clip;
   }
 
-  /* Locale-aware font stack, resolved per character. */
-  html[lang='ar'] body {
-    font-family: var(--font-arabic), var(--font-inter), system-ui, sans-serif;
-  }
-  html[lang='en'] body {
-    font-family: var(--font-inter), var(--font-arabic), system-ui, sans-serif;
-  }
-
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin: 0;
     font-weight: 700;
-    letter-spacing: -0.015em;
+    letter-spacing: -0.012em;
     line-height: 1.2;
     text-wrap: balance;
   }
 
-  /*
-   * Arabic headings keep neutral tracking.
-   *
-   * Arabic letters join along a baseline; negative letter-spacing pulls those
-   * joins apart and breaks the word shape. This overrides the Latin-tuned
-   * tracking on the display scale for Arabic only, and leaves digits alone —
-   * numerals do benefit from tight tracking.
-   */
+  h1,
+  h2 {
+    font-family: var(--font-display), Georgia, serif;
+    font-weight: 700;
+  }
+
   html[lang='ar'] :is(h1, h2, h3, h4, h5, h6) {
     letter-spacing: normal;
-    line-height: 1.34;
+    line-height: 1.32;
+  }
+
+  html[lang='ar'] :is(h1, h2) {
+    line-height: 1.18;
+    font-weight: 700;
   }
 
   p {
@@ -210,20 +126,31 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--orange-500);
+    outline: 2px solid var(--gold-500);
     outline-offset: 3px;
-    border-radius: 4px;
+    border-radius: 6px;
   }
 
   ::selection {
-    background-color: rgba(232, 119, 34, 0.22);
-    color: var(--navy-900);
+    background-color: rgba(212, 175, 55, 0.28);
+    color: var(--navy-950);
   }
 
-  ::-webkit-scrollbar { width: 11px; height: 11px; }
-  ::-webkit-scrollbar-track { background: #eef1f5; }
-  ::-webkit-scrollbar-thumb { background: #c3ced9; border-radius: 99px; border: 3px solid #eef1f5; }
-  ::-webkit-scrollbar-thumb:hover { background: var(--navy-500); }
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #efe6d3;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #cbb887;
+    border-radius: 99px;
+    border: 3px solid #efe6d3;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--gold-500);
+  }
 }
 
 /* ==========================================================================
@@ -236,45 +163,51 @@
     margin-inline: auto;
     padding-inline: 1.25rem;
   }
-  @media (min-width: 640px) { .shell { padding-inline: 1.5rem; } }
-  @media (min-width: 1024px) { .shell { padding-inline: 2.5rem; } }
+  @media (min-width: 640px) {
+    .shell {
+      padding-inline: 1.75rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .shell {
+      padding-inline: 2.75rem;
+    }
+  }
 
   /* ---- Context roles ---------------------------------------------------- */
-  /*
-   * Dark context. Flips the text-role variables and re-declares `color`, because
-   * `color` is an inherited *computed* value: a variable change on an ancestor
-   * cannot retroactively change a colour already resolved on `body`.
-   *
-   * Declared after `.btn-*` so these context classes always win over a button's
-   * own colours when the two are combined.
-   */
   .on-dark {
     color: #ffffff;
     --text-strong: #ffffff;
-    --text-body: #c9d6e6;
-    --text-soft: #a9bcd4;
-    --text-accent: #f0a768;
-    --icon-stroke: #ffffff;
-    --hairline: rgba(255, 255, 255, 0.14);
-    --hairline-strong: rgba(255, 255, 255, 0.24);
+    --text-body: #c9d9cf;
+    --text-soft: #a4b9ad;
+    --text-accent: #e9d09a;
+    --icon-stroke: #f2e2b8;
+    --hairline: rgba(242, 226, 184, 0.16);
+    --hairline-strong: rgba(242, 226, 184, 0.3);
   }
 
-  /*
-   * Light context — the counterpart to `.on-dark`.
-   *
-   * Apply to any light surface (chip, card, button) that can sit inside a dark
-   * section, so its role colours stay readable instead of inheriting the dark
-   * section's white. This is what stops "white text on a white chip".
-   */
   .on-light {
-    color: #0a1a33;
-    --text-strong: #0a1a33;
-    --text-body: #34455c;
-    --text-soft: #5a6b81;
-    --text-accent: #a7480d;
-    --icon-stroke: #1b4f8a;
-    --hairline: #e3e7ed;
-    --hairline-strong: #cdd5e0;
+    color: var(--ink);
+    --text-strong: var(--ink);
+    --text-body: var(--ink-body);
+    --text-soft: var(--ink-soft);
+    --text-accent: #8a641d;
+    --icon-stroke: var(--ink);
+    --hairline: rgba(18, 42, 34, 0.14);
+    --hairline-strong: rgba(18, 42, 34, 0.26);
+  }
+
+  .text-muted {
+    color: var(--text-soft);
+  }
+  .text-body {
+    color: var(--text-body);
+  }
+  .text-strong {
+    color: var(--text-strong);
+  }
+  .text-accent {
+    color: var(--text-accent);
   }
 
   /* ---- Buttons ---------------------------------------------------------- */
@@ -282,116 +215,267 @@
   .btn-primary,
   .btn-accent,
   .btn-outline,
-  .btn-ghost-dark {
+  .btn-ghost-dark,
+  .btn-gold-outline {
     position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    border-radius: 0.5rem;
-    padding: 0.8125rem 1.5rem;
+    gap: 0.6rem;
+    border-radius: 999px;
+    padding: 0.9rem 1.75rem;
     font-size: 0.875rem;
-    font-weight: 600;
+    font-weight: 700;
     line-height: 1.3;
     text-align: center;
-    transition: background-color 220ms ease, color 220ms ease,
-      border-color 220ms ease, transform 220ms ease;
+    white-space: nowrap;
+    transition:
+      background-color 260ms ease,
+      color 260ms ease,
+      border-color 260ms ease,
+      transform 260ms ease,
+      box-shadow 260ms ease;
     cursor: pointer;
     user-select: none;
   }
-  .btn:disabled { cursor: not-allowed; opacity: 0.55; }
+  .btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
 
   .btn-primary {
     background-color: var(--navy-900);
-    color: #fff;
+    color: #fbf7ee;
+    box-shadow: 0 16px 38px -22px rgba(7, 31, 23, 0.75);
   }
-  .btn-primary:hover { background-color: var(--navy-500); }
-  .btn-primary:active { transform: translateY(1px); }
+  .btn-primary:hover {
+    background-color: var(--navy-600);
+    transform: translateY(-1px);
+  }
 
   .btn-accent {
-    background-color: #e0b93a;
-    color: #16213a;
+    background: var(--gold-gradient);
+    color: #172d24;
+    box-shadow: 0 18px 42px -24px rgba(185, 138, 47, 0.9);
   }
-  .btn-accent:hover { background-color: #c9a227; }
+  .btn-accent:hover {
+    background: linear-gradient(135deg, #f6e8c4, #dfbd72 55%, #c1962f);
+    transform: translateY(-2px);
+    box-shadow: 0 24px 54px -24px rgba(185, 138, 47, 0.9);
+  }
 
   .btn-outline {
-    border: 1px solid var(--hairline);
-    background-color: #fff;
-    color: var(--navy-800);
+    border: 1px solid var(--hairline-strong);
+    background-color: transparent;
+    color: var(--text-strong);
   }
-  .btn-outline:hover { border-color: var(--navy-500); color: var(--navy-500); }
+  .btn-outline:hover {
+    border-color: var(--gold-600);
+    color: var(--text-accent);
+  }
 
   .btn-ghost-dark {
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    background-color: transparent;
-    color: #fff;
+    border: 1px solid rgba(242, 226, 184, 0.38);
+    background-color: rgba(255, 255, 255, 0.02);
+    color: #fbf7ee;
+    backdrop-filter: blur(6px);
   }
-  .btn-ghost-dark:hover { border-color: #fff; background-color: rgba(255, 255, 255, 0.08); }
+  .btn-ghost-dark:hover {
+    border-color: var(--gold-400);
+    background-color: rgba(242, 226, 184, 0.1);
+    transform: translateY(-1px);
+  }
 
-  /* ---- Text roles ------------------------------------------------------ */
-  .text-muted { color: var(--text-soft); }
-  .text-body { color: var(--text-body); }
-  .text-strong { color: var(--text-strong); }
-  .text-accent { color: var(--text-accent); }
+  .btn-gold-outline {
+    border: 1px solid rgba(212, 175, 55, 0.65);
+    background: transparent;
+    color: var(--gold-200);
+  }
+  .btn-gold-outline:hover {
+    background: rgba(212, 175, 55, 0.14);
+    border-color: var(--gold-300);
+  }
 
-  /*
-   * Brand rule pinned to the top edge of a card. The element is absolutely
-   * positioned, so its parent must be `relative` or it anchors to the wrong
-   * ancestor and paints across the whole section.
-   *
-   * Uses `to right` rather than `to inline-end`: the logical gradient keyword
-   * is not supported everywhere, and an unsupported value drops the whole
-   * declaration, leaving the bar invisible.
-   */
-  .accent-bar {
-    position: absolute;
-    inset-inline: 0;
-    top: 0;
-    height: 3px;
-    background-color: var(--orange-500);
-    background-image: linear-gradient(
-      to right,
-      var(--orange-700),
-      var(--orange-500) 45%,
-      #f0a768
-    );
+  .btn-ghost-light {
+    border: 1px solid var(--hairline-strong);
+    background: transparent;
+    color: var(--ink);
+    border-radius: 999px;
+    padding: 0.7rem 1.4rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+  }
+  .btn-ghost-light:hover {
+    border-color: var(--gold-600);
+    color: var(--gold-700);
   }
 
   /* ---- Labels ----------------------------------------------------------- */
   .eyebrow {
     display: inline-flex;
     align-items: center;
-    gap: 0.625rem;
-    font-size: clamp(0.75rem, 1.5vw, 0.8125rem);
+    gap: 0.7rem;
+    font-family: var(--font-sans);
+    font-size: clamp(0.72rem, 1.4vw, 0.8rem);
     font-weight: 700;
-    line-height: 1.4;
+    line-height: 1.5;
     text-transform: uppercase;
-    letter-spacing: 0.14em;
+    letter-spacing: 0.17em;
     color: var(--text-accent);
   }
   .eyebrow::before {
     content: '';
-    width: 1.5rem;
-    height: 2px;
-    background-color: currentColor;
+    width: 2rem;
+    height: 1px;
+    background: currentColor;
     flex: none;
+    opacity: 0.85;
+  }
+  .eyebrow::after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    flex: none;
+    transform: rotate(45deg);
+    border: 1px solid currentColor;
   }
 
   /* ---- Surfaces --------------------------------------------------------- */
   .card {
     border: 1px solid var(--hairline);
-    border-radius: 0.875rem;
-    background-color: #fff;
+    border-radius: 1.25rem;
+    background-color: #fffdf7;
   }
 
   .card-dark {
-    border: 1px solid rgba(255, 255, 255, 0.12);
-    border-radius: 0.875rem;
-    background-color: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(242, 226, 184, 0.14);
+    border-radius: 1.25rem;
+    background-color: rgba(255, 255, 255, 0.035);
+    backdrop-filter: blur(10px);
   }
 
-  /* ---- Text helpers ----------------------------------------------------- */
+  .panel-ivory {
+    background: linear-gradient(160deg, #fffdf7 0%, #f8f1e1 100%);
+    border: 1px solid var(--hairline-gold);
+  }
+
+  .panel-pine {
+    background:
+      radial-gradient(120% 90% at 100% 0%, rgba(212, 175, 55, 0.12), transparent 55%),
+      linear-gradient(155deg, #12392b 0%, #071f17 100%);
+    border: 1px solid rgba(242, 226, 184, 0.16);
+  }
+
+  /* ---- Decorative motifs ------------------------------------------------ */
+  .accent-bar {
+    position: absolute;
+    inset-inline: 0;
+    top: 0;
+    height: 2px;
+    background-image: var(--gold-gradient);
+  }
+
+  .gold-rule {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, transparent, rgba(186, 149, 43, 0.55), transparent);
+  }
+
+  .gold-rule-start {
+    height: 1px;
+    width: 5rem;
+    background: linear-gradient(90deg, rgba(212, 175, 55, 0.9), transparent);
+  }
+  html[dir='rtl'] .gold-rule-start {
+    background: linear-gradient(270deg, rgba(212, 175, 55, 0.9), transparent);
+  }
+
+  .bg-gold-gradient {
+    background: var(--gold-gradient);
+  }
+
+  .text-gold-gradient {
+    color: var(--gold-500);
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .pattern-stars {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 72 72'%3E%3Cg fill='none' stroke='%23ba952b' stroke-opacity='.22'%3E%3Cpath d='M36 12l5 14 14 5-14 5-5 14-5-14-14-5 14-5z'/%3E%3Cpath d='M36 20l3 11 11 3-11 3-3 11-3-11-11-3 11-3z' stroke-opacity='.08'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 72px 72px;
+  }
+
+  .pattern-dots {
+    background-image: radial-gradient(rgba(186, 149, 43, 0.24) 1px, transparent 1px);
+    background-size: 22px 22px;
+  }
+
+  .grain::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.18;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+    mix-blend-mode: overlay;
+  }
+
+  .arch {
+    border-radius: 48% 48% 1.35rem 1.35rem / 34% 34% 1.35rem 1.35rem;
+    overflow: hidden;
+  }
+
+  .arch-sm {
+    border-radius: 1.35rem 1.35rem 1.35rem 1.35rem;
+    overflow: hidden;
+  }
+
+  .arch-frame {
+    position: relative;
+  }
+  .arch-frame::before {
+    content: '';
+    position: absolute;
+    inset: -0.6rem;
+    border: 1px solid rgba(212, 175, 55, 0.42);
+    border-radius: 48% 48% 1.8rem 1.8rem / 34% 34% 1.8rem 1.8rem;
+    pointer-events: none;
+  }
+
+  .star-watermark {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.14;
+    color: var(--gold-500);
+  }
+
+  /* ---- Marquee ---------------------------------------------------------- */
+  .marquee-track {
+    display: flex;
+    width: max-content;
+    animation: marquee-x 46s linear infinite;
+    will-change: transform;
+  }
+  html[dir='rtl'] .marquee-track {
+    animation-name: marquee-rtl;
+  }
+  .marquee-track:hover {
+    animation-play-state: paused;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* ---- Typography helpers ---------------------------------------------- */
   .numeral {
+    font-family: var(--font-inter), var(--font-tajawal), system-ui, sans-serif;
     font-variant-numeric: tabular-nums;
     font-weight: 700;
     line-height: 1;
@@ -418,38 +502,80 @@
     transform-origin: right center;
     transition: transform 260ms ease;
   }
-  .link-underline:hover::after { transform: scaleX(1); transform-origin: left center; }
-  html[dir='rtl'] .link-underline::after { transform-origin: left center; }
-  html[dir='rtl'] .link-underline:hover::after { transform-origin: right center; }
+  .link-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: left center;
+  }
+  html[dir='rtl'] .link-underline::after {
+    transform-origin: left center;
+  }
+  html[dir='rtl'] .link-underline:hover::after {
+    transform-origin: right center;
+  }
 
-  .force-ltr { direction: ltr; unicode-bidi: isolate; }
-  .force-rtl { direction: rtl; unicode-bidi: isolate; }
+  .force-ltr {
+    direction: ltr;
+    unicode-bidi: isolate;
+  }
+  .force-rtl {
+    direction: rtl;
+    unicode-bidi: isolate;
+  }
 }
 
-/* ==========================================================================
-   Utilities
-   ========================================================================== */
+/* Needed by `.marquee-track` in both directions. */
+@keyframes marquee-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes marquee-rtl {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(50%);
+  }
+}
+
 @layer utilities {
-  .no-scrollbar::-webkit-scrollbar { display: none; }
-  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 
-  .tabular { font-variant-numeric: tabular-nums; }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
 
-  /* Soft, shape-based fade used instead of grid patterns. */
   .mask-soft-b {
-    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 58%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 58%, transparent 100%);
   }
 
   .mask-soft-x {
-    -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
-    mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 7%, black 93%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 7%, black 93%, transparent);
+  }
+
+  .bg-surface-alt {
+    background-color: var(--surface-alt);
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
@@ -458,6 +584,12 @@
 }
 
 @media print {
-  header, footer, .no-print { display: none !important; }
-  body { background: #fff; }
+  header,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+  body {
+    background: #fff;
+  }
 }
