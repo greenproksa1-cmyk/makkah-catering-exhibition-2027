@@ -75,6 +75,16 @@ export function PartnersPage({ locale, dict }: { locale: Locale; dict: Dictionar
           />
 
           <div className="shell relative z-10">
+            <motion.div {...rise(0)} className="mb-7">
+              <Image
+                src="/brand/logo-mark-light.png"
+                alt=""
+                width={1753}
+                height={1965}
+                priority
+                className="h-20 w-auto"
+              />
+            </motion.div>
             <motion.p {...rise(0.02)} className="eyebrow text-gold-300">
               {t.eyebrowEn}
             </motion.p>

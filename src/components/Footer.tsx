@@ -228,16 +228,15 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
         {/* Link columns */}
         <div className="grid gap-10 py-12 sm:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="flex items-center gap-2.5 text-gold-300">
-              <StarMark className="h-4 w-4" filled />
-              <p className="text-label-2xs font-bold uppercase tracking-[0.18em]">
-                {isAr ? 'معرض مكة' : 'Makkah Expo'}
-              </p>
-            </div>
-            <p className="mt-4 max-w-xs font-display text-[1.45rem] font-bold leading-snug text-white">
-              {isAr ? dict.event.wordmarkAr : dict.event.wordmarkEn}
-            </p>
-            <p className="mt-3 border-t border-white/10 pt-4 font-display text-body-md italic leading-relaxed text-gold-200/80">
+            <Image
+              src="/brand/logo-full-light.png"
+              alt={isAr ? dict.event.wordmarkAr : dict.event.wordmarkEn}
+              width={4642}
+              height={2908}
+              sizes="220px"
+              className="h-auto w-[190px]"
+            />
+            <p className="mt-5 border-t border-white/10 pt-4 font-display text-body-md italic leading-relaxed text-gold-200/80">
               {dict.event.tagline}
             </p>
           </div>

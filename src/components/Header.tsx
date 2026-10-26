@@ -2,6 +2,7 @@
 
 import { useCallback, useEffect, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
+import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import type { Locale } from '@/lib/i18n';
@@ -138,16 +139,14 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
             aria-label={isAr ? dict.event.wordmarkAr : dict.event.wordmarkEn}
             className="group flex min-w-0 shrink items-center gap-3 rounded py-1"
           >
-            <span
-              className={cn(
-                'relative flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-colors duration-300',
-                light ? 'border-gold-600/45' : 'border-gold-400/45',
-              )}
-            >
-              <StarMark className={cn('h-5 w-5', light ? 'text-gold-700' : 'text-gold-300')} />
-              <span
-                aria-hidden="true"
-                className="absolute inset-[-4px] rounded-full border border-dashed border-gold-500/20"
+            <span className="relative flex h-12 w-12 shrink-0 items-center justify-center">
+              <Image
+                src={light ? '/brand/logo-mark.png' : '/brand/logo-mark-light.png'}
+                alt=""
+                width={96}
+                height={108}
+                priority
+                className="h-11 w-auto drop-shadow-[0_1px_6px_rgba(0,0,0,0.18)]"
               />
             </span>
             <span className="min-w-0 leading-none">
