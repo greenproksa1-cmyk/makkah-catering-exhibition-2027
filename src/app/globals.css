@@ -476,7 +476,8 @@
   /* ---- Typography helpers ---------------------------------------------- */
   .numeral {
     font-family: var(--font-inter), var(--font-tajawal), system-ui, sans-serif;
-    font-variant-numeric: tabular-nums;
+    font-variant-numeric: lining-nums tabular-nums;
+    font-feature-settings: 'lnum' 1, 'tnum' 1;
     font-weight: 700;
     line-height: 1;
     letter-spacing: -0.02em;

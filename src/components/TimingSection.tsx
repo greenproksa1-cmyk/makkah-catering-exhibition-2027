@@ -20,7 +20,7 @@ export function TimingSection({ locale, dict }: { locale: Locale; dict: Dictiona
     {
       number: '02',
       period: isAr ? 'المعرض' : 'The exhibition',
-      date: isAr ? '١٠ – ١٢ يناير ٢٠٢٧' : '10 – 12 January 2027',
+      date: isAr ? '10 – 12 يناير 2027' : '10 – 12 January 2027',
       body: isAr
         ? 'ثلاثة أيام من اللقاءات المباشرة بين صنّاع القرار والموردين في قلب مكة المكرمة.'
         : 'Three days of direct meetings between decision-makers and suppliers in the heart of Makkah.',

@@ -155,7 +155,7 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               </p>
               <span aria-hidden="true" className="hidden h-px w-12 bg-gold-500/50 sm:block" />
               <p className="text-label-2xs font-semibold text-gold-200/90">
-                {isAr ? '١٠ – ١٢ يناير ٢٠٢٧' : '10 – 12 January 2027'}
+                {isAr ? '10 – 12 يناير 2027' : '10 – 12 January 2027'}
               </p>
             </motion.div>
 
@@ -229,7 +229,7 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
             <div className="mt-5 flex items-center justify-between gap-3 rounded-full border border-gold-400/25 bg-gold-500/10 px-4 py-2.5">
               <span className="text-label-2xs font-bold text-gold-200">{dict.earlyBird.badge}</span>
               <span className="text-label-2xs text-white/65">
-                {isAr ? 'حتى ١٥ نوفمبر ٢٠٢٦' : 'until 15 Nov 2026'}
+                {isAr ? 'حتى 15 نوفمبر 2026' : 'until 15 Nov 2026'}
               </span>
             </div>
           </motion.div>

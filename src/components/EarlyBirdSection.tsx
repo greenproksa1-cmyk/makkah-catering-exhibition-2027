@@ -84,7 +84,7 @@ export function EarlyBirdSection({ locale, dict }: { locale: Locale; dict: Dicti
             {[
               isAr ? 'سعر تأسيسي لجميع المساحات' : 'Founding rate for every stand size',
               isAr ? 'تثبيت السعر عند تأكيد الحجز' : 'Price locked on confirmation',
-              isAr ? 'دفعة أولى قبل ١٥ نوفمبر ٢٠٢٦' : 'First payment before 15 Nov 2026',
+              isAr ? 'دفعة أولى قبل 15 نوفمبر 2026' : 'First payment before 15 Nov 2026',
               isAr ? 'موقع داخل المنطقة المركزية' : 'Location inside central Makkah',
             ].map((item) => (
               <li key={item} className="flex items-start gap-2.5 text-body-xs leading-relaxed text-white/70">
@@ -101,7 +101,7 @@ export function EarlyBirdSection({ locale, dict }: { locale: Locale; dict: Dicti
             <div className="overflow-hidden rounded-[1.9rem] border border-gold-400/35 shadow-card-lg">
               <div className="grid lg:grid-cols-[0.86fr_1.14fr]">
                 {/* Price side */}
-                <div className="relative overflow-hidden bg-gold-gradient p-6 text-navy-950 sm:p-8">
+                <div className="relative flex h-full flex-col overflow-hidden bg-gold-gradient p-6 text-navy-950 sm:p-8">
                   <StarMark
                     aria-hidden="true"
                     className="pointer-events-none absolute -end-6 -top-6 h-32 w-32 text-navy-950/10"
@@ -111,32 +111,54 @@ export function EarlyBirdSection({ locale, dict }: { locale: Locale; dict: Dicti
                     {t.earlyLabel}
                   </p>
                   <p className="mt-3 flex items-end gap-2">
-                    <span className="numeral font-display text-[3.4rem] font-bold leading-none sm:text-[4rem]">
+                    <span className="numeral text-[3.4rem] font-bold leading-none sm:text-[4rem]">
                       {money.format(t.earlyPrice)}
                     </span>
-                    <span className="mb-1.5 text-label-xs font-bold text-navy-900/70">
+                    <span className="mb-1.5 whitespace-nowrap text-label-xs font-bold text-navy-900/70">
                       {t.currency}
                     </span>
                   </p>
 
-                  <p className="mt-4 inline-flex items-center gap-2 rounded-full bg-navy-950/10 px-3 py-1.5 text-label-2xs font-semibold text-navy-900/75">
+                  <p className="mt-4 inline-flex items-center gap-2 self-start rounded-full bg-navy-950/10 px-3 py-1.5 text-label-2xs font-semibold text-navy-900/75">
                     <span className="line-through decoration-navy-900/50">
                       {money.format(t.regularPrice)}
                     </span>
                     {t.regularLabel}
                   </p>
 
-                  <div className="mt-8 border-t border-navy-950/20 pt-5">
+                  <div className="mt-7 border-t border-navy-950/20 pt-5">
                     <p className="text-label-2xs font-bold uppercase tracking-[0.14em] text-navy-900/60">
                       {isAr ? 'الوفورات' : 'Your saving'}
                     </p>
-                    <p className="numeral mt-1 font-display text-[2rem] font-bold leading-none text-navy-950">
+                    <p className="numeral mt-1 text-[2rem] font-bold leading-none text-navy-950">
                       {money.format(totals.saving)}
                       <span className="ms-1 text-label-xs font-bold">{isAr ? 'ر.س' : 'SAR'}</span>
                     </p>
                   </div>
 
-                  <p className="mt-6 text-[0.68rem] font-medium leading-relaxed text-navy-900/65">
+                  <div className="mt-auto border-t border-navy-950/15 pt-5">
+                    <p className="text-label-2xs font-bold uppercase tracking-[0.14em] text-navy-900/60">
+                      {isAr ? 'خطوات تثبيت السعر' : 'How the rate is locked'}
+                    </p>
+                    <ol className="mt-3 space-y-2.5">
+                      {(isAr
+                        ? ['اختر مساحة الجناح', 'ادفع الدفعة الأولى', 'يُثبَّت السعر التأسيسي']
+                        : ['Choose your stand', 'Pay the first instalment', 'Your rate is locked']
+                      ).map((step, i) => (
+                        <li
+                          key={step}
+                          className="flex items-center gap-2.5 text-label-xs font-semibold text-navy-900/80"
+                        >
+                          <span className="numeral flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-navy-950/25 text-[0.6rem]">
+                            {String(i + 1).padStart(2, '0')}
+                          </span>
+                          {step}
+                        </li>
+                      ))}
+                    </ol>
+                  </div>
+
+                  <p className="mt-4 text-[0.68rem] font-medium leading-relaxed text-navy-900/65">
                     {isAr ? 'الأسعار لا تشمل ضريبة القيمة المضافة.' : 'Prices exclude VAT.'}
                   </p>
                 </div>
@@ -202,7 +224,7 @@ export function EarlyBirdSection({ locale, dict }: { locale: Locale; dict: Dicti
                     </div>
                     <div className="flex items-baseline justify-between gap-4 rounded-xl bg-navy-950 px-4 py-3 text-white">
                       <dt className="text-label-xs font-semibold">{t.earlyLabel}</dt>
-                      <dd className="numeral font-display text-[1.6rem] font-bold">
+                      <dd className="numeral text-[1.6rem] font-bold">
                         {money.format(totals.early)}
                         <span className="ms-1 text-[0.62rem] font-medium text-white/60">
                           {isAr ? 'ر.س' : 'SAR'}

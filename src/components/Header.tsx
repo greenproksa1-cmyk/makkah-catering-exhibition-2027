@@ -279,7 +279,7 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
           aria-label={dict.nav.label}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          className="on-dark fixed inset-0 z-40 overflow-y-auto bg-navy-950 px-6 pb-12 pt-[calc(var(--header-h)+1.5rem)] xl:hidden"
+          className="on-dark fixed inset-0 z-[45] overflow-y-auto overscroll-contain bg-navy-950 px-6 pb-[calc(4rem+env(safe-area-inset-bottom))] pt-[calc(var(--header-h)+1.5rem)] xl:hidden"
         >
           <div aria-hidden="true" className="pattern-stars absolute inset-0 opacity-30" />
           <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-b from-transparent via-navy-950/30 to-navy-950" />
