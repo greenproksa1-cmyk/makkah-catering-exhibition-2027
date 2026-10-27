@@ -931,7 +931,7 @@
     "items": [
       {
         "id": "makkah-municipality",
-        "logo": "",
+        "logo": "/images/partners/makkah-municipality.png",
         "nameAr": "أمانة العاصمة المقدسة",
         "nameEn": "Holy Makkah Municipality",
         "roleAr": "شريك تنظيمي",
@@ -953,7 +953,7 @@
       },
       {
         "id": "makkah-chamber",
-        "logo": "",
+        "logo": "/images/partners/makkah-chamber.png",
         "nameAr": "غرفة مكة المكرمة",
         "nameEn": "Makkah Chamber",
         "roleAr": "شريك قطاع الأعمال",
@@ -964,7 +964,7 @@
       },
       {
         "id": "tourism",
-        "logo": "",
+        "logo": "/images/partners/saudi-tourism.png",
         "nameAr": "الهيئة السعودية للسياحة",
         "nameEn": "Saudi Tourism Authority",
         "roleAr": "دعم قطاع الضيافة",
@@ -983,6 +983,17 @@
         "logoScale": 42,
         "logoW": 560,
         "logoH": 300
+      },
+      {
+        "id": "catering-association",
+        "logo": "/images/partners/catering-association.png",
+        "nameAr": "جمعية متعهدي الإعاشة والضيافة",
+        "nameEn": "Saudi Catering Association",
+        "roleAr": "شريك قطاع الإعاشة",
+        "roleEn": "Catering sector partner",
+        "logoScale": 52,
+        "logoW": 1024,
+        "logoH": 1024
       },
       {
         "id": "green-projects",
