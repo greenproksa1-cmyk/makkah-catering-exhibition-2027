@@ -124,7 +124,7 @@ export function PartnersPage({ locale, dict }: { locale: Locale; dict: Dictionar
                     the wall would stop reading as six peers. A minimum lets
                     each mark take the height its own width implies.
                   */}
-                  <div className="flex min-h-24 items-center justify-center sm:min-h-28">
+                  <div className="flex h-28 items-center justify-center sm:h-32">
                     {partner.logo ? (
                       <PartnerMark
                         src={partner.logo}
@@ -248,7 +248,7 @@ function PartnerMark({
       width={width}
       height={height}
       // height follows from the real ratio, so the mark is never distorted
-      className="h-auto max-w-full"
+      className="h-auto max-h-full max-w-full"
       style={{ width: `${scale}%` }}
       onError={() => setFailed(true)}
     />

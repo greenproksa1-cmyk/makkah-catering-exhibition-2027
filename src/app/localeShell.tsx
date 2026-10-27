@@ -93,7 +93,7 @@ export function localeMetadata(locale: Locale): Metadata {
         'max-video-preview': -1,
       },
     },
-    icons: { icon: [{ url: '/icon.svg', type: 'image/svg+xml' }] },
+    icons: { icon: [{ url: '/icon.png', type: 'image/png', sizes: '512x512' }] },
     other: {
       'x-locale': locale,
       'content-language': localeHtmlLang[locale],
@@ -141,7 +141,7 @@ export function EventJsonLd({ locale }: { locale: Locale }) {
           url: facts.organizer.url,
           email: facts.organizer.email,
           telephone: facts.organizer.telephone,
-          logo: `${siteUrl}/icon.svg`,
+          logo: `${siteUrl}/brand/icon-512.png`,
           address: {
             '@type': 'PostalAddress',
             streetAddress: facts.organizer.address.streetAddress,

@@ -495,7 +495,6 @@
           "International Hajj and Umrah missions",
           "Regulatory and supervisory bodies",
           "Holy Makkah Municipality",
-          "Saudi Food & Drug Authority",
           "Holy sites operators",
           "Financial and investment institutions"
         ]
@@ -933,20 +932,9 @@
         "nameEn": "Holy Makkah Municipality",
         "roleAr": "شريك تنظيمي",
         "roleEn": "Regulatory partner",
-        "logoScale": 45,
-        "logoW": 600,
-        "logoH": 300
-      },
-      {
-        "id": "sfda",
-        "logo": "",
-        "nameAr": "الهيئة العامة للغذاء والدواء",
-        "nameEn": "Saudi Food & Drug Authority",
-        "roleAr": "سلامة الغذاء",
-        "roleEn": "Food safety",
-        "logoScale": 42,
-        "logoW": 580,
-        "logoH": 290
+        "logoScale": 64,
+        "logoW": 795,
+        "logoH": 213
       },
       {
         "id": "makkah-chamber",
@@ -955,9 +943,9 @@
         "nameEn": "Makkah Chamber",
         "roleAr": "شريك قطاع الأعمال",
         "roleEn": "Business sector partner",
-        "logoScale": 40,
-        "logoW": 550,
-        "logoH": 280
+        "logoScale": 50,
+        "logoW": 900,
+        "logoH": 399
       },
       {
         "id": "tourism",
@@ -966,20 +954,9 @@
         "nameEn": "Saudi Tourism Authority",
         "roleAr": "دعم قطاع الضيافة",
         "roleEn": "Hospitality sector support",
-        "logoScale": 40,
-        "logoW": 550,
-        "logoH": 280
-      },
-      {
-        "id": "hajj",
-        "logo": "",
-        "nameAr": "وزارة الحج والعمرة",
-        "nameEn": "Ministry of Hajj and Umrah",
-        "roleAr": "خدمة ضيوف الرحمن",
-        "roleEn": "Pilgrim services",
-        "logoScale": 42,
-        "logoW": 560,
-        "logoH": 300
+        "logoScale": 62,
+        "logoW": 773,
+        "logoH": 224
       },
       {
         "id": "catering-association",
@@ -988,9 +965,9 @@
         "nameEn": "Saudi Catering Association",
         "roleAr": "شريك قطاع الإعاشة",
         "roleEn": "Catering sector partner",
-        "logoScale": 52,
-        "logoW": 1024,
-        "logoH": 1024
+        "logoScale": 39,
+        "logoW": 900,
+        "logoH": 635
       },
       {
         "id": "green-projects",
