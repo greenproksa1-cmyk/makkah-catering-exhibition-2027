@@ -14,6 +14,7 @@ import { StarMark } from './ui/Ornament';
 
 const NAV_IDS = [
   'introduction',
+  'market',
   'importance',
   'objectives',
   'ecosystem',
@@ -21,6 +22,7 @@ const NAV_IDS = [
   'experience',
   'business-value',
   'early-bird',
+  'sponsorship',
   'partners',
   'register',
 ];
@@ -116,8 +118,8 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const solid = scrolled || !onLanding;
   const light = solid && !menuOpen;
 
-  const wordmarkMain = isAr ? 'معرض مكة' : 'MAKKAH EXPO';
-  const wordmarkSub = isAr ? 'للإعاشة والتموين ٢٠٢٧' : 'CATERING & FOOD SUPPLY 2027';
+  const wordmarkMain = isAr ? 'منتدى مكة' : 'MAKKAH FORUM';
+  const wordmarkSub = isAr ? 'للإعاشة والتموين الغذائي ٢٠٢٧' : 'CATERING & FOOD SUPPLY 2027';
 
   return (
     <>
@@ -288,8 +290,8 @@ export function Header({ locale, dict }: { locale: Locale; dict: Dictionary }) {
               {isAr ? dict.event.heroKickerAr : dict.event.heroKickerEn}
             </p>
             <h2 className="mt-5 font-display text-[2.35rem] leading-tight text-white">
-              {isAr ? 'معرض مكة' : 'Makkah Expo'}
-              <span className="mt-1 block text-gold-300">{isAr ? 'للإعاشة والتموين ٢٠٢٧' : 'Catering & Food Supply 2027'}</span>
+              {isAr ? 'منتدى مكة' : 'Makkah Forum'}
+              <span className="mt-1 block text-gold-300">{isAr ? 'للإعاشة والتموين الغذائي ٢٠٢٧' : 'Catering & Food Supply 2027'}</span>
             </h2>
 
             <nav aria-label={dict.nav.label} className="mt-10">

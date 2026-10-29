@@ -105,7 +105,7 @@ export function EventExperience({ locale, dict }: { locale: Locale; dict: Dictio
         lead={t.lead}
         tone="dark"
         titleId="experience-title"
-        index="07"
+        index="08"
         titleClassName="max-w-[19ch]"
       />
 

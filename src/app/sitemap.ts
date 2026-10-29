@@ -22,7 +22,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     });
 
     // The profile's major chapters, all anchors on the same page.
-    for (const anchor of ['introduction', 'themes', 'objectives', 'ecosystem', 'visitors', 'business-value', 'experience', 'register']) {
+    for (const anchor of [
+      'introduction',
+      'market',
+      'themes',
+      'objectives',
+      'ecosystem',
+      'visitors',
+      'business-value',
+      'experience',
+      'sponsorship',
+      'register',
+    ]) {
       entries.push({
         url: `${siteUrl}/${locale}#${anchor}`,
         lastModified,
@@ -49,6 +60,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           ar: `${siteUrl}/ar/partners`,
           en: `${siteUrl}/en/partners`,
+        },
+      },
+    });
+  }
+
+  // Sponsorship packages are a dedicated sales page.
+  for (const locale of locales) {
+    entries.push({
+      url: `${siteUrl}/${locale}/sponsorship`,
+      lastModified,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+      alternates: {
+        languages: {
+          ar: `${siteUrl}/ar/sponsorship`,
+          en: `${siteUrl}/en/sponsorship`,
         },
       },
     });

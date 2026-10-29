@@ -50,7 +50,7 @@ export function EarlyBirdSection({ locale, dict }: { locale: Locale; dict: Dicti
             lead={t.lead}
             tone="dark"
             titleId="early-bird-title"
-            index="10"
+            index="11"
             titleClassName="max-w-[17ch]"
           />
 

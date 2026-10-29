@@ -25,7 +25,7 @@ export function Objectives({ locale, dict }: { locale: Locale; dict: Dictionary 
           title={t.title}
           tone="light"
           titleId="objectives-title"
-          index="04"
+          index="05"
           className="max-w-3xl"
           titleClassName="max-w-[17ch]"
         />

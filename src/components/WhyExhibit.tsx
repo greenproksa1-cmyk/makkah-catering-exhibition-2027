@@ -71,7 +71,7 @@ export function WhyExhibit({ locale, dict }: { locale: Locale; dict: Dictionary 
             lead={t.lead}
             tone="light"
             titleId="why-exhibit-title"
-            index="08"
+            index="09"
             titleClassName="max-w-[19ch]"
           />
 

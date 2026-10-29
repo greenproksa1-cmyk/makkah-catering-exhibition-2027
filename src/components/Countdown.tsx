@@ -113,8 +113,8 @@ export function Countdown({
         )}
       >
         {locale === 'ar'
-          ? 'انطلق المعرض — شكرًا لزيارتكم.'
-          : 'The Exhibition has launched — thank you for visiting.'}
+          ? 'انطلق المنتدى — شكرًا لزيارتكم.'
+          : 'The Forum has launched — thank you for visiting.'}
       </p>
     );
   }

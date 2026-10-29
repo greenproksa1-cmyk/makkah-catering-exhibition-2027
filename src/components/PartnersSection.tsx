@@ -47,7 +47,7 @@ export function PartnersSection({ locale, dict }: { locale: Locale; dict: Dictio
           lead={isAr ? t.leadAr : t.leadEn}
           tone="light"
           titleId="partners-grid-title"
-          index="11"
+          index="13"
           className="max-w-2xl"
           titleClassName="max-w-[18ch]"
         />

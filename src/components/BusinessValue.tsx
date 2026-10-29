@@ -27,7 +27,7 @@ export function BusinessValue({ locale, dict }: { locale: Locale; dict: Dictiona
           lead={t.lead}
           tone="light"
           titleId="business-value-title"
-          index="09"
+          index="10"
           titleClassName="max-w-[18ch]"
         />
 

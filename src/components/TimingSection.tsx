@@ -19,7 +19,7 @@ export function TimingSection({ locale, dict }: { locale: Locale; dict: Dictiona
     },
     {
       number: '02',
-      period: isAr ? 'المعرض' : 'The exhibition',
+      period: isAr ? 'المنتدى' : 'The Forum',
       date: isAr ? '10 – 12 يناير 2027' : '10 – 12 January 2027',
       body: isAr
         ? 'ثلاثة أيام من اللقاءات المباشرة بين صنّاع القرار والموردين في قلب مكة المكرمة.'
@@ -57,7 +57,7 @@ export function TimingSection({ locale, dict }: { locale: Locale; dict: Dictiona
         lead={t.lead}
         tone="light"
         titleId="timing-title"
-        index="03"
+        index="04"
         className="relative"
         titleClassName="max-w-[21ch]"
       />

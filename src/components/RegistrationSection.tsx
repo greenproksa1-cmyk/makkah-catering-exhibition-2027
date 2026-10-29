@@ -224,7 +224,7 @@ export function RegistrationSection({ locale, dict }: { locale: Locale; dict: Di
           lead={dict.register.lead}
           tone="dark"
           titleId="register-title"
-          index="12"
+          index="14"
           align="center"
           className="mx-auto max-w-3xl"
         />

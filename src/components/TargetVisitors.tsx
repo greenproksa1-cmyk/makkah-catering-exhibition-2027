@@ -26,7 +26,7 @@ export function TargetVisitors({ locale, dict }: { locale: Locale; dict: Diction
         lead={dict.visitors.lead}
         tone="light"
         titleId="visitors-title"
-        index="06"
+        index="07"
         titleClassName="max-w-[14ch]"
       />
 

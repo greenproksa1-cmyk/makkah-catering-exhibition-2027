@@ -69,7 +69,7 @@ export function ImportanceSection({ locale, dict }: { locale: Locale; dict: Dict
             lead={t.lead}
             tone="dark"
             titleId="importance-title"
-            index="02"
+            index="03"
             titleClassName="max-w-[16ch]"
           />
 

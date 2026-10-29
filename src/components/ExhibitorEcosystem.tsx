@@ -60,7 +60,7 @@ export function ExhibitorEcosystem({ locale, dict }: { locale: Locale; dict: Dic
         lead={dict.ecosystem.lead}
         tone="dark"
         titleId="ecosystem-title"
-        index="05"
+        index="06"
         titleClassName="max-w-[18ch]"
       />
 

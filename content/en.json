@@ -3,16 +3,16 @@
     "localeName": "English",
     "htmlLang": "en",
     "dir": "ltr",
-    "shortEventName": "Makkah Catering & Food Supply Exhibition 2027",
-    "title": "Makkah Catering & Food Supply Exhibition 2027 | Hilton Makkah Convention Hall",
-    "description": "A specialised exhibition and conference for catering, food supply and hospitality, connecting food and beverage suppliers and kitchen equipment providers with Makkah hotels, catering companies and Hajj and Umrah missions. 10–12 January 2027, Hilton Makkah Convention Hall, Saudi Arabia.",
-    "keywords": "Makkah exhibition, catering, food supply, hospitality, Makkah hotels, kitchen equipment, food and beverage, Hajj and Umrah, Saudi Arabia, 2027, exhibition and conference"
+    "shortEventName": "Makkah Catering & Food Supply Forum 2027",
+    "title": "Makkah Catering & Food Supply Forum 2027 | Hilton Makkah Convention Hall",
+    "description": "A specialised forum and conference for catering, food supply and hospitality, connecting food and beverage suppliers and kitchen equipment providers with Makkah hotels, catering companies and Hajj and Umrah missions. 10–12 January 2027, Hilton Makkah Convention Hall, Saudi Arabia.",
+    "keywords": "Makkah forum, catering, food supply, hospitality, Makkah hotels, kitchen equipment, food and beverage, Hajj and Umrah, Saudi Arabia, 2027, forum and conference"
   },
   "event": {
-    "nameAr": "معرض مكة للإعاشة والتموين 2027",
-    "nameEn": "Makkah Catering & Food Supply Exhibition 2027",
-    "wordmarkAr": "معرض مكة للإعاشة والتموين",
-    "wordmarkEn": "Makkah Catering & Food Supply Exhibition",
+    "nameAr": "منتدى مكة للإعاشة والتموين الغذائي 2027",
+    "nameEn": "Makkah Catering & Food Supply Forum 2027",
+    "wordmarkAr": "منتدى مكة للإعاشة والتموين الغذائي",
+    "wordmarkEn": "Makkah Catering & Food Supply Forum",
     "tagline": "From the heart of Makkah to the world's hospitality table",
     "dateLineAr": "10 – 12 يناير 2027",
     "dateLineEn": "10 – 12 January 2027",
@@ -25,8 +25,8 @@
     "startISO": "2027-01-10T09:00:00+03:00",
     "endISO": "2027-01-12T18:00:00+03:00",
     "isoDuration": "P3D",
-    "heroTitleAr": "معرض مكة للإعاشة والتموين 2027",
-    "heroTitleEn": "Makkah Catering & Food Supply Exhibition 2027",
+    "heroTitleAr": "منتدى مكة للإعاشة والتموين الغذائي 2027",
+    "heroTitleEn": "Makkah Catering & Food Supply Forum 2027",
     "heroKickerAr": "منصة الإعاشة والضيافة في قلب مكة المكرمة",
     "heroKickerEn": "The catering and hospitality platform at the heart of Makkah",
     "scrollLabelAr": "اكتشف المزيد",
@@ -54,6 +54,11 @@
       {
         "id": "business-value",
         "label": "Value"
+      },
+      {
+        "id": "sponsorship",
+        "label": "Packages",
+        "href": "/sponsorship"
       },
       {
         "id": "partners",
@@ -118,7 +123,7 @@
     "scrollHint": "Scroll to explore"
   },
   "hero": {
-    "countdownLabel": "Countdown to the exhibition",
+    "countdownLabel": "Countdown to the forum",
     "days": "Days",
     "hours": "Hours",
     "minutes": "Minutes",
@@ -158,28 +163,28 @@
     "title": "Makkah: the world's largest catering and hospitality market",
     "lead": "One business platform bringing food and beverage manufacturers and kitchen equipment suppliers together with Makkah hotels, catering companies and Hajj and Umrah missions.",
     "paragraphs": [
-      "Makkah welcomes millions of pilgrims and visitors throughout the year and hosts the largest concentration of hotels in the central zone, making it the most demanding market for catering services and high-efficiency kitchen equipment.",
-      "From this growing demand comes the Makkah Catering & Food Supply Exhibition 2027, bringing under one roof an integrated ecosystem of food and beverage manufacturers, catering and food supply companies, central kitchen equipment suppliers, refrigeration and packaging providers, alongside Makkah hotels, hospitality operators and Hajj and Umrah missions.",
-      "The exhibition is a genuine opportunity to build direct commercial partnerships, showcase the latest solutions that raise operational efficiency and guarantee food safety, and connect suppliers with the real decision-makers of Saudi Arabia's largest hospitality ecosystem."
+      "Makkah welcomes millions of pilgrims throughout the year and counts around 268,000 hotel rooms — 150,000 of them in the central area — making it the world’s largest hotel cluster and the market with the greatest demand for catering, food supply and central kitchen equipment.",
+      "As Saudi Vision 2030 accelerates toward welcoming more than 30 million Umrah pilgrims and 5 million Hajj pilgrims a year, the Makkah Catering & Food Supply Forum 2027 brings under one roof food and beverage manufacturers, catering and food supply companies, central kitchen equipment and cold chain suppliers, alongside Makkah hotels, hospitality operators and Hajj missions.",
+      "Food and beverage sales serving pilgrims reach about SAR 165 billion (USD 44.2 billion) with a compound annual growth rate of 4.1%; the Forum is the bridge that turns this demand into signed contracts between suppliers and decision-makers."
     ]
   },
   "importance": {
     "eyebrow": "The importance of location",
     "eyebrowEn": "THE IMPORTANCE OF LOCATION",
     "title": "From the heart of the central zone, where catering decisions are made",
-    "lead": "Location is the greatest competitive advantage: the exhibition takes place inside the very ecosystem it serves, steps away from the Holy Mosque and Makkah's largest hotels.",
+    "lead": "Location is the greatest competitive advantage: the forum takes place inside the very ecosystem it serves, steps away from the Holy Mosque and Makkah's largest hotels.",
     "cards": [
       {
         "number": "01",
         "title": "Heart of the central zone",
         "en": "Heart of the Central Zone",
-        "description": "A strategic position within the hotels and operating facilities that run catering for pilgrims and visitors around the clock."
+        "description": "A strategic position inside a central area of 150,000 hotel rooms, where catering for pilgrims is managed around the clock."
       },
       {
         "number": "02",
         "title": "A market that operates 365 days",
         "en": "A market that never sleeps",
-        "description": "Continuous demand beyond a single season, from hotel kitchens and catering companies to food warehouses, outlets and services."
+        "description": "Year-round demand that never stops: food and beverage sales serving pilgrims exceed SAR 165 billion, with direct domestic spending above SAR 4.39 billion a year."
       },
       {
         "number": "03",
@@ -189,13 +194,13 @@
       }
     ],
     "closingTitle": "Why you need to be here",
-    "closingText": "Because participating in Makkah is not simply attending an exhibition; it is direct entry into a year-round catering market serving pilgrims from across the world."
+    "closingText": "Because participating in Makkah is not simply attending a forum; it is direct entry into a year-round catering market serving pilgrims from across the world."
   },
   "timing": {
     "eyebrow": "The idea and timing",
     "eyebrowEn": "THE IDEA AND TIMING",
     "title": "Timed ahead of the season, so contracts are signed on time",
-    "lead": "The exhibition takes place in January 2027, ahead of the main Hajj and Umrah season, giving buyers and suppliers enough time to complete contracts and mobilise.",
+    "lead": "The Forum is held at the beginning of Sha’ban (10 January 2027) — the final window before the Ramadan and Hajj seasons, when catering contracts and operating budgets for millions of meals are decided.",
     "pills": [
       {
         "id": "1",
@@ -224,7 +229,7 @@
       }
     ],
     "bridgeTitle": "The trade bridge",
-    "closingLine": "One date. The largest demand meets the best supply."
+    "closingLine": "One window — bringing major demand and the best supply together 100 days before the season."
   },
   "objectives": {
     "eyebrow": "Objectives",
@@ -297,10 +302,10 @@
     ]
   },
   "ecosystem": {
-    "eyebrow": "Exhibition sectors",
-    "eyebrowEn": "EXHIBITION SECTORS",
+    "eyebrow": "Forum sectors",
+    "eyebrowEn": "FORUM SECTORS",
     "title": "Two core sectors and a complete supporting ecosystem",
-    "lead": "The exhibition covers the entire catering chain, from raw materials and equipment to operations, packaging and technology.",
+    "lead": "The forum covers the entire catering chain, from raw materials and equipment to operations, packaging and technology.",
     "hubAr": "الإعاشة والتموين",
     "hubEn": "Catering & Food Supply",
     "hint": "Select any sector to see its details",
@@ -453,8 +458,8 @@
   "visitors": {
     "eyebrow": "Target visitors",
     "eyebrowEn": "TARGET VISITORS",
-    "title": "Who does the exhibition welcome?",
-    "lead": "The exhibition welcomes decision-makers across the hospitality and catering ecosystem, from hotels and catering companies to Hajj missions and regulators.",
+    "title": "Who does the forum welcome?",
+    "lead": "The forum welcomes decision-makers across the hospitality and catering ecosystem, from hotels and catering companies to Hajj missions and regulators.",
     "hubAr": "أصحاب القرار",
     "hubEn": "Decision Makers",
     "items": [
@@ -564,7 +569,7 @@
       {
         "number": "01",
         "title": "Direct contracts",
-        "description": "Meet procurement and operations directors from hotels and catering companies, and sign your agreements at the exhibition instead of waiting for opportunities."
+        "description": "Meet procurement and operations directors from hotels and catering companies, and sign your agreements at the forum instead of waiting for opportunities."
       },
       {
         "number": "02",
@@ -588,7 +593,7 @@
       }
     ],
     "ctaTitle": "Don't miss contracting season",
-    "ctaBody": "Book your space now and put your brand in front of decision-makers in the heart of Makkah.",
+    "ctaBody": "Book your space or package now and put your brand in front of decision-makers in the heart of Makkah.",
     "ctaButton": "Book your space now"
   },
   "businessValue": {
@@ -651,7 +656,7 @@
     "eyebrow": "Event experience",
     "eyebrowEn": "EVENT EXPERIENCE",
     "title": "An integrated programme beyond a traditional showcase",
-    "lead": "The exhibition is accompanied by a programme of events and side activities that enhance its commercial and knowledge value:",
+    "lead": "The forum is accompanied by a programme of events and side activities that enhance its commercial and knowledge value:",
     "groupA": "Side programme 01–05",
     "groupB": "Side programme 06–10",
     "items": [
@@ -720,7 +725,7 @@
   "earlyBird": {
     "eyebrow": "Early-bird offer",
     "eyebrowEn": "EARLY-BIRD OFFER",
-    "title": "30% off exhibition space until 15 November 2026",
+    "title": "30% off forum space until 15 November 2026",
     "lead": "Book your space before the offer ends and benefit from the founding rate. Every square metre is priced at the early-bird rate for all stand sizes.",
     "badge": "30% OFF",
     "discountPercent": 30,
@@ -770,7 +775,7 @@
     ],
     "venueTitle": "Venue",
     "venueTba": "Hilton Makkah Convention Hall",
-    "venueNote": "A fully equipped convention hall in the central zone, with high operational flexibility and hospitality services befitting exhibition visitors.",
+    "venueNote": "A fully equipped convention hall in the central zone, with high operational flexibility and hospitality services befitting forum visitors.",
     "datesTitle": "Dates",
     "startDate": "10 – 12 January 2027",
     "duration": "Three days | 2 – 4 Sha'ban 1448",
@@ -864,7 +869,7 @@
         "labelEn": "Not decided yet"
       }
     ],
-    "consent": "By submitting this form you agree to be contacted by the Green Projects team regarding the exhibition.",
+    "consent": "By submitting this form you agree to be contacted by the Green Projects team regarding the forum.",
     "validation": {
       "required": "This field is required",
       "email": "Please enter a valid email address",
@@ -896,8 +901,8 @@
     "website": "www.greeen-pro.com",
     "websiteUrl": "https://www.greeen-pro.com",
     "whatsappLabel": "Chat on WhatsApp",
-    "noteAr": "Green Projects — project owner and organiser of Makkah Catering & Food Supply Exhibition 2027.",
-    "noteEn": "Green Projects — project owner and organiser of Makkah Catering & Food Supply Exhibition 2027."
+    "noteAr": "Green Projects — project owner and organiser of Makkah Catering & Food Supply Forum 2027.",
+    "noteEn": "Green Projects — project owner and organiser of Makkah Catering & Food Supply Forum 2027."
   },
   "footer": {
     "navTitle": "Quick links",
@@ -907,7 +912,7 @@
     "languageTitle": "Language",
     "rights": "All rights reserved",
     "madeWith": "Organised and led by",
-    "disclaimer": "All information, dates and prices are subject to update; the final offer is confirmed upon booking. Exhibition details are updated regularly."
+    "disclaimer": "All information, dates and prices are subject to update; the final offer is confirmed upon booking. Forum details are updated regularly."
   },
   "partners": {
     "eyebrow": "Partners",
@@ -919,10 +924,10 @@
     "noteAr": "نقدّر الشراكة والدعم المقدم من هذه الجهات، والذي يسهم في استضافة الحدث وتطوير برنامجه. تُستكمل قائمة الشركاء تباعاً بعد اعتماد مذكرات التفاهم.",
     "noteEn": "We acknowledge the partnership and support of these organisations, which contributes to hosting the event and developing its programme. The partner list will be completed as agreements are confirmed.",
     "backHome": "Back to the home page",
-    "metaTitle": "Event Partners | Makkah Catering & Food Supply Exhibition 2027",
-    "metaTitleEn": "Event Partners | Makkah Catering & Food Supply Exhibition 2027",
-    "metaDescription": "الجهات والشركات الشريكة في معرض مكة للإعاشة والتموين 2027: الجهات التنظيمية وقطاع الضيافة والغذاء في المملكة العربية السعودية.",
-    "metaDescriptionEn": "The partner organisations of the Makkah Catering & Food Supply Exhibition 2027: regulators and hospitality and food sector bodies in Saudi Arabia.",
+    "metaTitle": "Event Partners | Makkah Catering & Food Supply Forum 2027",
+    "metaTitleEn": "Event Partners | Makkah Catering & Food Supply Forum 2027",
+    "metaDescription": "الجهات والشركات الشريكة في منتدى مكة للإعاشة والتموين الغذائي 2027: الجهات التنظيمية وقطاع الضيافة والغذاء في المملكة العربية السعودية.",
+    "metaDescriptionEn": "The partner organisations of the Makkah Catering & Food Supply Forum 2027: regulators and hospitality and food sector bodies in Saudi Arabia.",
     "logoAlt": "Logo",
     "items": [
       {
@@ -974,7 +979,7 @@
         "logo": "/images/green-projects.png",
         "nameAr": "قرين بروجكتس",
         "nameEn": "Green Projects",
-        "roleAr": "منظّم المعرض",
+        "roleAr": "منظّم المنتدى",
         "roleEn": "Event organiser",
         "logoScale": 55,
         "logoW": 1200,
@@ -991,5 +996,346 @@
     "logoAlt": "Logo",
     "note": "The partner list will be completed as agreements are confirmed.",
     "cta": "View all partners"
+  },
+  "marketStats": {
+    "eyebrow": "Market in figures",
+    "eyebrowEn": "MARKET IN FIGURES",
+    "title": "A market worth tens of billions, waiting for its suppliers",
+    "lead": "Makkah is more than a seasonal destination: it is the world’s largest mass-catering market. These figures explain the scale of the opportunity the Forum sits at the heart of.",
+    "stats": [
+      {
+        "value": "165",
+        "suffix": "SAR bn",
+        "label": "Food and beverage sales serving pilgrims",
+        "sub": "Equivalent to USD 44.2 billion"
+      },
+      {
+        "value": "4.1",
+        "suffix": "%",
+        "label": "Compound annual growth rate of the sector",
+        "sub": "Driven by direct domestic spending above SAR 4.39 billion a year"
+      },
+      {
+        "value": "268",
+        "suffix": "k rooms",
+        "label": "Makkah’s hotel room supply",
+        "sub": "150,000 of them inside the central area"
+      },
+      {
+        "value": "35",
+        "suffix": "million",
+        "label": "Vision 2030 Hajj and Umrah targets",
+        "sub": "30 million Umrah pilgrims and 5 million Hajj pilgrims a year"
+      }
+    ],
+    "note": "Figures drawn from economic reports published by the Makkah Chamber, reflecting real catering and food supply demand in the Holy City.",
+    "source": "Source: Makkah Chamber"
+  },
+  "sponsorship": {
+    "eyebrow": "Sponsorship packages",
+    "eyebrowEn": "SPONSORSHIP PACKAGES",
+    "title": "Sponsorship packages built for direct return",
+    "lead": "Six packages combine space, media visibility and hospitality inside the Forum, with clear and specific benefits for every partner — from Diamond to Co-Sponsor.",
+    "homeTitle": "Choose your position at the heart of the event",
+    "homeLead": "From the 120 m² Diamond package to Co-Sponsor, every partner has a clear place at the Forum frontage and across all its media.",
+    "allCta": "View all packages",
+    "cta": "Book this package",
+    "ctaNote": "The Green Projects team will contact you to confirm the package and booth details.",
+    "featured": "Most prominent",
+    "priceOnRequest": "On request",
+    "currency": "SAR",
+    "fromLabel": "From",
+    "areaLabel": "Space",
+    "benefitsTitle": "Sponsorship benefits",
+    "packagesEyebrow": "Packages",
+    "packagesTitle": "Six packages, defined benefits for every partner",
+    "tableEyebrow": "Comparison",
+    "benefitColumn": "Benefit",
+    "tableTitle": "Detailed package comparison",
+    "tableHint": "Compare the six packages to choose the one that fits your goals.",
+    "noteTitle": "Notes",
+    "notes": [
+      "Prices exclude VAT.",
+      "Space is limited and allocated on a first-come, first-served basis.",
+      "Design and fit-out details are confirmed after the package is booked."
+    ],
+    "contactTitle": "Need a tailored package?",
+    "contactBody": "We build flexible sponsorship packages that match your brand goals and budget.",
+    "contactCta": "Talk to the sponsorship team",
+    "metaTitle": "Sponsorship Packages | Makkah Catering & Food Supply Forum 2027",
+    "metaDescription": "Sponsorship packages for the Makkah Catering & Food Supply Forum 2027: Diamond SAR 245,000, Gold SAR 185,000, Silver SAR 97,000, and co-sponsor packages of 30, 18 and 12 m².",
+    "tiers": [
+      {
+        "id": "diamond",
+        "nameAr": "راعي ألماسي",
+        "nameEn": "Diamond Sponsor",
+        "price": 245000,
+        "area": 120,
+        "featured": true,
+        "taglineAr": "الموقع الأبرز والمساحة الأكبر في واجهة المنتدى",
+        "taglineEn": "The most prominent position and the largest space at the Forum frontage",
+        "benefits": [
+          "120 m² booth at the Forum frontage",
+          "Complimentary 3D booth design",
+          "Two vehicles throughout the Forum",
+          "Full in-booth hospitality: two hosts, specialty and Arabic coffee, oriental sweets, juices and water",
+          "8 VIP invitations",
+          "Opportunity to nominate a speaker for one of the sessions",
+          "Official recognition plaque at the opening ceremony",
+          "Extensive coverage across digital platforms and media",
+          "Company logo on all advertising materials and official publications",
+          "Logo on the Forum website and social media accounts",
+          "Extensive media coverage featuring the sponsor’s name",
+          "Promotional announcement on the Forum’s official accounts"
+        ]
+      },
+      {
+        "id": "gold",
+        "nameAr": "راعي ذهبي",
+        "nameEn": "Gold Sponsor",
+        "price": 185000,
+        "area": 90,
+        "featured": false,
+        "taglineAr": "حضور قوي بضيافة كاملة ومساحة واسعة",
+        "taglineEn": "A strong presence with full hospitality and generous space",
+        "benefits": [
+          "90 m² booth at the Forum frontage",
+          "Full in-booth hospitality: a host, specialty and Arabic coffee, oriental sweets, juices and water",
+          "4 VIP invitations",
+          "Opportunity to nominate a speaker for one of the sessions",
+          "Official recognition plaque at the opening ceremony",
+          "Extensive coverage across digital platforms and media",
+          "Company logo on all advertising materials and official publications",
+          "Logo on the Forum website and social media accounts",
+          "Extensive media coverage featuring the sponsor’s name",
+          "Promotional announcement on the Forum’s official accounts"
+        ]
+      },
+      {
+        "id": "silver",
+        "nameAr": "راعي فضي",
+        "nameEn": "Silver Sponsor",
+        "price": 97000,
+        "area": 50,
+        "featured": false,
+        "taglineAr": "توازن بين المساحة والظهور الإعلامي",
+        "taglineEn": "A balance of space and media visibility",
+        "benefits": [
+          "50 m² booth",
+          "3 VIP invitations",
+          "Official recognition plaque at the opening ceremony",
+          "Extensive coverage across digital platforms and media",
+          "Company logo on all advertising materials and official publications",
+          "Logo on the Forum website and social media accounts",
+          "Extensive media coverage featuring the sponsor’s name",
+          "Promotional announcement on the Forum’s official accounts"
+        ]
+      },
+      {
+        "id": "co-a",
+        "nameAr": "راعي مشارك (A)",
+        "nameEn": "Co-Sponsor (A)",
+        "price": null,
+        "area": 30,
+        "featured": false,
+        "taglineAr": "جناح 30 م² مع ظهور في جميع المواد الرسمية",
+        "taglineEn": "A 30 m² booth with visibility across all official materials",
+        "benefits": [
+          "30 m² booth",
+          "Extensive coverage across digital platforms and media",
+          "Company logo on all advertising materials and official publications",
+          "Logo on the Forum website and social media accounts",
+          "Extensive media coverage featuring the sponsor’s name",
+          "Promotional announcement on the Forum’s official accounts"
+        ]
+      },
+      {
+        "id": "co-b",
+        "nameAr": "راعي مشارك (B)",
+        "nameEn": "Co-Sponsor (B)",
+        "price": null,
+        "area": 18,
+        "featured": false,
+        "taglineAr": "جناح 18 م² للشركات الناشئة والمتوسطة",
+        "taglineEn": "An 18 m² booth for emerging and mid-size companies",
+        "benefits": [
+          "18 m² booth",
+          "Logo on the Forum website and social media accounts",
+          "Extensive media coverage featuring the sponsor’s name",
+          "Promotional announcement on the Forum’s official accounts"
+        ]
+      },
+      {
+        "id": "co-c",
+        "nameAr": "راعي مشارك (C)",
+        "nameEn": "Co-Sponsor (C)",
+        "price": null,
+        "area": 12,
+        "featured": false,
+        "taglineAr": "بداية خفيفة بحضور رسمي معتمد",
+        "taglineEn": "A light entry point with official visibility",
+        "benefits": [
+          "12 m² booth",
+          "Logo on the Forum website and social media accounts",
+          "Extensive media coverage featuring the sponsor’s name",
+          "Promotional announcement on the Forum’s official accounts"
+        ]
+      }
+    ],
+    "comparison": {
+      "columns": [
+        "diamond",
+        "gold",
+        "silver",
+        "co-a",
+        "co-b",
+        "co-c"
+      ],
+      "rows": [
+        {
+          "type": "area",
+          "labelAr": "مساحة الجناح",
+          "labelEn": "Booth area",
+          "values": [
+            "120",
+            "90",
+            "50",
+            "30",
+            "18",
+            "12"
+          ]
+        },
+        {
+          "type": "count",
+          "labelAr": "دعوات كبار الشخصيات VIP",
+          "labelEn": "VIP invitations",
+          "values": [
+            "8",
+            "4",
+            "3",
+            "0",
+            "0",
+            "0"
+          ]
+        },
+        {
+          "type": "check",
+          "labelAr": "تصميم ثلاثي الأبعاد للجناح",
+          "labelEn": "3D booth design",
+          "values": [
+            "yes",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": "check",
+          "labelAr": "ضيافة متكاملة داخل الجناح",
+          "labelEn": "Full in-booth hospitality",
+          "values": [
+            "yes",
+            "yes",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": "check",
+          "labelAr": "سيارتان طوال فترة المنتدى",
+          "labelEn": "Two vehicles during the Forum",
+          "values": [
+            "yes",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": "check",
+          "labelAr": "ترشيح متحدث في إحدى الجلسات",
+          "labelEn": "Speaker nomination",
+          "values": [
+            "yes",
+            "yes",
+            "",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": "check",
+          "labelAr": "درع تكريم رسمي",
+          "labelEn": "Official recognition plaque",
+          "values": [
+            "yes",
+            "yes",
+            "yes",
+            "",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": "check",
+          "labelAr": "تغطية رقمية وإعلامية موسعة",
+          "labelEn": "Extensive digital and media coverage",
+          "values": [
+            "yes",
+            "yes",
+            "yes",
+            "yes",
+            "yes",
+            "yes"
+          ]
+        },
+        {
+          "type": "check",
+          "labelAr": "الشعار في المواد الإعلانية والمطبوعات",
+          "labelEn": "Logo on advertising and print materials",
+          "values": [
+            "yes",
+            "yes",
+            "yes",
+            "yes",
+            "",
+            ""
+          ]
+        },
+        {
+          "type": "check",
+          "labelAr": "الشعار على الموقع وحسابات التواصل",
+          "labelEn": "Logo on the website and social channels",
+          "values": [
+            "yes",
+            "yes",
+            "yes",
+            "yes",
+            "yes",
+            "yes"
+          ]
+        },
+        {
+          "type": "check",
+          "labelAr": "إعلان ترويجي عبر الحسابات الرسمية",
+          "labelEn": "Promotional announcement on official accounts",
+          "values": [
+            "yes",
+            "yes",
+            "yes",
+            "yes",
+            "yes",
+            "yes"
+          ]
+        }
+      ]
+    }
   }
 }

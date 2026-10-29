@@ -82,8 +82,8 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
             <RevealItem>
               <p className="mt-4 max-w-lg text-body-sm leading-[1.9] text-navy-200">
                 {isAr
-                  ? 'المعرض يجمع صنّاع القرار في الإعاشة والضيافة والتموين تحت سقف واحد، في قلب مكة المكرمة.'
-                  : 'The exhibition brings catering, hospitality and supply chain decision-makers together under one roof, in the heart of Makkah.'}
+                  ? 'المنتدى يجمع صنّاع القرار في الإعاشة والضيافة والتموين تحت سقف واحد، في قلب مكة المكرمة.'
+                  : 'The Forum brings catering, hospitality and supply chain decision-makers together under one roof, in the heart of Makkah.'}
               </p>
             </RevealItem>
             <RevealItem>

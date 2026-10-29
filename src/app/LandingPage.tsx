@@ -4,6 +4,7 @@ import { isLocale } from '@/lib/i18n';
 import { Header } from '@/components/Header';
 import { Hero } from '@/components/Hero';
 import { Introduction } from '@/components/Introduction';
+import { MarketFigures } from '@/components/MarketFigures';
 import { ImportanceSection } from '@/components/ImportanceSection';
 import { TimingSection } from '@/components/TimingSection';
 import { Objectives } from '@/components/Objectives';
@@ -13,6 +14,7 @@ import { WhyExhibit } from '@/components/WhyExhibit';
 import { BusinessValue } from '@/components/BusinessValue';
 import { EventExperience } from '@/components/EventExperience';
 import { EarlyBirdSection } from '@/components/EarlyBirdSection';
+import { SponsorshipSection } from '@/components/SponsorshipSection';
 import { PartnersSection } from '@/components/PartnersSection';
 import { RegistrationSection } from '@/components/RegistrationSection';
 import { Footer } from '@/components/Footer';
@@ -36,6 +38,7 @@ export function LandingPage({ locale: raw }: { locale: string }) {
         <Hero locale={raw} dict={dict} />
 
         <Introduction locale={raw} dict={dict} />
+        <MarketFigures locale={raw} dict={dict} />
         <ImportanceSection locale={raw} dict={dict} />
         <TimingSection locale={raw} dict={dict} />
 
@@ -47,6 +50,7 @@ export function LandingPage({ locale: raw }: { locale: string }) {
         <WhyExhibit locale={raw} dict={dict} />
         <BusinessValue locale={raw} dict={dict} />
         <EarlyBirdSection locale={raw} dict={dict} />
+        <SponsorshipSection locale={raw} dict={dict} />
         <PartnersSection locale={raw} dict={dict} />
         <RegistrationSection locale={raw} dict={dict} />
       </main>
